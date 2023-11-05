@@ -7,4 +7,5 @@
     font-family: var(--choice-font);
     text-transform: uppercase;
     box-shadow: 1px 1px 5px var(--soft-shadow-color);
+    color: var(--bg-color);
 }
