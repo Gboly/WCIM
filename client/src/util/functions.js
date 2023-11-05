@@ -2,7 +2,7 @@ export const getTheme = () => {
   const localStorageTheme = localStorage.getItem("theme");
   const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
 
-  if (localStorageTheme !== null) {
+  if (localStorageTheme && localStorageTheme !== "null") {
     return localStorageTheme;
   }
 
