@@ -1,0 +1,10 @@
+.donate-button{
+    padding: 0.6rem 1rem;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 0.7rem;
+    font-size: 1rem;
+    font-family: var(--choice-font);
+    text-transform: uppercase;
+    box-shadow: 1px 1px 5px var(--soft-shadow-color);
+}
