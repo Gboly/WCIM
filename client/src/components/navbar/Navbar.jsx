@@ -10,7 +10,7 @@ import ThemeToggle from "../themeToggle/ThemeToggle";
 function Navbar() {
   return (
     <section className="nav-container">
-      <NavLink reloadDocument>
+      <NavLink to={"/"} reloadDocument>
         <div className="brand">
           <img src={logo} alt="world care international ministry logo" />
           <div className="brand-name">
