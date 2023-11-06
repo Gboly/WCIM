@@ -45,6 +45,7 @@
     display: flex;
     align-items: center;
     font-family: var(--choice-font);
+    font-weight: 700;
 }
 .nav-options > div{
     display: flex;
@@ -53,7 +54,58 @@
 }
 .nav-options > nav{
     display: flex;
-    gap: 1.5rem;
-    margin-right: 1.5rem;
-    margin-left: 2rem;
+    margin: 0 1.5rem;
+}
+.nav-option{
+    position: relative;
+    padding: 0 0.75rem;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.nav-option > a {
+    opacity: 0.98;
+}
+.sub-options-wrapper{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    padding-top: 2rem;
+}
+.active-bar{
+    width: 100%;
+    height: 0.25rem;
+    background-color: var(--primary-color);
+    border-radius: 0.3rem;
+}
+.sub-option-container{
+    background-color: var(--bg-color);
+    display: flex;
+    flex-flow: row wrap;
+}
+.sub-option-container.double-column{
+    width: 24rem;
+}
+.sub-option-container.triple-column{
+    width: 36rem;
+}
+.sub-option{
+    width: 12rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 300;
+}
+.sub-option > img {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+.sub-option-hover{
+    text-decoration: underline !important;
+    background-color: var(--soft-shadow-color);
 }

@@ -19,14 +19,14 @@
   --bg-color: #faf8f6;
   --text-color: #161618;
   --primary-color: #9A0000;
-  --soft-shadow-color: rgba(0,0,0,0.5);
+  --soft-shadow-color: rgba(0,0,0,0.1);
   --default-icon-color: #2b2b2b;
 }
 [data-theme="dark"] {
   --bg-color: #2b2b2b;
   --text-color: #f6f7fa;
   --primary-color: #FFCC01;
-  --soft-shadow-color: rgba(255,255,255,0.7);
+  --soft-shadow-color: rgba(255,255,255,0.1);
   --default-icon-color: #faf8f6;
 }
 
