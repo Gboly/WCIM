@@ -1,4 +1,3 @@
-import money from "../../assets/money.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
