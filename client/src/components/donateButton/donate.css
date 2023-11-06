@@ -9,3 +9,7 @@
     box-shadow: 1px 1px 5px var(--soft-shadow-color);
     color: var(--bg-color);
 }
+.donate-button:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
