@@ -7,10 +7,15 @@ import { iconStyle } from "../../util/style";
 import Icon from "../icon/Icon";
 import ThemeToggle from "../themeToggle/ThemeToggle";
 import { navOptions } from "../../util/content";
-import { useEffect, useState } from "react";
 import NavSubOptions from "./NavSubOptions";
+import SearchBar from "./SearchBar";
+import { useRef, useState } from "react";
+import usePopUpHandler from "../../util/cutom-hooks/usePopupHandler";
 
 function Navbar() {
+  const searchBarRef = useRef(null);
+  const [searchIsOpen, openSearch] = usePopUpHandler(searchBarRef);
+
   return (
     <>
       <section className="nav-container">
@@ -25,7 +30,7 @@ function Navbar() {
         </NavLink>
         <div className="nav-options">
           <div>
-            <Icon>
+            <Icon handleClick={openSearch}>
               <SearchIcon style={iconStyle} />
             </Icon>
             <ThemeToggle />
@@ -37,6 +42,7 @@ function Navbar() {
           </nav>
           <DonateButton />
         </div>
+        {searchIsOpen && <SearchBar ref={searchBarRef} />}
       </section>
     </>
   );
@@ -44,10 +50,6 @@ function Navbar() {
 
 const NavOption = ({ option: { desc, content, columnType } }) => {
   const [isHovered, setIsHovered] = useState(false);
-
-  useEffect(() => {
-    desc === "What we do" && setIsHovered(true);
-  }, [desc]);
 
   const handleMouseOver = () => {
     setIsHovered(true);

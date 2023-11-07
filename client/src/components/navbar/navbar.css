@@ -8,6 +8,7 @@
     font-family: 'Roboto', sans-serif;
     position: sticky;
     top: 0;
+    z-index: 3;
 }
 .nav-container a{
     text-decoration: none;
@@ -61,6 +62,7 @@
     padding: 0 0.75rem;
     box-sizing: border-box;
     cursor: pointer;
+    z-index: 4;
 }
 .nav-option > a {
     opacity: 0.98;
@@ -108,4 +110,41 @@
 .sub-option-hover{
     text-decoration: underline !important;
     background-color: var(--soft-shadow-color);
+}
+.nav-search-bar{
+    width: 100%;
+    background-color: var(--soft-shadow-color);
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0;
+    box-sizing: border-box;
+    font-family: var(--choice-font);
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+.nav-search-bar > div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    opacity: 0.8;
+}
+.nav-search-bar > div > span {
+   font-size: 1.5rem;
+   font-weight: 700;
+}
+.nav-search-bar > div > input {
+    width: 30rem;
+    background-color: inherit;
+    border: none;
+    border-bottom: 2px solid var(--text-color);
+    color: inherit;
+    font-family: inherit;
+    font-weight: 300;
+    font-size: 1.05rem;
+    padding: 0.5rem 0.1rem;
+    box-sizing: border-box;
+}
+.nav-search-bar > div > input:focus{
+    outline: none;
 }
