@@ -1,0 +1,30 @@
+#intro{
+    /* Full screen minus navbar height. Navbar height is brand image's height plus (2 x navbar vertical padding)*/
+    height: calc(100vh - 5.9rem);
+    background-image: url("../../assets/wcim-main-pic.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    font-family: var(--choice-font);
+    color: var(--light);
+}
+#intro > div {
+    position: absolute;
+    left: 1rem;
+    bottom: 5rem;
+    font-weight: 900;
+}
+#intro header {
+    text-transform: uppercase;
+    font-size: 3rem;
+    max-width: 53rem;
+    margin-bottom: 1.5rem;
+    background-color: rgba(0,0,0,0.1);
+    box-shadow: 1px 1px 10px 7px rgba(0,0,0,0.1);
+}
+#intro p {
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: normal;
+}
