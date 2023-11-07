@@ -1,3 +1,4 @@
+import { iconStyle } from "../../util/style";
 import "./icon.css";
 
 function Icon({
@@ -7,6 +8,7 @@ function Icon({
   handleMouseOver,
   handleMouseOut,
   handleClick,
+  value: Value,
 }) {
   return (
     <button className="icon-button">
@@ -17,7 +19,7 @@ function Icon({
         onMouseOut={handleMouseOut}
         onClick={handleClick}
       >
-        {children}
+        {children || <Value style={iconStyle} />}
       </i>
     </button>
   );
