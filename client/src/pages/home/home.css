@@ -1,6 +1,6 @@
 #intro{
-    /* Full screen minus navbar height. Navbar height is brand image's height plus (2 x navbar vertical padding)*/
-    height: calc(100vh - 5.9rem);
+    /* Full screen minus navbar height*/
+    height: calc(100vh - 4.8rem);
     background-image: url("../../assets/wcim-main-pic.jpg");
     background-position: center;
     background-size: cover;

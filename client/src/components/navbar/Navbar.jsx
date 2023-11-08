@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/brand-logo.png";
 import "./navbar.css";
 import DonateButton from "../donateButton/DonateButton";
 import SearchIcon from "@mui/icons-material/Search";
@@ -14,6 +13,8 @@ import usePopUpHandler from "../../util/cutom-hooks/usePopupHandler";
 import Animated from "../animated/Animated";
 import { motion } from "framer-motion";
 import { spreadOut } from "../../util/variants";
+import globe from "../../assets/globe.png";
+import cross from "../../assets/cross.png";
 
 function Navbar() {
   const searchBarRef = useRef(null);
@@ -24,9 +25,15 @@ function Navbar() {
       <section className="nav-container">
         <NavLink to={"/"} reloadDocument>
           <div className="brand">
-            <img src={logo} alt="world care international ministry logo" />
             <div className="brand-name">
-              <span>World care</span>
+              <span>
+                <span className="world">w</span>
+                <img src={globe} alt="globe" className="globe" />
+                <span>rld</span>
+                <span className="care">c</span>
+                <img src={cross} alt="cross" className="cross" />
+                <span>re</span>
+              </span>
               <span>international ministry</span>
             </div>
           </div>
