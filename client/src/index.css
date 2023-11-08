@@ -48,6 +48,10 @@ body {
   color: var(--text-color);
 }
 
+.reference-container{
+  background-color: transparent;
+}
+
 
 /* @media (prefers-color-scheme: light) {
   :root {

@@ -111,17 +111,20 @@
     text-decoration: underline !important;
     background-color: var(--soft-shadow-color);
 }
-.nav-search-bar{
+#search-bar {
     width: 100%;
-    background-color: var(--soft-shadow-actual-color);
-    display: flex;
-    justify-content: center;
-    padding: 1.5rem 0;
-    box-sizing: border-box;
-    font-family: var(--choice-font);
     position: absolute;
     top: 100%;
     left: 0;
+}
+.nav-search-bar{ 
+    width: 100%;
+    background-color: var(--soft-shadow-actual-color);
+    font-family: var(--choice-font);
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0;
+    box-sizing: border-box;    
 }
 .nav-search-bar > div {
     display: flex;

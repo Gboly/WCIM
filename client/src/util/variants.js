@@ -11,6 +11,19 @@ export const hSlideIn = (transition) => ({
   },
 });
 
+export const vSlideIn = (transition) => ({
+  initial: { opacity: 0, y: "-1rem" },
+  final: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: transition?.duration || 2,
+      ease: transition?.ease || "easeOut",
+      delay: transition?.delay || 0,
+    },
+  },
+});
+
 export const reveal = (transition) => ({
   initial: { opacity: 0 },
   final: {
@@ -22,6 +35,7 @@ export const reveal = (transition) => ({
     },
   },
 });
+
 export const spreadOut = (transition) => ({
   initial: { width: 0 },
   final: {
