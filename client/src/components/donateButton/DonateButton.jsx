@@ -10,6 +10,7 @@ function DonateButtonWithRef({ styleClass, variants }, ref) {
         <Animated
           element={motion.button}
           className={`donate-button ${styleClass || ""}`}
+          whileHover={{ scale: 1.05 }}
           variants={variants}
           ref={ref}
         >

@@ -2,7 +2,16 @@ import { useAnimation, useInView } from "framer-motion";
 import { forwardRef, useEffect } from "react";
 
 const AnimatedWithRef = (
-  { element: Element, className, children, variants },
+  {
+    element: Element,
+    className,
+    children,
+    variants,
+    whileHover,
+    whileTap,
+    onClick,
+    onHover,
+  },
   ref
 ) => {
   const isInView = useInView(ref);
@@ -19,6 +28,10 @@ const AnimatedWithRef = (
         variants={variants}
         initial="initial"
         animate={control}
+        whileHover={whileHover}
+        whiletap={whileTap}
+        onClick={onClick}
+        onHover={onHover}
       >
         {children}
       </Element>
