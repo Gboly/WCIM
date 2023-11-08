@@ -39,6 +39,7 @@ function SearchBar(_, ref) {
             placeholder="Enter keyword here"
             value={value}
             onChange={handleChange}
+            autoFocus
           />
           <Icon value={SearchIcon} />
         </div>
