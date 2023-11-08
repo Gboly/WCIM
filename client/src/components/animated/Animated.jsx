@@ -10,7 +10,8 @@ const AnimatedWithRef = (
     whileHover,
     whileTap,
     onClick,
-    onHover,
+    onMouseOver,
+    setElementRef,
   },
   ref
 ) => {
@@ -31,7 +32,8 @@ const AnimatedWithRef = (
         whileHover={whileHover}
         whiletap={whileTap}
         onClick={onClick}
-        onHover={onHover}
+        onMouseOver={onMouseOver}
+        ref={setElementRef}
       >
         {children}
       </Element>
