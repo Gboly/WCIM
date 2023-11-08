@@ -22,3 +22,14 @@ export const reveal = (transition) => ({
     },
   },
 });
+export const spreadOut = (transition) => ({
+  initial: { width: 0 },
+  final: {
+    width: "100%",
+    transition: {
+      duration: transition?.duration || 0.5,
+      ease: transition?.ease || "easeOut",
+      delay: transition?.delay || 0,
+    },
+  },
+});

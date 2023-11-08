@@ -1,15 +1,23 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { forwardRef, useState } from "react";
+import Animated from "../animated/Animated";
+import { motion } from "framer-motion";
+import { reveal } from "../../util/variants";
 
-function NavSubOptions({ subOptions, columnType }) {
+const NavSubOptionsWithRef = ({ subOptions, columnType }, ref) => {
   return (
-    <div className={`sub-option-container ${columnType}`}>
+    <Animated
+      element={motion.div}
+      className={`sub-option-container ${columnType}`}
+      variants={reveal({ duration: 0.2 })}
+      ref={ref}
+    >
       {subOptions.map((subOption) => (
         <SubOption key={subOption.desc} subOption={subOption} />
       ))}
-    </div>
+    </Animated>
   );
-}
+};
 
 const SubOption = ({ subOption: { icon, desc, url } }) => {
   const navigate = useNavigate();
@@ -39,4 +47,5 @@ const SubOption = ({ subOption: { icon, desc, url } }) => {
   );
 };
 
+const NavSubOptions = forwardRef(NavSubOptionsWithRef);
 export default NavSubOptions;

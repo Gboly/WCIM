@@ -11,6 +11,9 @@ import NavSubOptions from "./NavSubOptions";
 import SearchBar from "./SearchBar";
 import { useRef, useState } from "react";
 import usePopUpHandler from "../../util/cutom-hooks/usePopupHandler";
+import Animated from "../animated/Animated";
+import { motion } from "framer-motion";
+import { spreadOut } from "../../util/variants";
 
 function Navbar() {
   const searchBarRef = useRef(null);
@@ -50,6 +53,7 @@ function Navbar() {
 
 const NavOption = ({ option: { desc, content, columnType } }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const subOptionsRef = useRef(null);
 
   const handleMouseOver = () => {
     setIsHovered(true);
@@ -66,11 +70,20 @@ const NavOption = ({ option: { desc, content, columnType } }) => {
       onMouseOut={handleMouseOut}
     >
       <NavLink>{desc}</NavLink>
-      <div className="sub-options-wrapper">
+      <div ref={subOptionsRef} className="sub-options-wrapper">
         {isHovered && (
           <>
-            <div className="active-bar"></div>
-            <NavSubOptions subOptions={content} columnType={columnType} />
+            <Animated
+              element={motion.div}
+              className={"active-bar"}
+              variants={spreadOut()}
+              ref={subOptionsRef}
+            />
+            <NavSubOptions
+              subOptions={content}
+              columnType={columnType}
+              ref={subOptionsRef}
+            />
           </>
         )}
       </div>
