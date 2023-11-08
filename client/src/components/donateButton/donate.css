@@ -7,9 +7,18 @@
     font-family: var(--choice-font);
     text-transform: uppercase;
     box-shadow: 1px 1px 5px var(--soft-shadow-color);
-    color: var(--bg-color);
+    color: var(--dark);
 }
 .donate-button:hover{
     opacity: 0.7;
     cursor: pointer;
+}
+.donate-button.bigger{
+    width: 10rem;
+    height: 3rem;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    box-shadow: 1px 1px 10px 7px rgba(0,0,0,0.1);
 }
