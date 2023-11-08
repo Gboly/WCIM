@@ -15,7 +15,7 @@ const AnimatedWithRef = (
   },
   ref
 ) => {
-  const isInView = useInView(ref);
+  const isInView = useInView(ref, { once: true });
   const control = useAnimation();
 
   useEffect(() => {
