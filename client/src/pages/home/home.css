@@ -27,4 +27,6 @@
     margin-top: 1.5rem;
     font-size: 1.3rem;
     font-weight: normal;
+    background-color: rgba(0,0,0,0.1);
+    box-shadow: 1px 1px 10px 7px rgba(0,0,0,0.1);
 }

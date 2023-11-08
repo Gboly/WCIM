@@ -1,5 +1,5 @@
 .nav-container{
-    background-color: inherit;
+    background-color: var(--bg-color);
     padding: 1.2rem 1rem;
     box-sizing: border-box;
     width: 100%;
@@ -113,7 +113,7 @@
 }
 .nav-search-bar{
     width: 100%;
-    background-color: var(--soft-shadow-color);
+    background-color: var(--soft-shadow-actual-color);
     display: flex;
     justify-content: center;
     padding: 1.5rem 0;
