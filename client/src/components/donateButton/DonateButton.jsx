@@ -1,7 +1,26 @@
+import { motion } from "framer-motion";
+import Animated from "../animated/Animated";
 import "./donate.css";
+import { forwardRef } from "react";
 
-function DonateButton() {
-  return <button className="donate-button">Donate</button>;
+function DonateButtonWithRef({ styleClass, variants }, ref) {
+  return (
+    <>
+      {variants ? (
+        <Animated
+          element={motion.button}
+          className={`donate-button ${styleClass || ""}`}
+          variants={variants}
+          ref={ref}
+        >
+          Donate
+        </Animated>
+      ) : (
+        <button className={`donate-button ${styleClass || ""}`}>Donate</button>
+      )}
+    </>
+  );
 }
 
+const DonateButton = forwardRef(DonateButtonWithRef);
 export default DonateButton;

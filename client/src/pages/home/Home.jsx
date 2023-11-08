@@ -1,21 +1,32 @@
+import { useRef } from "react";
 import DonateButton from "../../components/donateButton/DonateButton";
 import "./home.css";
-// import mainPicture from "../../assets/wcim-main-pic.png";
+import { motion } from "framer-motion";
+import Animated from "../../components/animated/Animated";
+import { hSlideIn, reveal } from "../../util/variants";
 
 function Home() {
+  const introRef = useRef(null);
+
   return (
     <main className="home">
-      <section id="intro">
-        {/* <img
-          src={mainPicture}
-          alt="Kids touching with a WCIM official's hair while they all smile"
-        /> */}
+      <section ref={introRef} id="intro">
         <div>
-          <header>
+          <Animated element={motion.header} variants={reveal()} ref={introRef}>
             Expressing your faith means blessing the poor and helping humanity
-          </header>
-          <DonateButton styleClass={"bigger"} />
-          <p>Join and support us in making the world a better place.</p>
+          </Animated>
+          <DonateButton
+            styleClass={"bigger"}
+            variants={hSlideIn({ delay: 1 })}
+            ref={introRef}
+          />
+          <Animated
+            element={motion.p}
+            variants={reveal({ delay: 2 })}
+            ref={introRef}
+          >
+            Join and support us in making the world a better place.
+          </Animated>
         </div>
       </section>
     </main>
