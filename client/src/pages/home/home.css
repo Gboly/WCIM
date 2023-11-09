@@ -1,3 +1,6 @@
+.home {
+    font-family: var(--choice-font);
+}
 #intro{
     /* Full screen minus navbar height*/
     height: calc(100vh - 4.8rem);
@@ -6,7 +9,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    font-family: var(--choice-font);
     color: var(--bg-color);
 }
 #intro > div {
@@ -30,4 +32,29 @@
     color: var(--light);
     background-color: var(--light-text-bg-color);
     box-shadow: var(--light-text-box-shadow);
+}
+#our-mission {
+    display: flex;
+    justify-content: center;
+}
+#our-mission > div {
+    padding: 5rem 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 65rem;
+}
+#our-mission header {
+    text-transform: uppercase;
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+#our-mission p {
+    font-size: 1.3rem;
+    text-align: center;
+    line-height: 2rem;
+    opacity: 0.98;
 }

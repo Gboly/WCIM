@@ -5,8 +5,12 @@ import { motion } from "framer-motion";
 import Animated from "../../components/animated/Animated";
 import { hSlideIn, reveal } from "../../util/variants";
 
+const ourMissionStatement =
+  "At WCIM, our mission is to transform lives and communities through the power of faith, love, and compassion. Inspired by the teachings of Christ, we are dedicated to serving humanity's most vulnerable, providing hope, and facilitating positive change.";
+
 function Home() {
   const introRef = useRef(null);
+  const ourMissionRef = useRef(null);
 
   return (
     <main className="home">
@@ -27,6 +31,14 @@ function Home() {
           >
             Join and support us in making the world a better place.
           </Animated>
+        </div>
+      </section>
+      <section ref={ourMissionRef} id="our-mission">
+        <div>
+          <header>
+            Our mission <div className="active-bar"></div>
+          </header>
+          <p>{ourMissionStatement}</p>
         </div>
       </section>
     </main>
