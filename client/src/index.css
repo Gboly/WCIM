@@ -62,6 +62,8 @@ body {
 
 .reference-container{
   background-color: transparent;
+  display: flex;
+  justify-content: center;
 }
 
 
