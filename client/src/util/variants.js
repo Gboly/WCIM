@@ -24,6 +24,19 @@ export const vSlideIn = (transition) => ({
   },
 });
 
+export const vSlideInBottom = (transition) => ({
+  initial: { opacity: 0, y: "2rem" },
+  final: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: transition?.duration || 2,
+      ease: transition?.ease || "easeOut",
+      delay: transition?.delay || 0,
+    },
+  },
+});
+
 export const reveal = (transition) => ({
   initial: { opacity: 0 },
   final: {
