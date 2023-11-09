@@ -11,6 +11,8 @@ const AnimatedWithRef = (
     whileTap,
     onClick,
     onMouseOver,
+    onMouseOut,
+    useVariantHover,
     setElementRef,
   },
   ref
@@ -22,6 +24,9 @@ const AnimatedWithRef = (
     isInView && control.start("final");
   }, [isInView, control]);
 
+  const customMouseOver = () => control.start("mouseOver");
+  const customMouseOut = () => control.start("mouseOut");
+
   return (
     <>
       <Element
@@ -32,7 +37,8 @@ const AnimatedWithRef = (
         whileHover={whileHover}
         whiletap={whileTap}
         onClick={onClick}
-        onMouseOver={onMouseOver}
+        onMouseOver={useVariantHover ? customMouseOver : onMouseOver}
+        onMouseOut={useVariantHover ? customMouseOut : onMouseOut}
         ref={setElementRef}
       >
         {children}
