@@ -11,6 +11,32 @@ export const hSlideIn = (transition) => ({
   },
 });
 
+export const hSlideInLeft = (transition) => ({
+  initial: { opacity: 0, x: "-2rem" },
+  final: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: transition?.duration || 2,
+      ease: transition?.ease || "backInOut",
+      delay: transition?.delay || 0,
+    },
+  },
+});
+
+export const hSlideInRight = (transition) => ({
+  initial: { opacity: 0, x: "2rem" },
+  final: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: transition?.duration || 2,
+      ease: transition?.ease || "backInOut",
+      delay: transition?.delay || 0,
+    },
+  },
+});
+
 export const vSlideIn = (transition) => ({
   initial: { opacity: 0, y: "-1rem" },
   final: {
