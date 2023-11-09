@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
     position: relative;
     font-family: var(--choice-font);
-    color: var(--light);
+    color: var(--bg-color);
 }
 #intro > div {
     position: absolute;
@@ -20,13 +20,14 @@
     font-size: 3rem;
     max-width: 53rem;
     margin-bottom: 1.5rem;
-    background-color: rgba(0,0,0,0.1);
-    box-shadow: 1px 1px 10px 7px rgba(0,0,0,0.1);
+    background-color: var(--text-bg-color);
+    box-shadow: var(--text-box-shadow);
 }
 #intro p {
     margin-top: 1.5rem;
     font-size: 1.3rem;
     font-weight: normal;
-    background-color: rgba(0,0,0,0.1);
-    box-shadow: 1px 1px 10px 7px rgba(0,0,0,0.1);
+    color: var(--light);
+    background-color: var(--light-text-bg-color);
+    box-shadow: var(--light-text-box-shadow);
 }
