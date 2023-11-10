@@ -2,6 +2,7 @@ import { iconStyle } from "../../util/style";
 import "./icon.css";
 
 function Icon({
+  className,
   style,
   size,
   children,
@@ -11,7 +12,7 @@ function Icon({
   value: Value,
 }) {
   return (
-    <button className="icon-button">
+    <button className={`icon-button ${className}`}>
       <i
         className="icon"
         style={{ ...(style || {}), fontSize: `${size || 1.8}rem` }}

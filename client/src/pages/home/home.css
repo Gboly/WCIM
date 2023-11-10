@@ -33,28 +33,47 @@
     background-color: var(--light-text-bg-color);
     box-shadow: var(--light-text-box-shadow);
 }
-#our-mission {
-    display: flex;
-    justify-content: center;
-}
-#our-mission > div {
-    padding: 5rem 1rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    justify-content: center;
-    max-width: 65rem;
-}
-#our-mission header {
-    text-transform: uppercase;
-    font-size: 2.3rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-}
+
 #our-mission p {
     font-size: 1.3rem;
     text-align: center;
-    line-height: 2rem;
+    line-height: 2.5rem;
     opacity: 0.98;
 }
+ #what-we-do {
+    background-color: var(--soft-shadow-actual-color);
+    padding-left: 0;
+    padding-right: 0;
+ }
+ #what-we-do .options-container {
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 2rem;
+ }
+ .iconNdesc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    color: var(--text-color);
+    font-size: 1.05rem;
+    background-color: var(--primary-color);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    opacity: 0.8;
+    box-shadow: var(--light-text-box-shadow);
+    animation: upNdown 2s infinite ;
+ }
+ .iconNdesc > i {
+    font-size: 2rem;
+ }
+
+
+ @keyframes upNdown {
+    0% { transform: translateY(0);}
+    70% {transform: translateY(1rem);}
+    100% {transform: translateY(0);}
+ }
+
+
