@@ -14,6 +14,7 @@ const AnimatedWithRef = (
     onMouseOut,
     useVariantHover,
     setElementRef,
+    animateExit,
   },
   ref
 ) => {
@@ -24,6 +25,7 @@ const AnimatedWithRef = (
     isInView && control.start("final");
   }, [isInView, control]);
 
+  // Felt the need to these customs because for some reason animating with whileHover just wouldn't return component back to initial form.
   const customMouseOver = () => control.start("mouseOver");
   const customMouseOut = () => control.start("mouseOut");
 
@@ -34,6 +36,7 @@ const AnimatedWithRef = (
         variants={variants}
         initial="initial"
         animate={control}
+        exit={animateExit && "initial"}
         whileHover={whileHover}
         whiletap={whileTap}
         onClick={onClick}
