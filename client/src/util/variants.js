@@ -27,7 +27,7 @@ export const hSlideInLeft = (transition) => ({
     transition: { duration: 0.4, ease: "easeOut" },
   },
   mouseOut: {
-    boxShadow: 0,
+    boxShadow: "0 0",
     transition: { duration: 0.3, ease: "easeIn" },
   },
 });
@@ -48,7 +48,7 @@ export const hSlideInRight = (transition) => ({
     transition: { duration: 0.4, ease: "easeOut" },
   },
   mouseOut: {
-    boxShadow: 0,
+    boxShadow: "0 0",
     transition: { duration: 0.3, ease: "easeIn" },
   },
 });
