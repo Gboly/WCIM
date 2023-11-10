@@ -1,5 +1,4 @@
 import "./doingsCameo.css";
-import water from "../../assets/water.png";
 import { forwardRef } from "react";
 import Animated from "../animated/Animated";
 import { motion } from "framer-motion";
@@ -8,7 +7,10 @@ import { hSlideInLeft, hSlideInRight } from "../../util/variants";
 const isLeft = (index) => index % 2 === 0;
 const delayByIndex = [0.8, 0.8, 1.3, 1.3, 0, 0];
 
-const DoingsCameoWithRef = ({ index }, ref) => {
+const DoingsCameoWithRef = (
+  { index, doings: { icon, desc, url, body } },
+  ref
+) => {
   const transition = {
     duration: 1,
     delay: delayByIndex[index],
@@ -23,16 +25,12 @@ const DoingsCameoWithRef = ({ index }, ref) => {
       }
       ref={ref}
       useVariantHover={true}
+      animateExit={index > 3}
     >
-      <img src={water} alt={"water"} />
+      <img src={icon} alt={"water"} />
       <article>
-        <header>Hunger relief</header>
-        <p>
-          In the United States, and around the world, YOU are helping fill
-          hungry bellies and fight hunger-related health problems through
-          compassionate hunger relief programs in homes, schools, churches, and
-          entire communities!
-        </p>
+        <header>{desc}</header>
+        <p>{body}</p>
       </article>
     </Animated>
   );
