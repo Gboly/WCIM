@@ -22,6 +22,14 @@ export const hSlideInLeft = (transition) => ({
       delay: transition?.delay || 0,
     },
   },
+  mouseOver: {
+    boxShadow: "var(--light-text-box-shadow)",
+    transition: { duration: 0.4, ease: "easeOut" },
+  },
+  mouseOut: {
+    boxShadow: 0,
+    transition: { duration: 0.3, ease: "easeIn" },
+  },
 });
 
 export const hSlideInRight = (transition) => ({
@@ -34,6 +42,14 @@ export const hSlideInRight = (transition) => ({
       ease: transition?.ease || "backInOut",
       delay: transition?.delay || 0,
     },
+  },
+  mouseOver: {
+    boxShadow: "var(--light-text-box-shadow)",
+    transition: { duration: 0.4, ease: "easeOut" },
+  },
+  mouseOut: {
+    boxShadow: 0,
+    transition: { duration: 0.3, ease: "easeIn" },
   },
 });
 
