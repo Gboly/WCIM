@@ -2,7 +2,7 @@ import "./doingsCameo.css";
 import { forwardRef } from "react";
 import Animated from "../animated/Animated";
 import { motion } from "framer-motion";
-import { hSlideInLeft, hSlideInRight } from "../../util/variants";
+import { hSlideInLeft, hSlideInRight, shadowOut } from "../../util/variants";
 import { NavLink } from "react-router-dom";
 
 const isLeft = (index) => index % 2 === 0;
@@ -23,7 +23,9 @@ const DoingsCameoWithRef = (
         element={motion.div}
         className="doingsCameo"
         variants={
-          isLeft(index) ? hSlideInLeft(transition) : hSlideInRight(transition)
+          isLeft(index)
+            ? hSlideInLeft(transition, shadowOut)
+            : hSlideInRight(transition, shadowOut)
         }
         ref={ref}
         useVariantHover={true}
