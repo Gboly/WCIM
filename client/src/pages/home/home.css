@@ -50,6 +50,11 @@
     flex-flow: row wrap;
     margin-top: 2rem;
  }
+ #what-we-do a{
+    max-width: 50%;
+    color: initial;
+    text-decoration: none;
+ }
  .iconNdesc {
     display: flex;
     justify-content: center;
