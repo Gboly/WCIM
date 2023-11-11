@@ -3,13 +3,20 @@ import DonateButton from "../../components/donateButton/DonateButton";
 import "./home.css";
 import { AnimatePresence, motion } from "framer-motion";
 import Animated from "../../components/animated/Animated";
-import { hSlideIn, reveal, vSlideInBottom } from "../../util/variants";
+import {
+  fontSizeIncrease,
+  hSlideIn,
+  reveal,
+  vSlideInBottom,
+} from "../../util/variants";
 import DoingsCameo from "../../components/doingsCameo/DoingsCameo";
 import CustomSection from "../../components/customSection/customSection";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import Icon from "../../components/icon/Icon";
 import { doingsContent } from "../../util/content";
+import { NavLink } from "react-router-dom";
+import giving from "../../assets/giving.png";
 
 const ourMissionStatement =
   "At WCIM, our mission is to transform lives and communities through the power of faith, love, and compassion. Inspired by the teachings of Christ, we are dedicated to serving humanity's most vulnerable, providing hope, and facilitating positive change.";
@@ -18,6 +25,7 @@ function Home() {
   const introRef = useRef(null);
   const ourMissionRef = useRef(null);
   const whatWeDoRef = useRef(null);
+  const givingCatalogRef = useRef(null);
 
   const [showMore, setshowMore] = useState(false);
 
@@ -82,6 +90,23 @@ function Home() {
           handleClick={() => setshowMore(!showMore)}
         />
       </CustomSection>
+      <section
+        ref={givingCatalogRef}
+        className="reference-container"
+        id="giving-catalog"
+      >
+        <Animated
+          element={motion.div}
+          variants={hSlideIn({}, fontSizeIncrease)}
+          ref={givingCatalogRef}
+          useVariantHover={true}
+        >
+          <NavLink to={"/get-invloved/giving"}>
+            <img src={giving} alt="giving icon" />
+            Giving catalog
+          </NavLink>
+        </Animated>
+      </section>
     </main>
   );
 }

@@ -66,7 +66,7 @@ export const navOptions = [
       {
         icon: giving,
         desc: "Giving catalog",
-        url: "/get-involved/clean-water",
+        url: "/get-involved/giving",
       },
       {
         icon: mailing,

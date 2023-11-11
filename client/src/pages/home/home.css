@@ -52,7 +52,7 @@
  }
  #what-we-do a{
     max-width: 50%;
-    color: initial;
+    color: inherit;
     text-decoration: none;
  }
  .iconNdesc {
@@ -72,6 +72,29 @@
  }
  .iconNdesc > i {
     font-size: 2rem;
+ }
+ #giving-catalog {
+    text-transform: uppercase;
+    font-size: 2.8rem;
+    letter-spacing: 0.2rem;
+ }
+ #giving-catalog > div {
+    width: 100%;
+    background-color: var(--primary-color);
+ }
+ #giving-catalog a{
+    width: 100%;
+    padding: 5rem 0;
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+ }
+ #giving-catalog img {
+    width: 10rem;
+    min-width: 10rem;
  }
 
 
