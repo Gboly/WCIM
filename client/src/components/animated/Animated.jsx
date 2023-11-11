@@ -4,6 +4,7 @@ import { forwardRef, useEffect } from "react";
 const AnimatedWithRef = (
   {
     element: Element,
+    id,
     className,
     children,
     variants,
@@ -32,6 +33,7 @@ const AnimatedWithRef = (
   return (
     <>
       <Element
+        id={id}
         className={className}
         variants={variants}
         initial="initial"
