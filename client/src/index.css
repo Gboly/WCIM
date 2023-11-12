@@ -31,6 +31,7 @@
   --soft-shadow-actual-color: #e5e5e5;
   --default-icon-color: #2b2b2b;
   --primary-color: var(--color-1);
+  --secondary-color: var(--color-2);
   /* white cooured text */
   --text-bg-color: var(--light-text-bg-color);
   --text-box-shadow: var(--light-text-box-shadow);
@@ -43,6 +44,7 @@
   --soft-shadow-actual-color: #4c4c4c;
   --default-icon-color: #faf8f6;
   --primary-color: var(--color-2);
+  --secondary-color: var(--color-1);
     /* dark cooured text */
     --text-bg-color: var(--dark-text-bg-color);
     --text-box-shadow: var(--dark-text-box-shadow);

@@ -1,0 +1,14 @@
+.article > header {
+    font-size: 1.4rem;
+    font-weight: 700;
+ }
+ .article > p {
+    font-size: 1.1rem;
+    font-weight:lighter;
+ }
+ .article span {
+    margin-left: 0.25rem;
+ }
+ .article a {
+    color: var(--secondary-color) !important;
+ }
