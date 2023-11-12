@@ -4,6 +4,7 @@ import Animated from "../animated/Animated";
 import { motion } from "framer-motion";
 import { hSlideInLeft, hSlideInRight, shadowOut } from "../../util/variants";
 import { NavLink } from "react-router-dom";
+import Article from "../article/Article";
 
 const isLeft = (index) => index % 2 === 0;
 const delayByIndex = [0.8, 0.8, 1.3, 1.3, 0, 0];
@@ -32,10 +33,7 @@ const DoingsCameoWithRef = (
         animateExit={index > 3}
       >
         <img src={icon} alt={"water"} />
-        <article>
-          <header>{desc}</header>
-          <p>{body}</p>
-        </article>
+        <Article header={desc} body={body} />
       </Animated>
     </NavLink>
   );
