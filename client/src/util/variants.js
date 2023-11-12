@@ -120,7 +120,7 @@ export const fontSizeIncrease = {
     transition: { duration: 0.2, ease: "easeIn" },
   },
   final: {
-    opacity: 0.9,
+    opacity: 0.8,
     fontSize: "110%",
     transition: { duration: 0.2, ease: "easeOut" },
   },
