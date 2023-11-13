@@ -12,3 +12,6 @@
  .article a {
     color: var(--secondary-color) !important;
  }
+ .article a:hover {
+   opacity: 0.8;
+ }
