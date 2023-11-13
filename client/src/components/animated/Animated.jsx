@@ -16,6 +16,7 @@ const AnimatedWithRef = (
     useVariantHover,
     setElementRef,
     animateExit,
+    style,
   },
   ref
 ) => {
@@ -35,6 +36,7 @@ const AnimatedWithRef = (
       <Element
         id={id}
         className={className}
+        style={style}
         variants={variants}
         initial="initial"
         animate={control}
