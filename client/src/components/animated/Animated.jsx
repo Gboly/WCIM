@@ -1,5 +1,5 @@
 import { useAnimation, useInView } from "framer-motion";
-import { forwardRef, useEffect } from "react";
+import { forwardRef, useCallback, useEffect, useState } from "react";
 
 const AnimatedWithRef = (
   {
@@ -14,22 +14,43 @@ const AnimatedWithRef = (
     onMouseOver,
     onMouseOut,
     useVariantHover,
+    isReferenceHover,
     setElementRef,
     animateExit,
     style,
+    alt,
+    src,
   },
   ref
 ) => {
   const isInView = useInView(ref, { once: true });
   const control = useAnimation();
 
-  useEffect(() => {
-    isInView && control.start("final");
-  }, [isInView, control]);
+  const [isInitial, setIsInitial] = useState(true);
 
   // Felt the need to these customs because for some reason animating with whileHover just wouldn't return component back to initial form.
-  const customMouseOver = () => control.start("mouseOver");
-  const customMouseOut = () => control.start("mouseOut");
+  const customMouseOver = useCallback(
+    () => control.start("mouseOver"),
+    [control]
+  );
+  const customMouseOut = useCallback(
+    () => control.start("mouseOut"),
+    [control]
+  );
+
+  useEffect(() => {
+    isInView && control.start("final");
+
+    isReferenceHover && (customMouseOver(), setIsInitial(false));
+    !isReferenceHover && !isInitial && customMouseOut();
+  }, [
+    isInView,
+    isReferenceHover,
+    isInitial,
+    control,
+    customMouseOver,
+    customMouseOut,
+  ]);
 
   return (
     <>
@@ -47,6 +68,9 @@ const AnimatedWithRef = (
         onMouseOver={useVariantHover ? customMouseOver : onMouseOver}
         onMouseOut={useVariantHover ? customMouseOut : onMouseOut}
         ref={setElementRef}
+        // When the element is an image.
+        src={src}
+        alt={alt}
       >
         {children}
       </Element>
