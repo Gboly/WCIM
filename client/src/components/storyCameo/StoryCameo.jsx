@@ -13,6 +13,7 @@ import {
   rotateEnlarge,
 } from "../../util/variants";
 
+const frameColors = ["#43409f", "#ed1414", "#009a00"];
 const StoryCameo = ({ index }) => {
   const storyCameoRef = useRef(null);
   const [isReferenceHover, setIsReferenceHover] = useState(false);
@@ -37,6 +38,7 @@ const StoryCameo = ({ index }) => {
           ref={storyCameoRef}
           variants={justReactions(rotateEnlarge)}
           isReferenceHover={isReferenceHover}
+          style={{ backgroundColor: frameColors[index] }}
         />
         <NavLink>
           <Animated
