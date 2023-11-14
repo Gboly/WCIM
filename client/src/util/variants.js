@@ -101,6 +101,13 @@ export const spreadOut = (transition, hoverVariant) => ({
   mouseOut: hoverVariant?.initial,
 });
 
+export const justReactions = (hoverVariant) => ({
+  initial: hoverVariant?.initial,
+  final: {},
+  mouseOver: hoverVariant?.final,
+  mouseOut: hoverVariant?.initial,
+});
+
 // event animation
 export const shadowOut = {
   initial: {
@@ -122,6 +129,36 @@ export const fontSizeIncrease = {
   final: {
     opacity: 0.8,
     fontSize: "110%",
+    transition: { duration: 0.2, ease: "easeOut" },
+  },
+};
+
+export const rotateEnlarge = {
+  initial: {
+    transform: "rotate(5deg)",
+    left: "0.8rem",
+    right: "0.8rem",
+    top: "1.2rem",
+    bottom: "1.2rem",
+    transition: { duration: 0.2, ease: "easeOut", delay: 0.1 },
+  },
+  final: {
+    transform: "rotate(0deg)",
+    left: "0rem",
+    right: "0rem",
+    top: "0rem",
+    bottom: "0rem",
+    transition: { duration: 0.2, ease: "easeIn", delay: 0.1 },
+  },
+};
+
+export const imageScale = {
+  initial: {
+    transform: "scaleX(1) scaleY(1)",
+    transition: { duration: 0.2, ease: "easeOut" },
+  },
+  final: {
+    transform: "scaleX(1.05) scaleY(1.07)",
     transition: { duration: 0.2, ease: "easeOut" },
   },
 };
