@@ -2,13 +2,20 @@ import "./storyCameo.css";
 import placeholder from "../../assets/wcim-main-pic.jpg";
 import Article from "../article/Article";
 import { NavLink } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Animated from "../animated/Animated";
-import { hSlideInLeft, hSlideInRight } from "../../util/variants";
+import {
+  hSlideInLeft,
+  hSlideInRight,
+  imageScale,
+  justReactions,
+  rotateEnlarge,
+} from "../../util/variants";
 
 const StoryCameo = ({ index }) => {
   const storyCameoRef = useRef(null);
+  const [isReferenceHover, setIsReferenceHover] = useState(false);
 
   const isReverse = index % 2 === 0;
 
@@ -22,10 +29,24 @@ const StoryCameo = ({ index }) => {
         element={motion.div}
         variants={isReverse ? hSlideInRight() : hSlideInLeft()}
         ref={storyCameoRef}
+        onMouseOver={() => setIsReferenceHover(true)}
+        onMouseOut={() => setIsReferenceHover(false)}
       >
-        <div></div>
+        <Animated
+          element={motion.div}
+          ref={storyCameoRef}
+          variants={justReactions(rotateEnlarge)}
+          isReferenceHover={isReferenceHover}
+        />
         <NavLink>
-          <img src={placeholder} alt={"stoy poster image"} />
+          <Animated
+            element={motion.img}
+            src={placeholder}
+            alt={"stoy poster image"}
+            ref={storyCameoRef}
+            variants={justReactions(imageScale)}
+            isReferenceHover={isReferenceHover}
+          />
         </NavLink>
       </Animated>
       <Animated
