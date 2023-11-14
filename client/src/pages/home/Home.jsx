@@ -17,6 +17,7 @@ import Icon from "../../components/icon/Icon";
 import { doingsContent } from "../../util/content";
 import { NavLink } from "react-router-dom";
 import giving from "../../assets/giving.png";
+import StoryCameo from "../../components/storyCameo/StoryCameo";
 
 const ourMissionStatement =
   "At WCIM, our mission is to transform lives and communities through the power of faith, love, and compassion. Inspired by the teachings of Christ, we are dedicated to serving humanity's most vulnerable, providing hope, and facilitating positive change.";
@@ -26,6 +27,7 @@ function Home() {
   const ourMissionRef = useRef(null);
   const whatWeDoRef = useRef(null);
   const givingCatalogRef = useRef(null);
+  const ourStoriesRef = useRef(null);
 
   const [showMore, setshowMore] = useState(false);
 
@@ -107,6 +109,11 @@ function Home() {
           </NavLink>
         </Animated>
       </section>
+      <CustomSection ref={ourStoriesRef} id={"our-stories"}>
+        <StoryCameo index={0} />
+        <StoryCameo index={1} />
+        <StoryCameo index={2} />
+      </CustomSection>
     </main>
   );
 }
