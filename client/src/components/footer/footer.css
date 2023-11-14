@@ -1,0 +1,79 @@
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--soft-shadow-actual-color);
+    font-size: 1rem;
+    font-weight: lighter;
+}
+.footer-1 {
+    padding: 3rem 1rem;    
+}
+footer > main {
+    width: 65rem;
+    max-width: 65rem;
+    display: flex;
+    justify-content: space-between;
+}
+footer section {
+    width: 20rem;
+    max-width: 20rem;
+}
+#Learn-more {
+    padding-left: 1.5rem;
+}
+footer header {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+footer p {
+    opacity: 0.9;
+}
+footer a {
+    text-decoration: none;
+    color: inherit;
+}
+#Learn-more > div {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    width: fit-content;
+}
+footer form {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+}
+footer form input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem 1rem;
+    background-color: var(--bg-color);
+    border: none;
+    color: inherit;
+    font-size: 0.92rem;
+    opacity: 0.8;
+}
+footer form input:focus {
+    outline: none;
+}
+footer form button {
+    padding: 1rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    cursor: pointer;
+}
+footer form button:hover {
+    opacity: 0.8;
+}
+.footer-2 {
+    opacity: 0.7;
+}
+.footer-2 > p {
+    width: 65rem;
+    max-width: 65rem;
+    margin: 0.5rem 0;
+    font-size: 0.85rem;
+}
