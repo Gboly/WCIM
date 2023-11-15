@@ -1,14 +1,15 @@
 footer {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
     background-color: var(--soft-shadow-actual-color);
     font-size: 1rem;
     font-weight: lighter;
 }
 .footer-1 {
-    padding: 3rem 1rem;    
+    padding: 3rem 1rem 2rem;    
 }
-footer > main {
+footer > main, .footer-1 > div {
     width: 65rem;
     max-width: 65rem;
     display: flex;
@@ -67,6 +68,30 @@ footer form button {
 }
 footer form button:hover {
     opacity: 0.8;
+}
+#Stay-informed > div {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+#Stay-informed > div img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.footer-1 > div {
+    margin-top: 2rem;
+    align-items: center;
+}
+.footer-1 > div > div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.footer-1 > div > div > span {
+    opacity: 0.9;
 }
 .footer-2 {
     opacity: 0.7;
