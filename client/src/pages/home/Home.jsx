@@ -14,7 +14,7 @@ import CustomSection from "../../components/customSection/customSection";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import Icon from "../../components/icon/Icon";
-import { doingsContent } from "../../util/content";
+import { doingsContent, storyContent } from "../../util/content";
 import { NavLink } from "react-router-dom";
 import giving from "../../assets/giving.png";
 import StoryCameo from "../../components/storyCameo/StoryCameo";
@@ -111,9 +111,9 @@ function Home() {
         </Animated>
       </section>
       <CustomSection ref={ourStoriesRef} id={"our-stories"}>
-        <StoryCameo index={0} />
-        <StoryCameo index={1} />
-        <StoryCameo index={2} />
+        {storyContent.map((content, index) => (
+          <StoryCameo key={content.id} index={index} content={content} />
+        ))}
       </CustomSection>
       <Footer />
     </main>
