@@ -13,8 +13,7 @@ import usePopUpHandler from "../../util/cutom-hooks/usePopupHandler";
 import Animated from "../animated/Animated";
 import { motion } from "framer-motion";
 import { spreadOut } from "../../util/variants";
-import globe from "../../assets/globe.png";
-import cross from "../../assets/cross.png";
+import Brand from "../brand/Brand";
 
 function Navbar() {
   const searchBarRef = useRef(null);
@@ -24,19 +23,7 @@ function Navbar() {
     <>
       <section className="nav-container">
         <NavLink to={"/"} reloadDocument>
-          <div className="brand">
-            <div className="brand-name">
-              <span>
-                <span className="world">w</span>
-                <img src={globe} alt="globe" className="globe" />
-                <span>rld</span>
-                <span className="care">c</span>
-                <img src={cross} alt="cross" className="cross" />
-                <span>re</span>
-              </span>
-              <span>international ministry</span>
-            </div>
-          </div>
+          <Brand />
         </NavLink>
         <div className="nav-options">
           <div>
