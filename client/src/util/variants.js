@@ -162,3 +162,13 @@ export const imageScale = {
     transition: { duration: 0.2, ease: "easeOut" },
   },
 };
+export const scale = {
+  initial: {
+    transform: "scale(1)",
+    transition: { duration: 0.2, ease: "easeIn" },
+  },
+  final: {
+    transform: "scale(1.3)",
+    transition: { duration: 0.2, ease: "easeOut" },
+  },
+};

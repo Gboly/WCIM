@@ -3,7 +3,7 @@ import "./footer.css";
 import { forwardRef, useRef, useState } from "react";
 import Animated from "../animated/Animated";
 import { AnimatePresence, motion } from "framer-motion";
-import { spreadOut } from "../../util/variants";
+import { justReactions, scale, spreadOut } from "../../util/variants";
 import facebook from "../../assets/facebook.png";
 import instagram from "../../assets/instagram.png";
 import gmail from "../../assets/gmail.png";
@@ -80,7 +80,14 @@ const Footer = () => {
             <div>
               {socials.map(({ name, src, url }) => (
                 <a key={name} href={url} target="_blank" rel="noreferrer">
-                  <img src={src} alt={`${name} icon`} />
+                  <Animated
+                    element={motion.img}
+                    src={src}
+                    alt={`${name} icon`}
+                    variants={justReactions(scale)}
+                    ref={footerRef}
+                    useVariantHover={true}
+                  />
                 </a>
               ))}
             </div>
