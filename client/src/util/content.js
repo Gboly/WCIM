@@ -11,6 +11,7 @@ import volunteer from "../assets/volunteer.png";
 import about from "../assets/about.png";
 import team from "../assets/team.png";
 import contact from "../assets/contact.png";
+import boreholeAponmu from "../assets/borehole-aponmu.png";
 
 export const navOptions = [
   {
@@ -107,3 +108,36 @@ export const navOptions = [
 export const doingsContent = navOptions.find(
   (option) => option.desc === "What we do"
 ).content;
+
+const aponmuBoreholeStory =
+  "In the heart of Ondo State, Nigeria, lies the resilient community of Aponmu. For years, the lack of access to clean water had been an enduring challenge, casting a shadow over the daily lives of its residents. Women and children traversed long distances, bearing the burden of water containers, their daily routines dictated by the relentless pursuit of this basic necessity. p The community's plea for relief echoed far and wide, reaching the ears of our charity organization. Determined to make a lasting impact, we embarked on a mission to bring clean water to Aponmu. The solution came in the form of a borehole—a source of hope that would transform the lives of the community forever. p As the borehole was drilled and water began to flow, a wave of anticipation and joy swept through Aponmu. No longer bound by the arduous trek for water, families now had a reliable and sustainable source right at their doorstep. The burden on women and children lightened, replaced by the simple joy of turning a tap and witnessing the life-giving liquid flow freely. p Beyond quenching their physical thirst, the borehole became a symbol of empowerment. With newfound time and energy, community members redirected their focus towards education and economic activities. Children spent more time in classrooms, and families engaged in initiatives to improve their economic well-being. p The borehole didn't just provide water; it irrigated the fields of opportunity, nurturing a sense of community and resilience. Aponmu transformed from a village burdened by water scarcity to a thriving hub where the ripples of change reached every corner. p This story is a testament to the impact a simple borehole can have on a community's life. Through collective efforts and unwavering determination, we turned the tide for Aponmu, bringing an abundance of clean water and fostering a brighter, more promising future for all.";
+
+export const storyContent = [
+  {
+    id: 1,
+    imgSrc: boreholeAponmu,
+    desc: "Quenching the Thirst: A Borehole Brings Hope to Aponmu Community",
+    body: aponmuBoreholeStory,
+    category: "clean water",
+    url: "/stories/clean-water/aponmu-borehole",
+    keywords: ["water", "clean water", "borehole", "nigeria"],
+  },
+  {
+    id: 2,
+    imgSrc: boreholeAponmu,
+    desc: "Quenching the Thirst: A Borehole Brings Hope to Aponmu Community",
+    body: aponmuBoreholeStory,
+    category: "clean water",
+    url: "/stories/clean-water/aponmu-borehole",
+    keywords: ["water", "clean water", "borehole", "nigeria"],
+  },
+  {
+    id: 3,
+    imgSrc: boreholeAponmu,
+    desc: "Quenching the Thirst: A Borehole Brings Hope to Aponmu Community",
+    body: aponmuBoreholeStory,
+    category: "clean water",
+    url: "/stories/clean-water/aponmu-borehole",
+    keywords: ["water", "clean water", "borehole", "nigeria"],
+  },
+];
