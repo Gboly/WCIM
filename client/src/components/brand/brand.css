@@ -6,13 +6,13 @@
 }
 .brand-name > span {
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: var(--p4);
     display: flex;
     align-items: center;
 }
 .brand-name > span:first-of-type {    
     font-weight: 700;
-    font-size: 1.3rem;
+    font-size: var(--p1);
     letter-spacing: 0.2rem;
 }
 .brand-name img {

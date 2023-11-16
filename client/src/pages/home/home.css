@@ -19,7 +19,7 @@
 }
 #intro header {
     text-transform: uppercase;
-    font-size: 3rem;
+    font-size: var(--h1);
     max-width: 53rem;
     margin-bottom: 1.5rem;
     background-color: var(--text-bg-color);
@@ -27,7 +27,7 @@
 }
 #intro p {
     margin-top: 1.5rem;
-    font-size: 1.3rem;
+    font-size: var(--p1);
     font-weight: normal;
     color: var(--light);
     background-color: var(--light-text-bg-color);
@@ -35,7 +35,7 @@
 }
 
 #our-mission p {
-    font-size: 1.3rem;
+    font-size: var(--p1);
     text-align: center;
     line-height: 2.5rem;
     opacity: 0.98;
@@ -61,7 +61,7 @@
     align-items: center;
     margin-top: 1.5rem;
     color: var(--text-color);
-    font-size: 1.05rem;
+    font-size: var(--p3);
     background-color: var(--primary-color);
     width: 3rem;
     height: 3rem;
@@ -70,12 +70,9 @@
     box-shadow: var(--light-text-box-shadow);
     animation: upNdown 2s infinite ;
  }
- .iconNdesc > i {
-    font-size: 2rem;
- }
  #giving-catalog {
     text-transform: uppercase;
-    font-size: 2.8rem;
+    font-size: var(--h2);
     letter-spacing: 0.2rem;
  }
  #giving-catalog > div {

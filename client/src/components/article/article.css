@@ -1,9 +1,9 @@
 .article > header {
-    font-size: 1.4rem;
+    font-size: var(--h4);
     font-weight: 700;
  }
  .article > p {
-    font-size: 1.1rem;
+    font-size: var(--p2);
     font-weight:lighter;
  }
  .article span {

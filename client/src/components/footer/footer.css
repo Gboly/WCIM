@@ -1,5 +1,5 @@
 footer {
-    font-size: 1rem;
+    font-size: var(--p4);
     font-weight: lighter;
 }
 .footer-1 {
@@ -33,7 +33,7 @@ footer section {
     max-width: 20rem;
 }
 footer header {
-    font-size: 1.4rem;
+    font-size: var(--h4);
     font-weight: 700;
     margin-bottom: 1rem;
 }
@@ -46,7 +46,7 @@ footer a {
 }
 #Learn-more > div {
     margin-bottom: 1rem;
-    font-size: 1.1rem;
+    font-size: var(--p2);
     width: fit-content;
 }
 footer form {
@@ -62,7 +62,7 @@ footer form input {
     background-color: var(--bg-color);
     border: none;
     color: inherit;
-    font-size: 0.92rem;
+    font-size: var(--p4);
     opacity: 0.8;
 }
 footer form input:focus {
@@ -70,7 +70,7 @@ footer form input:focus {
 }
 footer form button {
     padding: 1rem 1rem;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-weight: 700;
     background-color: var(--text-color);
     color: var(--bg-color);
