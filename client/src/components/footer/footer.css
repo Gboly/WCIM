@@ -1,26 +1,36 @@
 footer {
-    display: flex;
-    align-items: center;
-    flex-flow: column nowrap;
-    background-color: var(--soft-shadow-actual-color);
     font-size: 1rem;
     font-weight: lighter;
 }
 .footer-1 {
-    padding: 3rem 1rem 2rem;    
+    background-color: var(--soft-shadow-actual-color);
+    padding: 3rem 1rem 2rem;
+    box-sizing: border-box;
 }
-footer > main, .footer-1 > div {
+footer > main {
     width: 65rem;
     max-width: 65rem;
     display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;    
+}
+/* .footer-2 > main {
+    display: block;
+} */
+.footer-1 > main > div {
+    width: 100%;
+    display: flex;
     justify-content: space-between;
 }
-footer section {
-    width: 20rem;
-    max-width: 20rem;
+.footer-1 > main > div > div {
+    display: flex;
+    gap: 2rem;
 }
-#Learn-more {
-    padding-left: 1.5rem;
+
+
+footer section {
+    max-width: 20rem;
 }
 footer header {
     font-size: 1.4rem;
@@ -81,24 +91,22 @@ footer form button:hover {
     width: 1.5rem;
     height: 1.5rem;
 }
-.footer-1 > div {
+.footer-1 > main > div:last-of-type {
     margin-top: 2rem;
     align-items: center;
 }
-.footer-1 > div > div {
+.footer-1 > main > div:last-of-type > div {
     display: flex;
     align-items: center;
     gap: 0.5rem;
 }
-.footer-1 > div > div > span {
+.footer-1 > main > div:last-of-type > div > span {
     opacity: 0.9;
 }
 .footer-2 {
     opacity: 0.7;
 }
-.footer-2 > p {
-    width: 65rem;
-    max-width: 65rem;
-    margin: 0.5rem 0;
-    font-size: 0.85rem;
+.footer-2  p {
+    margin: 0.3rem 0;
+    /* font-size: 0.85rem; */
 }
