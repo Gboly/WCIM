@@ -5,7 +5,7 @@ import cross from "../../assets/cross.png";
 const Brand = () => {
   return (
     <div className="brand">
-      <div className="brand-name">
+      <div className="brand-name lg">
         <span>
           <span className="world">w</span>
           <img src={globe} alt="globe" className="globe" />
@@ -15,6 +15,14 @@ const Brand = () => {
           <span>re</span>
         </span>
         <span>international ministry</span>
+      </div>
+      <div className="brand-name sm">
+        <span>
+          <span>w</span>
+          <span>c</span>
+          <img src={cross} alt="cross" className="cross" />
+          <span>m</span>
+        </span>
       </div>
     </div>
   );

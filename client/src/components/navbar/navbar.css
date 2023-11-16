@@ -37,6 +37,7 @@
     box-sizing: border-box;
     cursor: pointer;
     z-index: 4;
+    font-size: var(--p2);
 }
 .nav-option > a {
     opacity: 0.98;
@@ -124,4 +125,29 @@
 }
 .nav-search-bar > div > input:focus{
     outline: none;
+}
+
+@media screen and (max-width: 1440px) {
+    .nav-option {
+        font-size: var(--p4);
+    }
+}
+@media screen and (max-width: 1100px) {
+    .nav-options > nav {
+        display: none;
+    }
+    .nav-options > div {
+        margin-right: 1rem;
+    }
+    .menu-icon {
+        margin-left: 1rem;
+    }
+}
+@media screen and (max-width: 720px) {
+    .nav-container {
+        padding: 0.8rem 1rem;
+    }
+    .nav-container .donate-button {
+        /* font-size: 0.9rem; */
+    }
 }

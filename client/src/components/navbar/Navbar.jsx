@@ -14,6 +14,7 @@ import Animated from "../animated/Animated";
 import { motion } from "framer-motion";
 import { spreadOut } from "../../util/variants";
 import Brand from "../brand/Brand";
+import MenuIcon from "@mui/icons-material/Menu";
 
 function Navbar() {
   const searchBarRef = useRef(null);
@@ -27,7 +28,7 @@ function Navbar() {
         </NavLink>
         <div className="nav-options">
           <div>
-            <Icon handleClick={openSearch}>
+            <Icon handleClick={openSearch} className={"search-icon"}>
               <SearchIcon style={iconStyle} />
             </Icon>
             <ThemeToggle />
@@ -38,6 +39,7 @@ function Navbar() {
             ))}
           </nav>
           <DonateButton />
+          <Icon value={MenuIcon} className={"menu-icon"} />
         </div>
         {searchIsOpen && <SearchBar ref={searchBarRef} />}
       </section>
