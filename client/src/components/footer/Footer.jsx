@@ -29,16 +29,7 @@ const socials = [
 ];
 
 const Footer = () => {
-  const [userDetails, setUserDetails] = useState({ name: "", email: "" });
   const footerRef = useRef(null);
-
-  const handleSubmit = (e) => {
-    e && e.preventDefault();
-  };
-  const handleInput = (e) => {
-    const { id, value } = e.target;
-    setUserDetails({ ...userDetails, [id]: value });
-  };
 
   return (
     <>
@@ -63,23 +54,7 @@ const Footer = () => {
                 needs, and more! Sign up to receive important updates right to
                 your inbox.
               </p>
-              <form onSubmit={handleSubmit}>
-                <input
-                  type="text"
-                  id="name"
-                  placeholder="Your Name"
-                  value={userDetails.name}
-                  onInput={handleInput}
-                />
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="Your Email"
-                  value={userDetails.email}
-                  onInput={handleInput}
-                />
-                <button type="submit">KEEP ME INFORMED</button>
-              </form>
+              <SubscriptionForm />
               <div>
                 {socials.map(({ name, src, url }) => (
                   <a key={name} href={url} target="_blank" rel="noreferrer">
@@ -118,6 +93,37 @@ const Footer = () => {
         </main>
       </footer>
     </>
+  );
+};
+
+const SubscriptionForm = () => {
+  const [userDetails, setUserDetails] = useState({ name: "", email: "" });
+  const handleSubmit = (e) => {
+    e && e.preventDefault();
+  };
+  const handleInput = (e) => {
+    const { id, value } = e.target;
+    setUserDetails({ ...userDetails, [id]: value });
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        id="name"
+        placeholder="Your Name"
+        value={userDetails.name}
+        onInput={handleInput}
+      />
+      <input
+        type="email"
+        id="email"
+        placeholder="Your Email"
+        value={userDetails.email}
+        onInput={handleInput}
+      />
+      <button type="submit">KEEP ME INFORMED</button>
+    </form>
   );
 };
 
