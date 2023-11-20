@@ -3,16 +3,13 @@ import "./footer.css";
 import { forwardRef, useRef, useState } from "react";
 import Animated from "../animated/Animated";
 import { AnimatePresence, motion } from "framer-motion";
-import { justReactions, scale, spreadOut } from "../../util/variants";
+import { spreadOut } from "../../util/variants";
 import Brand from "../brand/Brand";
 import Icon from "../icon/Icon";
 import PlaceIcon from "@mui/icons-material/Place";
 import CallIcon from "@mui/icons-material/Call";
-import {
-  socials,
-  extendedMissionStatement,
-  learnMorecontent,
-} from "../../util/content";
+import { extendedMissionStatement, learnMorecontent } from "../../util/content";
+import Socials from "../socials/Socials";
 
 const Footer = () => {
   const footerRef = useRef(null);
@@ -41,20 +38,7 @@ const Footer = () => {
                 your inbox.
               </p>
               <SubscriptionForm />
-              <div>
-                {socials.map(({ name, src, url }) => (
-                  <a key={name} href={url} target="_blank" rel="noreferrer">
-                    <Animated
-                      element={motion.img}
-                      src={src}
-                      alt={`${name} icon`}
-                      variants={justReactions(scale)}
-                      ref={footerRef}
-                      useVariantHover={true}
-                    />
-                  </a>
-                ))}
-              </div>
+              <Socials />
             </FooterSection>
           </div>
           <div>

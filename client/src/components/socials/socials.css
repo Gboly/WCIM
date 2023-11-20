@@ -1,0 +1,11 @@
+.socials {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+.socials img {
+    width: 1.5rem;
+    height: 1.5rem;
+}

@@ -75,21 +75,10 @@ footer form button {
     background-color: var(--text-color);
     color: var(--bg-color);
     cursor: pointer;
+    margin-bottom: 2rem;
 }
 footer form button:hover {
     opacity: 0.8;
-}
-#Stay-informed > div {
-    width: 100%;
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2.5rem;
-}
-#Stay-informed > div img {
-    width: 1.5rem;
-    height: 1.5rem;
 }
 .footer-1 > main > div:last-of-type {
     margin-top: 2rem;
