@@ -99,3 +99,22 @@ footer form button:hover {
     margin: 0.3rem 0;
     /* font-size: 0.85rem; */
 }
+
+@media screen and (max-width: 900px) {
+    .footer-1 > main > div {
+        flex-flow: row wrap;
+        justify-content: center;
+
+    }
+    .footer-1 > main > div > div {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        flex-flow: row wrap;
+        gap: 1.5rem;
+        justify-content: center;
+    }
+    #Learn-more  {
+        min-width: 10rem;
+    }
+    footer form {}
+ }
