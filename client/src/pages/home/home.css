@@ -166,6 +166,16 @@
     #our-mission p {
         font-size: var(--p2);
     }
+    #giving-catalog {
+        font-size: var(--h3);
+    }        
+    #giving-catalog img{
+        width: 5rem;
+        min-width: 5rem;
+    }
+    #giving-catalog a {
+        gap: 1.5rem;
+    }
  }
 
 
