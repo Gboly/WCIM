@@ -12,6 +12,9 @@ import about from "../assets/about.png";
 import team from "../assets/team.png";
 import contact from "../assets/contact.png";
 import boreholeAponmu from "../assets/borehole-aponmu.png";
+import facebook from "../assets/facebook.png";
+import instagram from "../assets/instagram.png";
+import gmail from "../assets/gmail.png";
 
 export const navOptions = [
   {
@@ -141,3 +144,21 @@ export const storyContent = [
     keywords: ["water", "clean water", "borehole", "nigeria"],
   },
 ];
+
+export const socials = [
+  {
+    name: "facebook",
+    src: facebook,
+    url: "https://web.facebook.com/myworldcare208",
+  },
+  { name: "instagram", src: instagram, url: "" },
+  { name: "gmail", src: gmail, url: "mailto:worldcareinc@gmail.com" },
+];
+
+export const extendedMissionStatement = [
+  "World Care International Ministry collaborates with individuals like you to express God’s love globally, alleviating human suffering through hunger relief, medical care, clean water access, and education.",
+  " Our efficient, compassionate approach tailors programs to local needs, enabling partners to embody Jesus’ teachings and provide tangible support to those facing adversity.",
+  "Together, we create a world where collective compassion lessens the impact of human suffering. Join us in making a positive difference for those in need.",
+];
+
+export const learnMorecontent = ["Give Now", "About Us", "Contact Us"];
