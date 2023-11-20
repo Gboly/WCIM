@@ -8,7 +8,7 @@ import { socials } from "../../util/content";
 const Socials = () => {
   const socialsRef = useRef();
   return (
-    <div className="socials">
+    <aside className="socials">
       {socials.map(({ name, src, url }) => (
         <a key={name} href={url} target="_blank" rel="noreferrer">
           <Animated
@@ -21,7 +21,7 @@ const Socials = () => {
           />
         </a>
       ))}
-    </div>
+    </aside>
   );
 };
 
