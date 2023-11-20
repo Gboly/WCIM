@@ -21,8 +21,7 @@ const StoryCameo = ({ index, content: { imgSrc, desc, body, url } }) => {
 
   return (
     <div
-      className="story-cameo"
-      style={{ flexFlow: isReverse ? "row-reverse" : "row" }}
+      className={`story-cameo ${isReverse ? "row-reverse" : ""}`}
       ref={storyCameoRef}
     >
       <Animated

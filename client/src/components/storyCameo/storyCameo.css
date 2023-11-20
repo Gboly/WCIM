@@ -7,11 +7,15 @@
 .story-cameo:first-of-type {
     margin-top: 3rem;
 }
+.story-cameo.row-reverse {
+    flex-flow: row-reverse;
+}
 .story-cameo > div {
     position: relative;
     line-height: 0;
     padding: 1rem;
-    margin-right: 0.5rem;
+    margin-right: 1rem;
+    width: fit-content;
 }
 .story-cameo > div > div {
     position: absolute;
@@ -19,7 +23,7 @@
     right: 0.8rem;
     top: 1.2rem;
     bottom: 1.2rem;
-    background-color: red;
+    opacity: 0.5;
     z-index: -1;
     border-radius: 0.5rem;
     transform: rotate(5deg);
@@ -45,4 +49,38 @@
 .story-cameo .article header {
     text-transform: uppercase;
     /* max-width: ; */
+}
+
+@media screen and (max-width: 960px) {
+    .story-cameo img {
+        width: 25rem;
+        min-width: 25rem;
+        height: 15rem;
+    }
+}
+@media screen and (max-width: 900px) {
+    .story-cameo, .story-cameo.row-reverse{
+        flex-flow: column nowrap;
+        align-items: center;
+        gap: 1rem;
+        padding: 0 1rem;
+        box-sizing: border-box;
+        max-width: 35rem;
+        margin-top: 2rem;
+    }
+    .story-cameo > div {
+        margin-right: 0;
+        width: fit-content;
+        box-sizing: border-box;
+    }
+    .story-cameo img{
+        width: 90vw;
+        max-width: 33rem;
+        height: calc(90vw/1.54);
+        max-height: calc(33rem/1.54);
+    }
+    .story-cameo .article{
+        max-width: 100%;
+
+    }
 }
