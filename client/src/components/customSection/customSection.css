@@ -1,5 +1,6 @@
 .section {
     padding: 5rem 1rem;
+    box-sizing: border-box;
 }
 .section > div {
     box-sizing: border-box;

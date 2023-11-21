@@ -63,24 +63,38 @@
         flex-flow: column nowrap;
         align-items: center;
         gap: 1rem;
-        padding: 0 1rem;
-        box-sizing: border-box;
         max-width: 35rem;
         margin-top: 2rem;
     }
     .story-cameo > div {
         margin-right: 0;
-        width: fit-content;
+        width: 90vw;
+        max-width: 90vw;
         box-sizing: border-box;
     }
     .story-cameo img{
-        width: 90vw;
-        max-width: 33rem;
-        height: calc(90vw/1.54);
-        max-height: calc(33rem/1.54);
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        height: calc(75vw/1.54);
     }
     .story-cameo .article{
         max-width: 100%;
-
+    }
+}
+@media screen and (max-width: 560px) {
+    .story-cameo > div {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .story-cameo img{
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+        height: calc(75vw/1.54);
+    }
+    .story-cameo .article{
+        padding: 0 0.5rem;
     }
 }
