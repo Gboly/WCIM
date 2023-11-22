@@ -18,7 +18,6 @@ import { doingsContent, storyContent } from "../../util/content";
 import { NavLink } from "react-router-dom";
 import giving from "../../assets/giving.png";
 import StoryCameo from "../../components/storyCameo/StoryCameo";
-import Footer from "../../components/footer/Footer";
 import Socials from "../../components/socials/Socials";
 
 const ourMissionStatement =
@@ -117,7 +116,6 @@ function Home() {
           <StoryCameo key={content.id} index={index} content={content} />
         ))}
       </CustomSection>
-      <Footer />
     </main>
   );
 }
