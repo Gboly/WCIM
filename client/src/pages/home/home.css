@@ -176,6 +176,13 @@
     #giving-catalog a {
         gap: 1.5rem;
     }
+    .iconNdesc {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    .iconNdesc i {
+        font-size: 2rem !important;
+    }
  }
 
 

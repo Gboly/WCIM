@@ -103,7 +103,7 @@ footer form button:hover {
 @media screen and (max-width: 900px) {
     .footer-1 > main > div {
         flex-flow: row wrap;
-        justify-content: center;
+        /* justify-content: center; */
 
     }
     .footer-1 > main > div > div {
@@ -111,10 +111,10 @@ footer form button:hover {
         margin-bottom: 1.5rem;
         flex-flow: row wrap;
         gap: 1.5rem;
-        justify-content: center;
+        /* justify-content: space-between; */
     }
     #Learn-more  {
-        min-width: 10rem;
+        /* min-width: 20rem; */
     }
     footer form {}
  }
