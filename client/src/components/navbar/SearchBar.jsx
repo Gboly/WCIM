@@ -31,7 +31,7 @@ function SearchBar(_, ref) {
         setElementRef={setElementRef}
       >
         <div>
-          <span>Search :</span>
+          <span>Search:</span>
           <input
             type="text"
             name="search"

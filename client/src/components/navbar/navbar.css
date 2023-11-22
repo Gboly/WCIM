@@ -101,7 +101,7 @@
     font-family: var(--choice-font);
     display: flex;
     justify-content: center;
-    padding: 1.5rem 0;
+    padding: 1.5rem 1rem;
     box-sizing: border-box;    
 }
 .nav-search-bar > div {
@@ -162,5 +162,21 @@
         font-size: 0.8rem;
         padding: 0.45rem 0.8rem;
         border-radius: 0.45rem;
+    }
+    .nav-search-bar {
+        padding: 1rem 1rem 1.2rem;
+    }
+    .nav-search-bar > div {
+        width: 100%;
+    }
+    .nav-search-bar > div > span {
+        font-size: var(--p2);
+    }
+    .nav-search-bar > div > input {
+        width: 100%;
+        padding: 0.25rem 0.1rem;
+    }
+    .nav-search-bar .icon {
+        font-size: 1.6rem !important;
     }
 }
