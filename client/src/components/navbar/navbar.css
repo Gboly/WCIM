@@ -1,3 +1,4 @@
+/* Navbar heights; 0-720: 3.45rem, 721-1100: 4.75rem, 1100-infinity: 4.8rem */
 .nav-container{
     background-color: var(--bg-color);
     padding: 1.2rem 1rem;
