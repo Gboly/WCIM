@@ -155,4 +155,12 @@
     .nav-container {
         padding: 0.8rem 1rem;
     }
+    .nav-options i{
+        font-size: 1.5rem !important;
+    }
+    .nav-options .donate-button{
+        font-size: 0.8rem;
+        padding: 0.45rem 0.8rem;
+        border-radius: 0.45rem;
+    }
 }
