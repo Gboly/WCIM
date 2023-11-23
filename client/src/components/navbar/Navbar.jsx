@@ -15,10 +15,14 @@ import { motion } from "framer-motion";
 import { spreadOut } from "../../util/variants";
 import Brand from "../brand/Brand";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import Sidebar from "../sidebar/Sidebar";
 
 function Navbar() {
   const searchBarRef = useRef(null);
+  const sidebarRef = useRef(null);
   const [searchIsOpen, openSearch] = usePopUpHandler(searchBarRef);
+  const [sidebarIsOpen, openSidebar] = usePopUpHandler(sidebarRef);
 
   return (
     <>
@@ -39,10 +43,19 @@ function Navbar() {
             ))}
           </nav>
           <DonateButton />
-          <Icon value={MenuIcon} className={"menu-icon"} />
+          {!sidebarIsOpen ? (
+            <Icon
+              handleClick={openSidebar}
+              value={MenuIcon}
+              className={"menu-icon"}
+            />
+          ) : (
+            <Icon value={CloseIcon} className={"menu-icon"} />
+          )}
         </div>
         {searchIsOpen && <SearchBar ref={searchBarRef} />}
       </section>
+      {sidebarIsOpen && <Sidebar ref={sidebarRef} />}
     </>
   );
 }

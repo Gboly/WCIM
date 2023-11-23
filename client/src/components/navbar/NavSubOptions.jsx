@@ -19,7 +19,7 @@ const NavSubOptionsWithRef = ({ subOptions, columnType }, ref) => {
   );
 };
 
-const SubOption = ({ subOption: { icon, desc, url } }) => {
+export const SubOption = ({ subOption: { icon, desc, url } }) => {
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
 
