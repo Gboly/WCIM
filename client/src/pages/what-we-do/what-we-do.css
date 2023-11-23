@@ -1,0 +1,106 @@
+.wwd-intro{
+    /* Full screen minus navbar height*/
+    height: calc(100vh - 4.8rem);
+    display: flex;
+    background-color: var(--soft-shadow-actual-color);
+}
+.wwd-intro > div:first-of-type {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+}
+.wwd-intro .poster {
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+}
+.wwd-intro > div:last-of-type {
+    min-width: 30rem;
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+.wwd-intro > div > img {
+    width: 5rem;
+    height: 5rem;
+}
+.wwd-intro .article {
+    text-align: center;
+}
+.clean-water .bigger {
+    background-color: #0e87cc;
+    color: var(--light);
+}
+.wwd-intro .iconNdesc {
+    position: absolute;
+    bottom: 2rem;
+    right: calc(50% + 0.5rem);
+}
+.wwd-desc {
+    padding: 5rem 1rem 2rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    font-size: var(--p2);
+}
+.wwd-desc > div {
+    width: 65rem;
+    max-width: 65rem;
+}
+.wwd-desc > div > video {
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    background-color: var(--soft-shadow-actual-color);
+}
+.what-we-do #our-stories {
+    padding-top: 0 !important;
+}
+.what-we-do #our-stories > div > header {
+    display: none !important;
+}
+
+@media screen and (max-width: 1100px) { 
+    .wwd-intro{
+        /* Full screen minus navbar height*/
+        height: calc(100vh - 4.75rem);
+    }   
+}
+@media screen and (max-width: 960px) {  
+    .wwd-intro > div:last-of-type{
+        min-width: 18rem;
+        
+    }
+    .wwd-intro .article p {
+        font-size: var(--p3);
+    }
+}
+@media screen and (max-width: 720px) {
+    .wwd-intro{
+        /* Full screen minus navbar height*/
+        flex-flow: column;
+        height: fit-content;
+    }
+    .wwd-intro > div:first-of-type {
+        flex: none;
+        height: calc(95vw / 1.538);
+    }
+    .wwd-intro > div:last-of-type {
+        flex: none;
+        min-width: 100%;
+        padding: 3rem 1rem;
+        gap: 2rem;
+    }
+    .wwd-intro .iconNdesc {
+        display: none;
+    }
+    .wwd-desc {
+        padding-top: 2.5rem;
+    }
+}
