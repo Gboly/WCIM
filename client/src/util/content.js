@@ -15,6 +15,7 @@ import boreholeAponmu from "../assets/borehole-aponmu.png";
 import facebook from "../assets/facebook.png";
 import instagram from "../assets/instagram.png";
 import gmail from "../assets/gmail.png";
+import cleanWaterVideo from "../assets/clean-water-vid.mp4";
 
 export const navOptions = [
   {
@@ -162,3 +163,20 @@ export const extendedMissionStatement = [
 ];
 
 export const learnMorecontent = ["Give Now", "About Us", "Contact Us"];
+
+export const doingsPageContent = [
+  {
+    id: "clean-water",
+    title: "Clean water",
+    poster: boreholeAponmu,
+    icon: water,
+    snippet:
+      "In many corners of the world, a simple sip of water can pose grave dangers, even proving fatal. Sadly, numerous individuals in underprivileged regions must rely on contaminated streams or ponds, exposing them to waterborne diseases that claim the lives of countless children due to conditions like diarrhea and typhoid. Thanks to YOUR compassion, we are committed to establishing safe water sources, promoting sanitation, and fostering a healthier, brighter tomorrow for those facing these pressing challenges.",
+    content: [
+      "YOUR invaluable support has been the driving force behind our mission to combat the pressing issue of global water scarcity. In many regions, especially in Nigeria, communities grapple with the profound challenges of limited access to clean water.",
+      "The impact of YOUR contributions has been transformative. Together, we've provided sustainable solutions, breaking the cycle of waterborne diseases and unlocking brighter futures. As we've witnessed the profound change in Nigeria, we are fueled by the vision to extend this impact to other nations.",
+      "The need is urgent, and YOUR support is the catalyst for change. Join us in our quest to create a world where clean water flows freely, a testament to the power of collective action in addressing one of humanity's most critical challenges. YOUR donation isn't just a drop; it's a ripple of hope shaping a better future for communities worldwide. Together, let's make waves of lasting change.",
+    ],
+    video: cleanWaterVideo,
+  },
+];
