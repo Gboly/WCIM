@@ -69,6 +69,7 @@ body {
   overflow-x: hidden;
   background-color: var(--bg-color);
   color: var(--text-color);
+  font-family: var(--choice-font);
 }
 
 .reference-container{

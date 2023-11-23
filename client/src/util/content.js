@@ -156,7 +156,7 @@ export const socials = [
 ];
 
 export const extendedMissionStatement = [
-  "World Care International Ministry collaborates with individuals like you to express God’s love globally, alleviating human suffering through hunger relief, medical care, clean water access, and education.",
+  "World Care International Ministry collaborates with individuals like YOU to express God’s love globally, alleviating human suffering through hunger relief, medical care, clean water access, and education.",
   " Our efficient, compassionate approach tailors programs to local needs, enabling partners to embody Jesus’ teachings and provide tangible support to those facing adversity.",
   "Together, we create a world where collective compassion lessens the impact of human suffering. Join us in making a positive difference for those in need.",
 ];
