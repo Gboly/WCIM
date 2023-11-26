@@ -32,9 +32,27 @@
 .wwd-intro .article {
     text-align: center;
 }
+.wwd-intro .bigger {
+    color: var(--light);;
+}
 .clean-water .bigger {
     background-color: #0e87cc;
-    color: var(--light);
+}
+.evangelism .bigger {
+    background-color: #9f72fc;
+}
+.education .bigger {
+    background-image: linear-gradient(to bottom right, #02a9f4, #ff6666, #f4d177);
+}
+.health .bigger {
+    background-image: linear-gradient(to right, #d7143a, #a90028);
+}
+.orphanage .bigger {
+    background-image: linear-gradient(to right, #02a9f4, #f4d177, #ff6666);
+}
+.financing .bigger {
+    background-color: #fe7e00;
+    color: #fff6c0;
 }
 .wwd-intro .iconNdesc {
     position: absolute;
@@ -54,6 +72,7 @@
 }
 .wwd-desc > div > video {
     width: 100%;
+    max-width: 35rem;
     height: auto;
     margin-bottom: 2rem;
     border-radius: 1rem;
