@@ -22,7 +22,8 @@ function Navbar() {
   const searchBarRef = useRef(null);
   const sidebarRef = useRef(null);
   const [searchIsOpen, openSearch] = usePopUpHandler(searchBarRef);
-  const [sidebarIsOpen, openSidebar] = usePopUpHandler(sidebarRef);
+  const [sidebarIsOpen, openSidebar, closeSidebar] =
+    usePopUpHandler(sidebarRef);
 
   return (
     <>
@@ -55,7 +56,9 @@ function Navbar() {
         </div>
         {searchIsOpen && <SearchBar ref={searchBarRef} />}
       </section>
-      {sidebarIsOpen && <Sidebar ref={sidebarRef} />}
+      {sidebarIsOpen && (
+        <Sidebar ref={sidebarRef} closeSidebar={closeSidebar} />
+      )}
     </>
   );
 }

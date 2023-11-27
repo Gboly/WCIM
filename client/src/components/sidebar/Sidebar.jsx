@@ -6,7 +6,7 @@ import { hSlideInRight } from "../../util/variants";
 import { SubOption as NavSubOption } from "../navbar/NavSubOptions";
 import { navOptions } from "../../util/content";
 
-const SidebarWithRef = (_, ref) => {
+const SidebarWithRef = ({ closeSidebar }, ref) => {
   const sidebarInViewRef = useRef(null);
   const setElementRef = (elementNode) =>
     elementNode && (ref.current = elementNode);
@@ -25,7 +25,11 @@ const SidebarWithRef = (_, ref) => {
             <section key={desc}>
               <header>{desc}</header>
               {content.map((subOption) => (
-                <NavSubOption key={subOption.desc} subOption={subOption} />
+                <NavSubOption
+                  key={subOption.desc}
+                  subOption={subOption}
+                  closeSubOption={closeSidebar}
+                />
               ))}
             </section>
           ))}

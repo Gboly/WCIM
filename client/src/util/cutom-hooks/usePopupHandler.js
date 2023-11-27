@@ -23,7 +23,7 @@ const usePopUpHandler = (popUpRef) => {
     setIsOpen(false);
   };
 
-  return [isOpen, show];
+  return [isOpen, show, hide];
 };
 
 export default usePopUpHandler;
