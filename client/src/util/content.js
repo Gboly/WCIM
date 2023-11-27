@@ -17,6 +17,18 @@ import instagram from "../assets/instagram.png";
 import gmail from "../assets/gmail.png";
 import cleanWaterVideo from "../assets/clean-water-vid.mp4";
 import educationVideo from "../assets/education-vid.mp4";
+import evangelismPoster from "../assets/wcim-evangelism3.jpg";
+import boreholeOsolo from "../assets/wcim-water.jpeg";
+import eduPoster from "../assets/wcim-edu2.jpg";
+import scholarship from "../assets/wcim-scholarship.jpeg";
+import healthPoster from "../assets/wcim-health4.jpg";
+import orphanPoster from "../assets/wcim-orphan.jpg";
+import financingPoster from "../assets/wcim-financing.jpg";
+import {
+  aponmuBoreholeStory,
+  osoloBoreholeStory,
+  scholarshipStory,
+} from "./story";
 
 export const navOptions = [
   {
@@ -114,24 +126,21 @@ export const doingsContent = navOptions.find(
   (option) => option.desc === "What we do"
 ).content;
 
-const aponmuBoreholeStory =
-  "In the heart of Ondo State, Nigeria, lies the resilient community of Aponmu. For years, the lack of access to clean water had been an enduring challenge, casting a shadow over the daily lives of its residents. Women and children traversed long distances, bearing the burden of water containers, their daily routines dictated by the relentless pursuit of this basic necessity. p The community's plea for relief echoed far and wide, reaching the ears of our charity organization. Determined to make a lasting impact, we embarked on a mission to bring clean water to Aponmu. The solution came in the form of a borehole—a source of hope that would transform the lives of the community forever. p As the borehole was drilled and water began to flow, a wave of anticipation and joy swept through Aponmu. No longer bound by the arduous trek for water, families now had a reliable and sustainable source right at their doorstep. The burden on women and children lightened, replaced by the simple joy of turning a tap and witnessing the life-giving liquid flow freely. p Beyond quenching their physical thirst, the borehole became a symbol of empowerment. With newfound time and energy, community members redirected their focus towards education and economic activities. Children spent more time in classrooms, and families engaged in initiatives to improve their economic well-being. p The borehole didn't just provide water; it irrigated the fields of opportunity, nurturing a sense of community and resilience. Aponmu transformed from a village burdened by water scarcity to a thriving hub where the ripples of change reached every corner. p This story is a testament to the impact a simple borehole can have on a community's life. Through collective efforts and unwavering determination, we turned the tide for Aponmu, bringing an abundance of clean water and fostering a brighter, more promising future for all.";
-
 export const storyContent = [
   {
     id: 1,
-    imgSrc: boreholeAponmu,
-    desc: "Quenching the Thirst: A Borehole Brings Hope to Aponmu Community",
-    body: aponmuBoreholeStory,
+    imgSrc: boreholeOsolo,
+    desc: "A borehole of promise for osolo community in akure",
+    body: osoloBoreholeStory,
     category: "clean water",
     url: "/stories/clean-water/aponmu-borehole",
     keywords: ["water", "clean water", "borehole", "nigeria"],
   },
   {
     id: 2,
-    imgSrc: boreholeAponmu,
-    desc: "Quenching the Thirst: A Borehole Brings Hope to Aponmu Community",
-    body: aponmuBoreholeStory,
+    imgSrc: scholarship,
+    desc: "Igniting dreams: scholarships illuminate paths to success",
+    body: scholarshipStory,
     category: "clean water",
     url: "/stories/clean-water/aponmu-borehole",
     keywords: ["water", "clean water", "borehole", "nigeria"],
@@ -183,7 +192,7 @@ export const doingsPageContent = [
   {
     id: "evangelism",
     title: "Evangelism",
-    poster: boreholeAponmu,
+    poster: evangelismPoster,
     icon: evangelism,
     snippet:
       "Evangelism addresses the human search for spiritual fulfillment by sharing a transformative message. It builds communities, positively influences society, and provides hope and guidance in challenging times. Beyond individual transformation, evangelism creates a global sense of unity, connecting believers in a shared spiritual journey.",
@@ -197,7 +206,7 @@ export const doingsPageContent = [
   {
     id: "education",
     title: "Education",
-    poster: boreholeAponmu,
+    poster: eduPoster,
     icon: book,
     snippet:
       "Across the globe, hundreds of thousands of individuals face educational challenges that could be alleviated with proper support. Unfortunately, many of them lack the financial means to access the educational resources and opportunities they desperately need.",
@@ -211,7 +220,7 @@ export const doingsPageContent = [
   {
     id: "health",
     title: "Health care",
-    poster: boreholeAponmu,
+    poster: healthPoster,
     icon: health,
     snippet:
       "Globally, hundreds of thousands are afflicted by medical conditions that could be alleviated with proper care. Unfortunately, many lack the financial means to access the medical care they require.",
@@ -225,7 +234,7 @@ export const doingsPageContent = [
   {
     id: "orphanage",
     title: "Orphanage",
-    poster: boreholeAponmu,
+    poster: orphanPoster,
     icon: orphanage,
     snippet:
       "Across the world, hundreds of thousands of orphans endure challenging circumstances such as inadequate care, limited educational opportunities, and emotional hardship, which could be improved with proper support. Regrettably, many lack the necessary resources to access the care and opportunities they deserve.",
@@ -239,7 +248,7 @@ export const doingsPageContent = [
   {
     id: "financing",
     title: "Finanacial support",
-    poster: boreholeAponmu,
+    poster: financingPoster,
     icon: money,
     snippet:
       "Particularly in developing nations, individuals possess business ideas, inventions, and skills that could transform their lives and communities. However, the lack of financial resources hinders them from turning these aspirations into reality. Your support becomes a catalyst for a change.",

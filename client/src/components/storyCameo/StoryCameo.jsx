@@ -54,7 +54,7 @@ const StoryCameo = ({ index, content: { imgSrc, desc, body, url } }) => {
         variants={isReverse ? hSlideInLeft() : hSlideInRight()}
         ref={storyCameoRef}
       >
-        <Article header={desc} body={body.slice(0, 300)} url={url} />
+        <Article header={desc} body={body[0].slice(0, 300)} url={url} />
       </Animated>
     </div>
   );
