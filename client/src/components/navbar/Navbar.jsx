@@ -81,7 +81,7 @@ const NavOption = ({ option: { desc, content, columnType } }) => {
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
     >
-      <NavLink>{desc}</NavLink>
+      <span>{desc}</span>
       <div ref={subOptionsRef} className="sub-options-wrapper">
         {isHovered && (
           <>

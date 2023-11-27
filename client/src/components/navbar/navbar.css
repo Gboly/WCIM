@@ -40,7 +40,7 @@
     z-index: 4;
     font-size: var(--p2);
 }
-.nav-option > a {
+.nav-option > span {
     opacity: 0.98;
 }
 .nav-container .donate-button {
