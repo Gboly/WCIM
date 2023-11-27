@@ -33,6 +33,7 @@
     color: var(--light);
     background-color: var(--light-text-bg-color);
     box-shadow: var(--light-text-box-shadow);
+    padding: 0 1rem;
 }
 #intro .socials {
    display: none;
