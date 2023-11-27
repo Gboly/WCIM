@@ -4,7 +4,10 @@ import Animated from "../animated/Animated";
 import { motion } from "framer-motion";
 import { reveal } from "../../util/variants";
 
-const NavSubOptionsWithRef = ({ subOptions, columnType }, ref) => {
+const NavSubOptionsWithRef = (
+  { subOptions, columnType, closeSubOption },
+  ref
+) => {
   return (
     <Animated
       element={motion.div}
@@ -13,13 +16,20 @@ const NavSubOptionsWithRef = ({ subOptions, columnType }, ref) => {
       ref={ref}
     >
       {subOptions.map((subOption) => (
-        <SubOption key={subOption.desc} subOption={subOption} />
+        <SubOption
+          key={subOption.desc}
+          subOption={subOption}
+          closeSubOption={closeSubOption}
+        />
       ))}
     </Animated>
   );
 };
 
-export const SubOption = ({ subOption: { icon, desc, url } }) => {
+export const SubOption = ({
+  subOption: { icon, desc, url },
+  closeSubOption,
+}) => {
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
 
@@ -29,7 +39,10 @@ export const SubOption = ({ subOption: { icon, desc, url } }) => {
   const handleMouseOut = () => {
     setIsHovered(false);
   };
-  const handleClick = () => navigate(url);
+  const handleClick = () => {
+    closeSubOption && closeSubOption();
+    navigate(url);
+  };
 
   return (
     <div

@@ -92,6 +92,7 @@ const NavOption = ({ option: { desc, content, columnType } }) => {
               subOptions={content}
               columnType={columnType}
               ref={subOptionsRef}
+              closeSubOption={handleMouseOut}
             />
           </>
         )}
