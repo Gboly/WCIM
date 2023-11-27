@@ -14,7 +14,7 @@ export const hSlideIn = (transition, hoverVariant) => ({
 });
 
 export const hSlideInLeft = (transition, hoverVariant) => ({
-  initial: { opacity: 0, x: "-2rem" },
+  initial: { opacity: 0, x: "-0.5rem" },
   final: {
     opacity: 1,
     x: 0,
@@ -29,7 +29,7 @@ export const hSlideInLeft = (transition, hoverVariant) => ({
 });
 
 export const hSlideInRight = (transition, hoverVariant) => ({
-  initial: { opacity: 0, x: "2rem" },
+  initial: { opacity: 0, x: "0.5rem" },
   final: {
     opacity: 1,
     x: 0,
