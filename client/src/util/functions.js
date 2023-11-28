@@ -12,3 +12,8 @@ export const getTheme = () => {
 
   return "light";
 };
+
+export const chooseAtRandomFromArray = (array) => {
+  const position = Math.floor(Math.random() * array.length);
+  return array[position];
+};

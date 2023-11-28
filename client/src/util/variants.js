@@ -1,3 +1,5 @@
+import { chooseAtRandomFromArray } from "./functions";
+
 export const hSlideIn = (transition, hoverVariant) => ({
   initial: { opacity: 0, x: "-100vw" },
   final: {
@@ -13,8 +15,8 @@ export const hSlideIn = (transition, hoverVariant) => ({
   mouseOut: hoverVariant?.initial,
 });
 
-export const hSlideInLeft = (transition, hoverVariant) => ({
-  initial: { opacity: 0, x: "-0.5rem" },
+export const hSlideInLeft = (transition, hoverVariant, isPage) => ({
+  initial: isPage ? { opacity: 1, x: "-100vw" } : { opacity: 0, x: "-0.5rem" },
   final: {
     opacity: 1,
     x: 0,
@@ -28,8 +30,8 @@ export const hSlideInLeft = (transition, hoverVariant) => ({
   mouseOut: hoverVariant?.initial,
 });
 
-export const hSlideInRight = (transition, hoverVariant) => ({
-  initial: { opacity: 0, x: "0.5rem" },
+export const hSlideInRight = (transition, hoverVariant, isPage) => ({
+  initial: isPage ? { opacity: 1, x: "100vw" } : { opacity: 0, x: "0.5rem" },
   final: {
     opacity: 1,
     x: 0,
@@ -43,8 +45,8 @@ export const hSlideInRight = (transition, hoverVariant) => ({
   mouseOut: hoverVariant?.initial,
 });
 
-export const vSlideIn = (transition, hoverVariant) => ({
-  initial: { opacity: 0, y: "-1rem" },
+export const vSlideIn = (transition, hoverVariant, isPage) => ({
+  initial: isPage ? { opacity: 1, y: "-30vh" } : { opacity: 0, x: "-1rem" },
   final: {
     opacity: 1,
     y: 0,
@@ -107,6 +109,16 @@ export const justReactions = (hoverVariant) => ({
   mouseOver: hoverVariant?.final,
   mouseOut: hoverVariant?.initial,
 });
+
+const pageVariants = [hSlideInLeft, hSlideInRight, vSlideIn, spreadOut];
+export const pageVariant = () => {
+  const randomVariant = chooseAtRandomFromArray(pageVariants);
+  return randomVariant({ duration: 0.5, ease: "easeOut" }, "", true);
+};
+export const pageExit = {
+  opacity: 0,
+  transition: { duration: 0.5, ease: "easeOut" },
+};
 
 // event animation
 export const shadowOut = {
