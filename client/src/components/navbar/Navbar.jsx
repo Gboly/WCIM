@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import "./navbar.css";
 import DonateButton from "../donateButton/DonateButton";
 import SearchIcon from "@mui/icons-material/Search";
@@ -25,10 +25,13 @@ function Navbar() {
   const [sidebarIsOpen, openSidebar, closeSidebar] =
     usePopUpHandler(sidebarRef);
 
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
   return (
     <>
       <section className="nav-container">
-        <NavLink to={"/"} reloadDocument>
+        <NavLink to={"/"} reloadDocument={isHomePage}>
           <Brand />
         </NavLink>
         <div className="nav-options">
