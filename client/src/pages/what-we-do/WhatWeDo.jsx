@@ -8,13 +8,15 @@ import { useRef } from "react";
 import { storyContent } from "../../util/content";
 import StoryCameo from "../../components/storyCameo/StoryCameo";
 import { Link } from "react-scroll";
+import AnimatedPage from "../../components/animated/AnimatedPage";
 
 const WhatWeDo = ({
   content: { id, title, poster, icon, snippet, content, video },
 }) => {
   const ourStoriesRef = useRef(null);
+
   return (
-    <main className={`what-we-do ${id}`}>
+    <AnimatedPage className={`what-we-do ${id}`}>
       <section className="wwd-intro">
         <div>
           <img src={poster} alt="clean-water poster image" className="poster" />
@@ -42,7 +44,7 @@ const WhatWeDo = ({
           <StoryCameo key={content.id} index={index} content={content} />
         ))}
       </CustomSection>
-    </main>
+    </AnimatedPage>
   );
 };
 

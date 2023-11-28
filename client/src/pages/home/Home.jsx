@@ -19,6 +19,7 @@ import { NavLink } from "react-router-dom";
 import giving from "../../assets/giving.png";
 import StoryCameo from "../../components/storyCameo/StoryCameo";
 import Socials from "../../components/socials/Socials";
+import AnimatedPage from "../../components/animated/AnimatedPage";
 
 const ourMissionStatement =
   "At WCIM, our mission is to transform lives and communities through the power of faith, love, and compassion. Inspired by the teachings of Christ, we are dedicated to serving humanity's most vulnerable, providing hope, and facilitating positive change.";
@@ -33,7 +34,7 @@ function Home() {
   const [showMore, setshowMore] = useState(false);
 
   return (
-    <main className="home">
+    <AnimatedPage className="home">
       <section ref={introRef} id="intro">
         <div>
           <Animated element={motion.header} variants={reveal()} ref={introRef}>
@@ -116,7 +117,7 @@ function Home() {
           <StoryCameo key={content.id} index={index} content={content} />
         ))}
       </CustomSection>
-    </main>
+    </AnimatedPage>
   );
 }
 
