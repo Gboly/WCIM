@@ -106,7 +106,7 @@ function Home() {
           ref={givingCatalogRef}
           useVariantHover={true}
         >
-          <NavLink to={"/get-invloved/giving"}>
+          <NavLink to={"/get-involved/giving"}>
             <img src={giving} alt="giving icon" />
             Giving catalog
           </NavLink>
