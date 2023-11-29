@@ -46,6 +46,10 @@
     .giving-catalog #giving-catalog img {
         min-width: 10rem;
     }
+    .giving-catalog #Giving-catalog {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
 }
 @media screen and (max-width: 560px) {
     .giving-catalog #giving-catalog img {

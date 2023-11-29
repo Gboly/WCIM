@@ -31,6 +31,7 @@
 }
 .give-card .article > p {
     margin-top: 0.5rem;
+    height: 10rem;
 }
 .give-card > button:hover, .give-card > img:hover {
     opacity: 0.8;
@@ -43,5 +44,8 @@
     }
     .give-card > img {
         height: calc(75vw/1.385);
+    }
+    .give-card .article > p {
+        height: auto;
     }
 }

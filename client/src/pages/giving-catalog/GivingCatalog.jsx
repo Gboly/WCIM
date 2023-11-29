@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import givingPoster from "../../assets/wcim-giving-poster.png";
 import CustomSection from "../../components/customSection/customSection";
 import GiveCard from "../../components/give-card/GiveCard";
+import { giftCategories } from "../../util/content";
 
 const GivingCatalog = () => {
   const givingCatalogRef = useRef(null);
@@ -35,12 +36,9 @@ const GivingCatalog = () => {
       </section>
       <CustomSection id={"Giving-catalog"} ref={givingCatalogRef}>
         <main>
-          <GiveCard />
-          <GiveCard />
-          <GiveCard />
-          <GiveCard />
-          <GiveCard />
-          <GiveCard />
+          {giftCategories.map((details) => (
+            <GiveCard key={details.id} details={details} />
+          ))}
         </main>
       </CustomSection>
     </AnimatedPage>
