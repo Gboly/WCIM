@@ -5,6 +5,7 @@ import Home from "../pages/home/Home";
 import WhatWeDo from "../pages/what-we-do/WhatWeDo";
 import { doingsPageContent } from "../util/content";
 import { AnimatePresence } from "framer-motion";
+import GivingCatalog from "../pages/giving-catalog/GivingCatalog";
 
 export default function Router() {
   return (
@@ -36,6 +37,14 @@ export default function Router() {
             }
           />
         ))}
+        <Route
+          path="get-involved/giving"
+          element={
+            <AnimatePresence mode="wait">
+              <GivingCatalog />
+            </AnimatePresence>
+          }
+        />
       </Route>
     </Routes>
   );
