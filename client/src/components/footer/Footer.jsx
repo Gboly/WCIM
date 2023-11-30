@@ -17,11 +17,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer
-        className="reference-container footer-1"
-        name={"footer"}
-        ref={footerRef}
-      >
+      <footer className="reference-container footer-1" ref={footerRef}>
         <main>
           <div>
             <div>
@@ -36,7 +32,7 @@ const Footer = () => {
                 ))}
               </FooterSection>
             </div>
-            <FooterSection id={"Stay-informed"}>
+            <FooterSection id={"Stay-informed"} name={"subscription-form"}>
               <p>
                 Be the first to know about new life-changing programs, urgent
                 needs, and more! Sign up to receive important updates right to
@@ -114,9 +110,9 @@ const SubscriptionForm = () => {
   );
 };
 
-const FooterSection = ({ children, id }) => {
+const FooterSection = ({ children, id, name }) => {
   return (
-    <section id={id}>
+    <section id={id} name={name}>
       <header>{id.replace(/-/g, " ")}</header>
       {children}
     </section>

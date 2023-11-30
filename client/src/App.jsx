@@ -23,7 +23,7 @@ function App({ children }) {
   // Activating mailing form
   const [initiateMailingList, setInitiateMailingList] = useState(false);
   const gotoMailingForm = () => {
-    scroller.scrollTo("footer", { smooth: true });
+    scroller.scrollTo("subscription-form", { smooth: true });
     setInitiateMailingList(true);
   };
 
