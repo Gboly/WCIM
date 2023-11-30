@@ -100,7 +100,7 @@ export const navOptions = [
       {
         icon: volunteer,
         desc: "Volunteer",
-        url: "/get-involved/volunteer",
+        url: "/get-involved/volunteering",
       },
     ],
     columnType: "double-column",

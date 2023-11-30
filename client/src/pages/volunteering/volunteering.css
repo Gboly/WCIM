@@ -1,0 +1,44 @@
+.volunteering {
+    width: 100%;
+    height: calc(100vh - 4.8rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.volunteering > section {
+    width: 100%;
+    max-width: 37.5rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem;
+}
+.volunteering > section > header {
+    font-size: 5rem;
+    font-weight: 700;
+}
+.volunteering > section > p {
+    font-size: var(--p1);
+}
+.volunteering > section > button {
+    margin-top: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    border: none;
+    font-size: var(--p3);
+    font-family: inherit;
+    background-color: var(--color-2);
+    color: var(--light);
+}
+
+@media screen and (max-width: 1100px) {
+    .volunteering{
+        height: calc(100vh - 4.75rem);
+    }    
+ }
+@media screen and (max-width: 720px) {
+    .volunteering{
+        height: calc(100vh - 3.45rem);
+    }    
+ }
