@@ -20,6 +20,7 @@
 }
 .volunteering > section > p {
     font-size: var(--p1);
+    text-align: center;
 }
 .volunteering > section > button {
     margin-top: 1rem;
@@ -41,4 +42,9 @@
     .volunteering{
         height: calc(100vh - 3.45rem);
     }    
+ }
+@media screen and (max-width: 560px) {
+    .volunteering > section > header {
+        font-size: 3.1rem;
+    }   
  }
