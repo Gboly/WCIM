@@ -23,11 +23,33 @@
     width: 100%;
     max-width: 35rem;
 }
+#Giving-catalog > div > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    flex-flow: row wrap;
+}
+#Giving-catalog > div > div > button {
+    background-color: inherit;
+    color: inherit;
+    border: none;
+    box-shadow: 2px 2px 5px 2px var(--soft-shadow-color);
+    padding: 0.5rem 1rem;
+    border-radius: 0.8rem;
+}
+#Giving-catalog .active-button {
+    background-color: var(--primary-color);
+}
 #Giving-catalog main {
     width: 100%;
     display: flex;
     flex-flow: row wrap;
     gap: 1rem;
+}
+#Giving-catalog .iconNdesc {
+    margin-top: 2.5rem;
 }
 @media screen and (max-width: 1100px) {
     #Giving-catalog main { 

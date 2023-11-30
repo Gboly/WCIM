@@ -273,35 +273,51 @@ export const giftCategories = [
     title: "Support Monthly",
     poster: monthlySupport,
     desc: "Fuel lasting change by becoming a monthly donor. Your consistent support empowers us to address pressing needs, bringing hope, comfort, and joy to those in need. Join our community, ensuring a brighter future for all.",
+    category: "",
   },
   {
     id: "feed-the-hungry",
     title: "Feed the Hungry",
     poster: feedPoster,
     desc: "Your support has the transformative ability to break the chains of hunger, providing nourishment and fostering hope. Join us in the mission to eradicate hunger, ensuring a future where no one experiences the pain of an empty.",
+    category: "",
   },
   {
     id: "provide-clean-water",
     title: "Provide Clean Water",
     poster: waterGiftPoster,
     desc: "Empower change with the gift of clean water. Your donation fuels our mission, bringing life-sustaining water to communities in need. Join us in quenching the thirst for a healthier, brighter future.",
+    category: "clean water",
   },
   {
     id: "heal-the-sick",
     title: "Heal the Sick",
     poster: healPoster,
     desc: "Be a healing force. Your donation supports our mission for vital medical care. Contribute to be a lifeline, letting compassion and care prevail for those facing medical challenges. Every contribution matters.",
+    category: "medical care",
   },
   {
     id: "educate-a-child",
     title: "Educate a Child",
     poster: scholarshipPoster,
     desc: "Elevate education and diminish illiteracy by sponsoring a child through your support. Your contribution nurtures young minds, paving the way for a brighter future.Sponsor a child today and be a beacon of hope and change.",
+    category: "education",
   },
   {
     id: "empower-orphans-today",
     title: "Empower Orphans Today",
     poster: orphanGiftPoster,
     desc: "Extend a lifeline to orphans in need. Your donation brings hope, care, and a chance for a brighter future. Join us in providing essential support and making a lasting impact in the lives of these resilient children.",
+    category: "orphanage",
   },
+];
+
+export const choiceGiftCategories = [
+  "show all",
+  "medical care",
+  "evangelism",
+  "education",
+  "orphanage",
+  "clean water",
+  "financing",
 ];

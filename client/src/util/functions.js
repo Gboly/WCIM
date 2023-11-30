@@ -1,3 +1,5 @@
+import { giftCategories } from "./content";
+
 export const getTheme = () => {
   const localStorageTheme = localStorage.getItem("theme");
   const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
@@ -16,4 +18,13 @@ export const getTheme = () => {
 export const chooseAtRandomFromArray = (array) => {
   const position = Math.floor(Math.random() * array.length);
   return array[position];
+};
+
+export const getGiftByCategory = (showAll, choiceCategory) => {
+  let gifts =
+    choiceCategory === "show all"
+      ? giftCategories
+      : giftCategories.filter(({ category }) => category === choiceCategory);
+
+  return [gifts.slice(0, 6), showAll ? gifts.slice(6) : [], gifts.length > 6];
 };
