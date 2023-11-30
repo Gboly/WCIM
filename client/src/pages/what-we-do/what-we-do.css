@@ -3,6 +3,7 @@
     height: calc(100vh - 4.8rem);
     display: flex;
     background-color: var(--soft-shadow-actual-color);
+    position: relative;
 }
 .wwd-intro > div:first-of-type {
     flex: 1;
