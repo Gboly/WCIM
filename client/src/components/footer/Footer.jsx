@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./footer.css";
-import { forwardRef, useRef, useState } from "react";
+import { forwardRef, useContext, useEffect, useRef, useState } from "react";
 import Animated from "../animated/Animated";
 import { AnimatePresence, motion } from "framer-motion";
 import { spreadOut } from "../../util/variants";
@@ -10,13 +10,18 @@ import PlaceIcon from "@mui/icons-material/Place";
 import CallIcon from "@mui/icons-material/Call";
 import { extendedMissionStatement, learnMorecontent } from "../../util/content";
 import Socials from "../socials/Socials";
+import { GeneralContext } from "../../App";
 
 const Footer = () => {
   const footerRef = useRef(null);
 
   return (
     <>
-      <footer className="reference-container footer-1" ref={footerRef}>
+      <footer
+        className="reference-container footer-1"
+        name={"footer"}
+        ref={footerRef}
+      >
         <main>
           <div>
             <div>
@@ -67,6 +72,10 @@ const Footer = () => {
 };
 
 const SubscriptionForm = () => {
+  const nameRef = useRef(null);
+  const { initiateMailingList, setInitiateMailingList } =
+    useContext(GeneralContext);
+
   const [userDetails, setUserDetails] = useState({ name: "", email: "" });
   const handleSubmit = (e) => {
     e && e.preventDefault();
@@ -76,6 +85,13 @@ const SubscriptionForm = () => {
     setUserDetails({ ...userDetails, [id]: value });
   };
 
+  useEffect(() => {
+    if (initiateMailingList) {
+      nameRef.current.focus();
+      setInitiateMailingList(false);
+    }
+  }, [initiateMailingList, setInitiateMailingList]);
+
   return (
     <form onSubmit={handleSubmit}>
       <input
@@ -84,6 +100,7 @@ const SubscriptionForm = () => {
         placeholder="Your Name"
         value={userDetails.name}
         onInput={handleInput}
+        ref={nameRef}
       />
       <input
         type="email"

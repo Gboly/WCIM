@@ -1,8 +1,10 @@
-import { useLayoutEffect } from "react";
+import { createContext, useLayoutEffect, useState } from "react";
 import "./App.css";
 import { getTheme } from "./util/functions";
 import { useLocation } from "react-router-dom";
+import { scroller } from "react-scroll";
 
+export const GeneralContext = createContext();
 function App({ children }) {
   // Treat top-level states and contexts here
 
@@ -18,7 +20,20 @@ function App({ children }) {
     window.scrollTo(0, 0);
   }, [location]);
 
-  return <>{children}</>;
+  // Activating mailing form
+  const [initiateMailingList, setInitiateMailingList] = useState(false);
+  const gotoMailingForm = () => {
+    scroller.scrollTo("footer", { smooth: true });
+    setInitiateMailingList(true);
+  };
+
+  return (
+    <GeneralContext.Provider
+      value={{ initiateMailingList, gotoMailingForm, setInitiateMailingList }}
+    >
+      {children}
+    </GeneralContext.Provider>
+  );
 }
 
 export default App;
