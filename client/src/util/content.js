@@ -29,6 +29,12 @@ import {
   osoloBoreholeStory,
   scholarshipStory,
 } from "./story";
+import feedPoster from "../assets/wcim-donations.jpg";
+import monthlySupport from "../assets/wcim-monthly.jpeg";
+import waterGiftPoster from "../assets/wcim-water-gift.jpg";
+import healPoster from "../assets/wcim-healPoster.jpg";
+import scholarshipPoster from "../assets/wcim-scholarship2.jpg";
+import orphanGiftPoster from "../assets/wcim-orphan2.jpg";
 
 export const navOptions = [
   {
@@ -258,5 +264,44 @@ export const doingsPageContent = [
       "Through YOUR generosity, YOU sow the seeds of self-sufficiency, fostering a ripple effect that uplifts individuals, families, and entire communities towards a brighter and more sustainable future.",
     ],
     video: "",
+  },
+];
+
+export const giftCategories = [
+  {
+    id: "support-monthly",
+    title: "Support Monthly",
+    poster: monthlySupport,
+    desc: "Fuel lasting change by becoming a monthly donor. Your consistent support empowers us to address pressing needs, bringing hope, comfort, and joy to those in need. Join our community, ensuring a brighter future for all.",
+  },
+  {
+    id: "feed-the-hungry",
+    title: "Feed the Hungry",
+    poster: feedPoster,
+    desc: "Your support has the transformative ability to break the chains of hunger, providing nourishment and fostering hope. Join us in the mission to eradicate hunger, ensuring a future where no one experiences the pain of an empty.",
+  },
+  {
+    id: "provide-clean-water",
+    title: "Provide Clean Water",
+    poster: waterGiftPoster,
+    desc: "Empower change with the gift of clean water. Your donation fuels our mission, bringing life-sustaining water to communities in need. Join us in quenching the thirst for a healthier, brighter future.",
+  },
+  {
+    id: "heal-the-sick",
+    title: "Heal the Sick",
+    poster: healPoster,
+    desc: "Be a healing force. Your donation supports our mission for vital medical care. Contribute to be a lifeline, letting compassion and care prevail for those facing medical challenges. Every contribution matters.",
+  },
+  {
+    id: "educate-a-child",
+    title: "Educate a Child",
+    poster: scholarshipPoster,
+    desc: "Elevate education and diminish illiteracy by sponsoring a child through your support. Your contribution nurtures young minds, paving the way for a brighter future.Sponsor a child today and be a beacon of hope and change.",
+  },
+  {
+    id: "empower-orphans-today",
+    title: "Empower Orphans Today",
+    poster: orphanGiftPoster,
+    desc: "Extend a lifeline to orphans in need. Your donation brings hope, care, and a chance for a brighter future. Join us in providing essential support and making a lasting impact in the lives of these resilient children.",
   },
 ];
