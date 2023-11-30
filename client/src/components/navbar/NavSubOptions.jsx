@@ -1,8 +1,9 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { forwardRef, useState } from "react";
+import { forwardRef, useContext, useState } from "react";
 import Animated from "../animated/Animated";
 import { motion } from "framer-motion";
 import { reveal } from "../../util/variants";
+import { GeneralContext } from "../../App";
 
 const NavSubOptionsWithRef = (
   { subOptions, columnType, closeSubOption },
@@ -30,6 +31,7 @@ export const SubOption = ({
   subOption: { icon, desc, url },
   closeSubOption,
 }) => {
+  const { gotoMailingForm } = useContext(GeneralContext);
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
 
@@ -41,7 +43,7 @@ export const SubOption = ({
   };
   const handleClick = () => {
     closeSubOption && closeSubOption();
-    navigate(url);
+    desc === "Mailing list" ? gotoMailingForm() : navigate(url);
   };
 
   return (
