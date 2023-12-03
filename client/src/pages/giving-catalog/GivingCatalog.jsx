@@ -1,10 +1,6 @@
 import { useMemo, useRef, useState } from "react";
-import Animated from "../../components/animated/Animated";
 import AnimatedPage from "../../components/animated/AnimatedPage";
-import { hSlideIn } from "../../util/variants";
 import "./giving-catalog.css";
-import { motion } from "framer-motion";
-import givingPoster from "../../assets/wcim-giving-poster.png";
 import CustomSection from "../../components/customSection/customSection";
 import GiveCard from "../../components/give-card/GiveCard";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -12,6 +8,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Icon from "../../components/icon/Icon";
 import { getGiftByCategory } from "../../util/functions";
 import { choiceGiftCategories } from "../../util/content";
+import Banner from "../../components/banner/Banner";
 
 const GivingCatalog = () => {
   const givingCatalogRef = useRef(null);
@@ -30,26 +27,12 @@ const GivingCatalog = () => {
 
   return (
     <AnimatedPage className={"giving-catalog"}>
-      <section
+      <Banner
         ref={givingCatalogRef}
-        className="reference-container"
-        id="giving-catalog"
-      >
-        <Animated
-          element={motion.div}
-          variants={hSlideIn({})}
-          ref={givingCatalogRef}
-          useVariantHover={true}
-        >
-          <img src={givingPoster} alt="giving icon" />
-          <div>
-            <p>
-              Your support is filled with warmth and delight, bringing comfort
-              and joy to those who receive them.
-            </p>
-          </div>
-        </Animated>
-      </section>
+        desc={
+          "Your support is filled with warmth and delight, bringing comfort and joy to those who receive them."
+        }
+      />
       <CustomSection id={"Giving-catalog"} ref={givingCatalogRef}>
         <div>
           {choiceGiftCategories.map((category) => (
