@@ -1,0 +1,125 @@
+.contact-banner {
+    display: flex;
+    justify-content: center;
+    background-color: var(--banner-color);
+    color: var(--light);
+    height: 12rem;
+}
+.contact-banner .article {
+    margin: 2rem 1rem;
+    max-width: 25rem;
+}
+.contact-banner .article > p {
+    margin: 0.5rem 0;
+}
+.contact-banner img {
+    height: inherit;
+    border-radius: 40%;
+}
+.contact-cards {
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
+}
+.contact-cards > div {
+    display: flex;
+    justify-content: space-between;
+    /* gap: 1.5rem; */
+    transform: translateY(-1.5rem);
+    width: 52rem;
+    flex-flow: row wrap;
+}
+.contact-card {
+    width: 25rem;
+    height: 19rem;
+    background-color: var(--bg-color);
+    box-shadow: 0px 2px 5px 1px var(--text-bg-color);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 1rem;
+    color: inherit;
+    text-decoration: none;
+    padding: 2rem 1rem 1rem;
+    box-sizing: border-box;
+    opacity: 0.85;
+}
+.contact-card > div {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.contact-card > div > p {
+    font-weight: 700;
+    font-size: var(--p3);
+}
+.contact-card > p {
+    font-weight: 700;
+    font-size: var(--p2);
+    text-align: center;
+    color: var(--color-2);
+}
+.contact-card:hover {
+    transform: scale(107%);
+    opacity: 1;
+}
+
+@media screen and (max-width: 1100px) {
+    .contact-cards > div {
+        width: 44rem;
+    }
+    .contact-card {
+        width: 21rem;
+    }
+}
+@media screen and (max-width: 720px) {
+    .contact-cards > div {
+        width: 100%;
+    }
+    .contact-card {
+        width: 48.5%;
+        height: 17rem;
+    }
+    .contact-card #facebook, .contact-card #mail {
+        word-break: break-all;
+    }
+}
+@media screen and (max-width: 560px) {
+    .contact-banner {
+        justify-content: space-between;
+        align-items: center;
+        height: 10rem;
+    }
+    .contact-banner .article {
+        max-width: 100%;
+        margin: 0 1rem;
+        flex: 1;
+    }
+    .contact-banner .article > header {
+        font-size: var(--p3);
+    }
+    .contact-banner .article > p {
+        font-size: 0.85rem;
+    }
+    .contact-banner img {
+        height: 100%;
+        max-width: 12rem;
+        border-radius: 50% 0 0 50%;
+        flex: 1;
+        line-height: 0;
+        object-fit: cover;
+    }
+    .contact-cards {
+        padding: 0 0.2rem;
+    }
+    .contact-cards > div {
+        transform: translateY(0);
+        margin: 2rem 0;
+    }
+    .contact-card:hover {
+        transform: scale(103%);
+    }
+}

@@ -7,6 +7,7 @@ import { doingsPageContent } from "../util/content";
 import { AnimatePresence } from "framer-motion";
 import GivingCatalog from "../pages/giving-catalog/GivingCatalog";
 import Volunteering from "../pages/volunteering/Volunteering";
+import ContactUs from "../pages/contact-us/ContactUs";
 
 export default function Router() {
   return (
@@ -51,6 +52,14 @@ export default function Router() {
           element={
             <AnimatePresence mode="wait">
               <Volunteering />
+            </AnimatePresence>
+          }
+        />
+        <Route
+          path="who-we-are/contact-us"
+          element={
+            <AnimatePresence mode="wait">
+              <ContactUs />
             </AnimatePresence>
           }
         />

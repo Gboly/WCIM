@@ -35,6 +35,10 @@ import waterGiftPoster from "../assets/wcim-water-gift.jpg";
 import healPoster from "../assets/wcim-healPoster.jpg";
 import scholarshipPoster from "../assets/wcim-scholarship2.jpg";
 import orphanGiftPoster from "../assets/wcim-orphan2.jpg";
+import CallIcon from "@mui/icons-material/Call";
+import PlaceIcon from "@mui/icons-material/Place";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import EmailIcon from "@mui/icons-material/Email";
 
 export const navOptions = [
   {
@@ -320,4 +324,35 @@ export const choiceGiftCategories = [
   "orphanage",
   "clean water",
   "financing",
+];
+
+export const contactDetails = [
+  {
+    id: "location",
+    icon: PlaceIcon,
+    desc: "Visit Us",
+    value: "Springfield, IL, United States, Illinois.",
+    url: "",
+  },
+  {
+    id: "phone",
+    icon: CallIcon,
+    desc: "Call Us",
+    value: "+1 518-986-1836",
+    url: "tel:+1 518-986-1836",
+  },
+  {
+    id: "mail",
+    icon: EmailIcon,
+    desc: "Send us a mail",
+    value: "worldcareinc@gmail.com",
+    url: "mailto:worldcareinc@gmail.com",
+  },
+  {
+    id: "facebook",
+    icon: FacebookIcon,
+    desc: "Look us up",
+    value: "facebook.com/myworldcare208",
+    url: "https://facebook.com/myworldcare208",
+  },
 ];
