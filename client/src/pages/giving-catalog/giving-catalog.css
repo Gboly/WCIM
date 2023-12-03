@@ -4,7 +4,7 @@
     min-width: 15rem;
 }
 .giving-catalog #giving-catalog > div {
-    background-color: #517e92;
+    background-color: var(--banner-color);
     color: var(--light);
     display: flex;
 }
