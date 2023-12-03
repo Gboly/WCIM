@@ -1,0 +1,47 @@
+#giving-catalog.banner img {
+    width: 40%;
+    max-width: 25rem;
+    min-width: 15rem;
+}
+#giving-catalog.banner > div {
+    background-color: var(--banner-color);
+    color: var(--light);
+    display: flex;
+}
+#giving-catalog.banner > div > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#giving-catalog.banner p {
+    padding: 1rem;
+    box-sizing: border-box;
+    text-align: center;
+    vertical-align: middle;
+    font-size: var(--h4);
+    width: 100%;
+    max-width: 35rem;
+}
+@media screen and (max-width: 720px) {
+    #giving-catalog.banner{
+        letter-spacing: 0;
+    }
+    #giving-catalog.banner p {
+        font-size: var(--p2);
+        max-width: 25rem;
+    }
+    #giving-catalog.banner img {
+        min-width: 10rem;
+    }
+}
+@media screen and (max-width: 560px) {
+    #giving-catalog.banner img {
+        min-width: 20%;
+    }
+    #giving-catalog.banner p {
+        font-size: 0.72rem;
+        padding: 0 0.5rem;
+        max-width: 15rem;
+    }
+}
