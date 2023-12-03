@@ -8,6 +8,7 @@ import { AnimatePresence } from "framer-motion";
 import GivingCatalog from "../pages/giving-catalog/GivingCatalog";
 import Volunteering from "../pages/volunteering/Volunteering";
 import ContactUs from "../pages/contact-us/ContactUs";
+import AboutUs from "../pages/about-us/AboutUs";
 
 export default function Router() {
   return (
@@ -60,6 +61,14 @@ export default function Router() {
           element={
             <AnimatePresence mode="wait">
               <ContactUs />
+            </AnimatePresence>
+          }
+        />
+        <Route
+          path="who-we-are/about-us"
+          element={
+            <AnimatePresence mode="wait">
+              <AboutUs />
             </AnimatePresence>
           }
         />
