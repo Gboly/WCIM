@@ -166,6 +166,38 @@ export const storyContent = [
   },
 ];
 
+// Articles are programmed to be accepted as arrays
+const scholarshipTestimonial = [
+  `Thanks to World care international ministry, my education has been sorted. They helped with the costs and fueled my dreams. Your support makes a real difference, turning education into a pathway for a better future. I'm truly grateful for the chance you've given me.`,
+];
+const cleanWaterTestimonial = [
+  `As the community leader of Osolo, I want to express our deep gratitude for the borehole water. This essential resource has transformed our daily lives, ensuring access to clean water for everyone.  We are truly thankful for the positive impact you've made by enhancing our well-being.`,
+];
+const orphanageTestimonial = [
+  `Being an orphan isn't easy, but thanks to World Care International Ministry, our home is filled with love, care, and support. Thank you for making a difference in our lives.`,
+];
+import osoloOfOsolo from "../assets/wcim-osolo.jpg";
+export const testimonials = [
+  {
+    id: 1,
+    imgSrc: scholarshipPoster,
+    desc: "Scholarship Beneficiary",
+    body: scholarshipTestimonial,
+  },
+  {
+    id: 2,
+    imgSrc: osoloOfOsolo,
+    desc: "Osolo of Osolo",
+    body: cleanWaterTestimonial,
+  },
+  {
+    id: 3,
+    imgSrc: orphanGiftPoster,
+    desc: "The kids at the orphanage",
+    body: orphanageTestimonial,
+  },
+];
+
 export const socials = [
   {
     name: "facebook",
