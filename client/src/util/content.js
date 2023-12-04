@@ -39,6 +39,7 @@ import CallIcon from "@mui/icons-material/Call";
 import PlaceIcon from "@mui/icons-material/Place";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import EmailIcon from "@mui/icons-material/Email";
+import osoloOfOsolo from "../assets/wcim-osolo.jpg";
 
 export const navOptions = [
   {
@@ -176,7 +177,6 @@ const cleanWaterTestimonial = [
 const orphanageTestimonial = [
   `Being an orphan isn't easy, but thanks to World Care International Ministry, our home is filled with love, care, and support. Thank you for making a difference in our lives.`,
 ];
-import osoloOfOsolo from "../assets/wcim-osolo.jpg";
 export const testimonials = [
   {
     id: 1,
