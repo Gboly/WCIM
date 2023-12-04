@@ -13,7 +13,11 @@ import {
 } from "../../util/variants";
 
 const frameColors = ["#43409f", "#ed1414", "#009a00"];
-const StoryCameo = ({ index, content: { imgSrc, desc, body, url } }) => {
+const StoryCameo = ({
+  index,
+  content: { imgSrc, desc, body, url },
+  testimonial,
+}) => {
   const storyCameoRef = useRef(null);
   const [isReferenceHover, setIsReferenceHover] = useState(false);
 
@@ -38,7 +42,7 @@ const StoryCameo = ({ index, content: { imgSrc, desc, body, url } }) => {
           isReferenceHover={isReferenceHover}
           style={{ backgroundColor: frameColors[index] }}
         />
-        <NavLink to={url}>
+        <NavLink to={url} className={testimonial ? "no-pointer-event" : ""}>
           <Animated
             element={motion.img}
             src={imgSrc}
@@ -54,7 +58,12 @@ const StoryCameo = ({ index, content: { imgSrc, desc, body, url } }) => {
         variants={isReverse ? hSlideInLeft() : hSlideInRight()}
         ref={storyCameoRef}
       >
-        <Article header={desc} body={body[0].slice(0, 300)} url={url} />
+        <Article
+          header={desc}
+          body={body[0].slice(0, 300)}
+          url={url}
+          quote={testimonial}
+        />
       </Animated>
     </div>
   );
