@@ -1,0 +1,34 @@
+#meet-the-team {
+    padding-top: 2rem;
+}
+#meet-the-team > div > header {
+    margin-bottom: 3rem;
+}
+#meet-the-team > div > div {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+}
+.official {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    font-size: var(--p2);
+    font-weight: 700;
+    /* margin-bottom: 1rem; */
+}
+.official > img {
+    width: 20rem;
+    height: 25rem;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 0.5rem;
+}
+#meet-the-team > div > p {
+    font-size: var(--p1);
+    line-height: 2rem;
+    font-weight: normal;
+    margin-top: 1.5rem;
+}
