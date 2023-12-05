@@ -16,8 +16,8 @@ const Stories = () => {
     [name]
   );
 
-  const storyMedia = ({ type, src, desc }) => (
-    <div className="media-container">
+  const storyMedia = ({ type, src, desc }, index) => (
+    <div className="media-container" key={index}>
       {type === "image" ? (
         <img src={src} alt="" className="story-media" />
       ) : (
@@ -34,7 +34,7 @@ const Stories = () => {
         <div>
           {body.map((content, index) =>
             content?.type ? (
-              storyMedia(content)
+              storyMedia(content, index)
             ) : (
               <p key={index} className="content">
                 {content}
