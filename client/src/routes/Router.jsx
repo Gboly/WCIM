@@ -9,6 +9,7 @@ import GivingCatalog from "../pages/giving-catalog/GivingCatalog";
 import Volunteering from "../pages/volunteering/Volunteering";
 import ContactUs from "../pages/contact-us/ContactUs";
 import AboutUs from "../pages/about-us/AboutUs";
+import Stories from "../pages/stories/Stories";
 
 export default function Router() {
   return (
@@ -69,6 +70,14 @@ export default function Router() {
           element={
             <AnimatePresence mode="wait">
               <AboutUs />
+            </AnimatePresence>
+          }
+        />
+        <Route
+          path="/stories/:category/:name"
+          element={
+            <AnimatePresence mode="wait">
+              <Stories />
             </AnimatePresence>
           }
         />
