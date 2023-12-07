@@ -144,6 +144,15 @@ export const doingsContent = navOptions.find(
   (option) => option.desc === "What we do"
 ).content;
 
+export const storyCategories = [
+  "show all",
+  "health",
+  "evangelism",
+  "education",
+  "orphanage",
+  "clean-water",
+  "financing",
+];
 export const storyContent = [
   {
     id: 2,
@@ -251,7 +260,7 @@ export const storyContent = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     name: "medical-checkups",
     imgSrc: healPoster,
     desc: "Preserving Well-Being: WCIM offers free health screening",

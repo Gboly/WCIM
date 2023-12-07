@@ -1,4 +1,4 @@
-import { giftCategories } from "./content";
+import { giftCategories, storyContent } from "./content";
 
 export const getTheme = () => {
   const localStorageTheme = localStorage.getItem("theme");
@@ -27,4 +27,10 @@ export const getGiftByCategory = (showAll, choiceCategory) => {
       : giftCategories.filter(({ category }) => category === choiceCategory);
 
   return [gifts.slice(0, 6), showAll ? gifts.slice(6) : [], gifts.length > 6];
+};
+
+export const getStoryCategory = (choiceCategory) => {
+  return choiceCategory === "show all"
+    ? storyContent
+    : storyContent.filter(({ category }) => category === choiceCategory);
 };
