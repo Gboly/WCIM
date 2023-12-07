@@ -11,6 +11,7 @@ import ContactUs from "../pages/contact-us/ContactUs";
 import AboutUs from "../pages/about-us/AboutUs";
 import Stories from "../pages/stories/Stories";
 import OurTeam from "../pages/our-team/OurTeam";
+import AllStories from "../pages/all-stories/AllStories";
 
 export default function Router() {
   return (
@@ -87,6 +88,14 @@ export default function Router() {
           element={
             <AnimatePresence mode="wait">
               <Stories />
+            </AnimatePresence>
+          }
+        />
+        <Route
+          path="/stories"
+          element={
+            <AnimatePresence mode="wait">
+              <AllStories />
             </AnimatePresence>
           }
         />
