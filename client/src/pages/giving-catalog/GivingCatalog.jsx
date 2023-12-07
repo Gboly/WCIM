@@ -34,7 +34,7 @@ const GivingCatalog = () => {
         }
       />
       <CustomSection id={"Giving-catalog"} ref={givingCatalogRef}>
-        <div>
+        <div className="our-services-options">
           {choiceGiftCategories.map((category) => (
             <button
               key={category}

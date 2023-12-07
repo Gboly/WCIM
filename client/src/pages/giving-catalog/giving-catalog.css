@@ -1,4 +1,4 @@
-#Giving-catalog > div > div {
+.our-services-options {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -6,7 +6,7 @@
     margin: 1.5rem 0;
     flex-flow: row wrap;
 }
-#Giving-catalog > div > div > button {
+.our-services-options > button {
     background-color: inherit;
     color: inherit;
     border: none;
@@ -14,7 +14,7 @@
     padding: 0.5rem 1rem;
     border-radius: 0.8rem;
 }
-#Giving-catalog .active-button {
+.our-services-options .active-button {
     background-color: var(--primary-color);
 }
 #Giving-catalog main {
