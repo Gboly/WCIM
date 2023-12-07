@@ -46,6 +46,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import osoloOfOsolo from "../assets/wcim-osolo.jpg";
 import orphanageVisitPoster from "../assets/wcim-orphanage.jpg";
 import evangelismStoryPoster from "../assets/wcim-evangelism4.jpg";
+import schoolAmenitiesPoster from "../assets/wcim-school-amenities.jpg";
 
 export const navOptions = [
   {
@@ -428,13 +429,6 @@ export const giftCategories = [
     category: "clean water",
   },
   {
-    id: "heal-the-sick",
-    title: "Heal the Sick",
-    poster: healPoster,
-    desc: "Be a healing force. Your donation supports our mission for vital medical care. Contribute to be a lifeline, letting compassion and care prevail for those facing medical challenges. Every contribution matters.",
-    category: "medical care",
-  },
-  {
     id: "educate-a-child",
     title: "Educate a Child",
     poster: scholarshipPoster,
@@ -442,11 +436,46 @@ export const giftCategories = [
     category: "education",
   },
   {
+    id: "heal-the-sick",
+    title: "Heal the Sick",
+    poster: healPoster,
+    desc: "Be a healing force. Your donation supports our mission for vital medical care. Contribute to be a lifeline, letting compassion and care prevail for those facing medical challenges. Every contribution matters.",
+    category: "medical care",
+  },
+  {
     id: "empower-orphans-today",
     title: "Empower Orphans Today",
     poster: orphanGiftPoster,
     desc: "Extend a lifeline to orphans in need. Your donation brings hope, care, and a chance for a brighter future. Join us in providing essential support and making a lasting impact in the lives of these resilient children.",
     category: "orphanage",
+  },
+  {
+    id: "empower-evangelism",
+    title: "Empower the Evangelism",
+    poster: evangelismStoryPoster,
+    desc: "Join us in illuminating hearts with the transformative message of hope and love. Your generous contribution empowers World Care International Ministry to spread the word of God through impactful evangelism initiatives.",
+    category: "evangelism",
+  },
+  {
+    id: "support-stuggling-families",
+    title: "Support Struggling Familes",
+    poster: financingPoster,
+    desc: "Extend a helping hand to families facing adversity by supporting World Care International Ministry. Join us in creating a harmonious world where every family thrives, supported by the generosity of compassionate hearts like yours.",
+    category: "financing",
+  },
+  {
+    id: "support-free-health-check-up",
+    title: "Support Free Health Check-up",
+    poster: healthPoster,
+    desc: "Your donation enables us to conduct free health screenings, ensuring early detection and provision of preventive care for those in need. Your support transforms lives, one health screening at a time.",
+    category: "medical care",
+  },
+  {
+    id: "provide-school-amenities",
+    title: "Provide School Amenities",
+    poster: schoolAmenitiesPoster,
+    desc: "Be a catalyst for change by supporting us in providing essential amenities for schools in communities. Your contribution creates an environment where young minds can flourish. We build a foundation for success.",
+    category: "education",
   },
 ];
 
