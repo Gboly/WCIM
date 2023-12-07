@@ -11,7 +11,7 @@ const Stories = () => {
   const moreStoriesRef = useRef(null);
   const { name } = useParams();
 
-  const { desc, imgSrc, body } = useMemo(
+  const stories = useMemo(
     () => storyContent.find(({ name: storyName }) => storyName === name),
     [name]
   );
@@ -28,11 +28,11 @@ const Stories = () => {
   );
   return (
     <AnimatedPage className={"story-page"}>
-      <CustomSection id={desc} ref={storyRef}>
-        <img src={imgSrc} alt="" className="story-poster" />
+      <CustomSection id={stories?.desc || ""} ref={storyRef}>
+        <img src={stories?.imgSrc || ""} alt="" className="story-poster" />
         <p className="date">{new Date().toLocaleString()}</p>
         <div>
-          {body.map((content, index) =>
+          {(stories?.body || []).map((content, index) =>
             content?.type ? (
               storyMedia(content, index)
             ) : (
