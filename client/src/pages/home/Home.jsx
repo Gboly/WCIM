@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import DonateButton from "../../components/donateButton/DonateButton";
 import "./home.css";
 import { AnimatePresence, motion } from "framer-motion";
@@ -32,6 +32,8 @@ function Home() {
   const ourStoriesRef = useRef(null);
 
   const [showMore, setshowMore] = useState(false);
+
+  const homePageStories = useMemo(() => storyContent.slice(0, 3), []);
 
   return (
     <AnimatedPage className="home">
@@ -113,7 +115,7 @@ function Home() {
         </Animated>
       </section>
       <CustomSection ref={ourStoriesRef} id={"our-stories"}>
-        {storyContent.map((content, index) => (
+        {homePageStories.map((content, index) => (
           <StoryCameo key={content.id} index={index} content={content} />
         ))}
       </CustomSection>
