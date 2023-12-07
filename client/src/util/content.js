@@ -26,8 +26,12 @@ import orphanPoster from "../assets/wcim-orphan.jpg";
 import financingPoster from "../assets/wcim-financing.jpg";
 import {
   aponmuBoreholeStory,
+  medicalCheckUpStory,
+  orphanageVisitStory,
   osoloBoreholeStory,
   scholarshipStory,
+  supportGroupGratitudeStory,
+  testimonyStory,
 } from "./story";
 import feedPoster from "../assets/wcim-donations.jpg";
 import monthlySupport from "../assets/wcim-monthly.jpeg";
@@ -40,6 +44,8 @@ import PlaceIcon from "@mui/icons-material/Place";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import EmailIcon from "@mui/icons-material/Email";
 import osoloOfOsolo from "../assets/wcim-osolo.jpg";
+import orphanageVisitPoster from "../assets/wcim-orphanage.jpg";
+import evangelismStoryPoster from "../assets/wcim-evangelism4.jpg";
 
 export const navOptions = [
   {
@@ -139,23 +145,6 @@ export const doingsContent = navOptions.find(
 
 export const storyContent = [
   {
-    id: 1,
-    name: "osolo-borehole",
-    imgSrc: boreholeOsolo,
-    desc: "A borehole of promise for osolo community in akure",
-    body: osoloBoreholeStory,
-    category: "clean-water",
-    url: "/stories/clean-water/osolo-borehole",
-    keywords: [
-      "water",
-      "clean water",
-      "borehole",
-      "nigeria",
-      "africa",
-      "osolo",
-    ],
-  },
-  {
     id: 2,
     imgSrc: scholarship,
     name: "ife-scholarship",
@@ -187,6 +176,95 @@ export const storyContent = [
       "nigeria",
       "africa",
       "aponmu",
+    ],
+  },
+  {
+    id: 4,
+    imgSrc: orphanageVisitPoster,
+    name: "ondo-orphanage",
+    desc: "A Day of Joyful Giving at Ondo State Chidren's Home",
+    body: orphanageVisitStory,
+    category: "orphanage",
+    url: "/stories/orphanage/ondo-orphanage",
+    keywords: [
+      "orphanage",
+      "orphan",
+      "nigeria",
+      "africa",
+      "ondo",
+      "children",
+      "kids",
+    ],
+  },
+  {
+    id: 1,
+    name: "osolo-borehole",
+    imgSrc: boreholeOsolo,
+    desc: "A borehole of promise for osolo community in akure",
+    body: osoloBoreholeStory,
+    category: "clean-water",
+    url: "/stories/clean-water/osolo-borehole",
+    keywords: [
+      "water",
+      "clean water",
+      "borehole",
+      "nigeria",
+      "africa",
+      "osolo",
+    ],
+  },
+  {
+    id: 5,
+    name: "church-thanksgiving",
+    imgSrc: evangelismStoryPoster,
+    desc: "Harmony of Hearts: WCIM Share Testimonies and Seek Divine Fortitude",
+    body: testimonyStory,
+    category: "evangelism",
+    url: "/stories/evangelism/church-thanksgiving",
+    keywords: [
+      "evangelism",
+      "gospel",
+      "testimony",
+      "nigeria",
+      "africa",
+      "ondo",
+      "church",
+    ],
+  },
+  {
+    id: 6,
+    name: "donate-support-group",
+    imgSrc: financingPoster,
+    desc: "A big thank you to our Ondo State Support Group",
+    body: supportGroupGratitudeStory,
+    category: "financing",
+    url: "/stories/financing/donate-support-group",
+    keywords: [
+      "financing",
+      "support group",
+      "assistance",
+      "nigeria",
+      "africa",
+      "ondo",
+      "support",
+    ],
+  },
+  {
+    id: 6,
+    name: "medical-checkups",
+    imgSrc: healPoster,
+    desc: "Preserving Well-Being: WCIM offers free health screening",
+    body: medicalCheckUpStory,
+    category: "health",
+    url: "/stories/health/medical-checkups",
+    keywords: [
+      "health",
+      "check up",
+      "medical care",
+      "nigeria",
+      "africa",
+      "ondo",
+      "hospital",
     ],
   },
 ];
