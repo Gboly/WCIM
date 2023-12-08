@@ -11,8 +11,16 @@ import {
   justReactions,
   rotateEnlarge,
 } from "../../util/variants";
+import { chooseAtRandomFromArray } from "../../util/functions";
 
-const frameColors = ["#43409f", "#ed1414", "#009a00"];
+const frameColors = [
+  "#43409f",
+  "#ed1414",
+  "#009a00",
+  "#ac88bb",
+  "#ff9d02",
+  "#b7ce00",
+];
 const StoryCameo = ({
   index,
   content: { imgSrc, desc, body, url },
@@ -40,7 +48,7 @@ const StoryCameo = ({
           ref={storyCameoRef}
           variants={justReactions(rotateEnlarge)}
           isReferenceHover={isReferenceHover}
-          style={{ backgroundColor: frameColors[index] }}
+          style={{ backgroundColor: chooseAtRandomFromArray(frameColors) }}
         />
         <NavLink to={url} className={testimonial ? "no-pointer-event" : ""}>
           <Animated
