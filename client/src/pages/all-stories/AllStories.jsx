@@ -1,21 +1,20 @@
-import { useMemo, useRef, useState } from "react";
+import { useContext, useMemo, useRef } from "react";
 import AnimatedPage from "../../components/animated/AnimatedPage";
 import CustomSection from "../../components/customSection/customSection";
 import "./all-stories.css";
 import { storyCategories } from "../../util/content";
 import { getStoryCategory } from "../../util/functions";
 import StoryCameo from "../../components/storyCameo/StoryCameo";
+import { GeneralContext } from "../../App";
 
 const AllStories = () => {
+  const { storyCategory, changeStoryCategory } = useContext(GeneralContext);
   const allStoriesRef = useRef(null);
-  const [storyCategory, setStoryCategory] = useState("show all");
 
   const stories = useMemo(
     () => getStoryCategory(storyCategory),
     [storyCategory]
   );
-
-  const changeStoryCategory = (e) => setStoryCategory(e.target.id);
 
   return (
     <AnimatedPage className={"all-stories"}>

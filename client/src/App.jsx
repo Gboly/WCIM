@@ -27,9 +27,19 @@ function App({ children }) {
     setInitiateMailingList(true);
   };
 
+  // Set story category
+  const [storyCategory, setStoryCategory] = useState("show all");
+  const changeStoryCategory = (e) => setStoryCategory(e.target.id);
+
   return (
     <GeneralContext.Provider
-      value={{ initiateMailingList, gotoMailingForm, setInitiateMailingList }}
+      value={{
+        initiateMailingList,
+        gotoMailingForm,
+        setInitiateMailingList,
+        storyCategory,
+        changeStoryCategory,
+      }}
     >
       {children}
     </GeneralContext.Provider>
