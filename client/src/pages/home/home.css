@@ -3,7 +3,7 @@
 }
 #intro{
     /* Full screen minus navbar height*/
-    height: calc(100vh - 4.8rem);
+    height: var(--full-height);
     background-image: url("../../assets/wcim-main-pic.jpg");
     background-position: center;
     background-size: cover;
@@ -99,9 +99,6 @@
  }
 
  @media screen and (max-width: 1100px) {
-    #intro{
-        height: calc(100vh - 4.75rem);
-    }
     #intro header {
         max-width: 90vw;
     }

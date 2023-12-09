@@ -1,6 +1,5 @@
 .wwd-intro{
-    /* Full screen minus navbar height*/
-    height: calc(100vh - 4.8rem);
+    height: var(--full-height);
     display: flex;
     background-color: var(--soft-shadow-actual-color);
     position: relative;
@@ -86,12 +85,6 @@
     display: none !important;
 }
 
-@media screen and (max-width: 1100px) { 
-    .wwd-intro{
-        /* Full screen minus navbar height*/
-        height: calc(100vh - 4.75rem);
-    }   
-}
 @media screen and (max-width: 960px) {  
     .wwd-intro > div:last-of-type{
         min-width: 18rem;
