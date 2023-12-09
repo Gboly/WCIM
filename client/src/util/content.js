@@ -47,6 +47,7 @@ import osoloOfOsolo from "../assets/wcim-osolo.jpg";
 import orphanageVisitPoster from "../assets/wcim-orphanage.jpg";
 import evangelismStoryPoster from "../assets/wcim-evangelism4.jpg";
 import schoolAmenitiesPoster from "../assets/wcim-school-amenities.jpg";
+import hash from "../assets/hash.png";
 
 export const navOptions = [
   {
@@ -113,6 +114,22 @@ export const navOptions = [
         icon: volunteer,
         desc: "Volunteer",
         url: "/get-involved/volunteering",
+      },
+    ],
+    columnType: "double-column",
+  },
+  {
+    desc: "News & Stories",
+    content: [
+      {
+        icon: hash,
+        desc: "All stories",
+        category: "show all",
+      },
+      {
+        icon: hash,
+        desc: "By Category",
+        category: "health",
       },
     ],
     columnType: "double-column",

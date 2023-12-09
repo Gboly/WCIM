@@ -28,12 +28,17 @@ const NavSubOptionsWithRef = (
 };
 
 export const SubOption = ({
-  subOption: { icon, desc, url },
+  subOption: { icon, desc, url, category },
   closeSubOption,
 }) => {
-  const { gotoMailingForm } = useContext(GeneralContext);
+  const { gotoMailingForm, changeStoryCategory } = useContext(GeneralContext);
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
+
+  const storyNavigation = () => {
+    changeStoryCategory(category);
+    navigate("/stories");
+  };
 
   const handleMouseOver = () => {
     setIsHovered(true);
@@ -43,7 +48,11 @@ export const SubOption = ({
   };
   const handleClick = () => {
     closeSubOption && closeSubOption();
-    desc === "Mailing list" ? gotoMailingForm() : navigate(url);
+    desc === "Mailing list"
+      ? gotoMailingForm()
+      : category
+      ? storyNavigation()
+      : navigate(url);
   };
 
   return (

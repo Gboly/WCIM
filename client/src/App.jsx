@@ -29,7 +29,7 @@ function App({ children }) {
 
   // Set story category
   const [storyCategory, setStoryCategory] = useState("show all");
-  const changeStoryCategory = (e) => setStoryCategory(e.target.id);
+  const changeStoryCategory = (e) => setStoryCategory(e?.target?.id || e);
 
   return (
     <GeneralContext.Provider
