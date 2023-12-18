@@ -5,6 +5,7 @@ import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import paystackRoute from "./routes/paystackPayment.js";
+import runDb from "./config/db.config.js";
 
 dotenv.config();
 const app = express();
@@ -23,6 +24,9 @@ app.use(
 );
 app.use(helmet());
 app.use(morgan("combined"));
+
+//Database connection
+runDb();
 
 //routing
 app.use("/payment/paystack", paystackRoute);
