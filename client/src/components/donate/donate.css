@@ -1,0 +1,124 @@
+.donate-section {
+    width: 100%;
+    height: var(--full-height);
+    position: relative;
+    color: var(--dark);
+}
+.donate-section > img {
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+}
+.donate-section > div {
+    padding: 2rem 3.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-70%);
+    background-color: rgba(255, 213, 192, 0.92);
+    border-radius: 1rem;
+    box-sizing: border-box;
+}
+.donate-section > div > div {
+    width: 30rem;
+}
+.donate-section p {
+    font-size: var(--p1);
+    text-transform: capitalize;
+}
+.donate-section header {   
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.donate-section header span {
+    font-size: var(--h2);
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--color-2);
+}
+.donate-section select {
+    width: 4.5rem;
+    height: 2rem;
+    border-radius: 0.3rem;
+    background-color: var(--light);
+    color: inherit;
+    border: 1px solid var(--dark);
+    font-family: inherit;
+    font-size: var(--p3);
+    padding: 0 0.3rem;
+    outline: none;
+}
+.donate-section form > div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+.donate-section form > div input {
+    display: none;
+}
+.custom-donation {
+    display: block !important;
+    width: inherit;
+    box-sizing: border-box;
+    padding: 0.2rem 0.5rem;
+    text-align: center;
+    border: none;
+    outline: none;
+    color: inherit;
+    background-color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+}
+.custom-donation::placeholder {
+    font-family: inherit;
+    /* color: inherit; */
+}
+.donate-section form > div label, .donate-section form > button {
+    width: 100%;
+    padding: 0.75rem 0;
+    font-size: var(--p1);
+    background-color: var(--light);
+    color: inherit;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    font-family: inherit;
+    text-align: center;
+}
+.donate-section form .other-label {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.donate-section form > div:last-of-type {
+    margin: 2.5rem 0;
+}
+.donate-section form > div:last-of-type label {
+    opacity: 0.8;
+}
+.donate-section form > button[disabled] {
+    opacity: 0.65;
+    cursor: default;
+}
+.donate-section form > button {
+   background-color: var(--dark);
+   color: var(--light);
+   text-transform: capitalize;
+   width: 100%;
+   margin: 1rem 0 1.5rem;
+   cursor: pointer;
+}
+.donate-section a {
+    display: block;
+    color: inherit;
+    font-size: var(--p4);
+}
+.donate-section form > div label.checked {
+    background-color: var(--dark) !important;
+    color: var(--light) !important;
+    opacity: 1;
+}

@@ -545,3 +545,12 @@ export const contactDetails = [
     url: "https://facebook.com/myworldcare208",
   },
 ];
+
+export const donationSectionImages = [
+  financingPoster,
+  scholarship,
+  scholarshipPoster,
+  // orphanGiftPoster,
+  orphanPoster,
+  boreholeOsolo,
+];
