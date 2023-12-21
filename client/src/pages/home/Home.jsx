@@ -20,6 +20,7 @@ import giving from "../../assets/giving.png";
 import StoryCameo from "../../components/storyCameo/StoryCameo";
 import Socials from "../../components/socials/Socials";
 import AnimatedPage from "../../components/animated/AnimatedPage";
+import Donate from "../../components/donate/Donate";
 
 const ourMissionStatement =
   "At WCIM, our mission is to transform lives and communities through the power of faith, love, and compassion. Inspired by the teachings of Christ, we are dedicated to serving humanity's most vulnerable, providing hope, and facilitating positive change.";
@@ -119,6 +120,7 @@ function Home() {
           <StoryCameo key={content.id} index={index} content={content} />
         ))}
       </CustomSection>
+      <Donate />
     </AnimatedPage>
   );
 }
