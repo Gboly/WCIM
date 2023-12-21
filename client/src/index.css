@@ -110,6 +110,7 @@ body {
   --p3: 0.95rem;
   --p4: 0.95rem;
   --i1: 1.8rem;
+  --full-height: calc(100vh - 3.45rem);
   }
 }
 @media screen and (max-width: 560px) {
