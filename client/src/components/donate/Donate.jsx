@@ -48,7 +48,6 @@ const Donate = () => {
       ...pending,
       [e.target.name]: e.target.value,
     }));
-    console.log(e.target.value);
   };
   const handleInput = (e) => {
     setDetails((pending) => ({ ...pending, amount: e.target.value }));
@@ -118,12 +117,18 @@ const Donate = () => {
   );
 };
 
-const SelectBox = ({ handleChange, value, label, options }) => {
+export const SelectBox = ({ handleChange, value, label, options }) => {
   return (
     <>
-      <select name={label} id={label} value={value} onChange={handleChange}>
-        {options.map(({ desc, name }) => (
-          <option key={name} value={name}>
+      <select
+        className="select"
+        name={label}
+        id={label}
+        value={value}
+        onChange={handleChange}
+      >
+        {(options || []).map(({ desc, name }, index) => (
+          <option key={index} value={name}>
             {desc}
           </option>
         ))}
