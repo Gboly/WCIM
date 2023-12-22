@@ -10,6 +10,7 @@ const donationSchema = schema({
   state: { type: String, default: "" },
   amount: { type: String, default: "0" },
   currency: { type: String, enum: ["NGN", "USD"], default: "" },
+  subscription: { type: Boolean },
   date: { type: Date, default: new Date() },
 });
 

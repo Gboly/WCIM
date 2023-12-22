@@ -1,19 +1,19 @@
 import axios from "axios";
 import dotenv from "dotenv";
+import Donation from "../models/donation.js";
 dotenv.config();
 
-const params = JSON.stringify({
-  email: "customer@email.com",
-  amount: "20000",
-  currency: "NGN",
-  //   callback: () => ,
-});
+// const params = JSON.stringify({
+//   email: "customer@email.com",
+//   amount: "20000",
+//   currency: "NGN",
+//   //   callback: () => ,
+// });
 
 const initOptions = {
   method: "POST",
   url: "https://api.paystack.co/transaction/initialize",
   port: 443,
-  data: params,
   headers: {
     authorization: `Bearer ${process.env.SECRET_KEY}`,
     "Content-Type": "application/json",
@@ -30,8 +30,15 @@ const verificationOptions = {
 };
 
 export const initializePayment = async (req, res) => {
+  const { email, amount, currency } = req.body;
   try {
-    const initResponse = await axios(initOptions);
+    const donation = new Donation(req.body);
+    await donation.save();
+
+    const initResponse = await axios({
+      ...initOptions,
+      data: JSON.stringify({ email, amount, currency }),
+    });
     res.status(200).json(initResponse.data);
   } catch (error) {
     console.log(error);
