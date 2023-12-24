@@ -41,7 +41,7 @@ export const initializePayment = async (req, res) => {
     });
     res.status(200).json(initResponse.data);
   } catch (error) {
-    console.log(error);
+    console.log(error?.response?.data || error);
     return res
       .status(400)
       .json({ error: "An error was encountered. Try again" });
