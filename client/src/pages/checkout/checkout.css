@@ -101,13 +101,13 @@
     font-size: var(--p1);
     font-weight: 700;
 }
-.checkout-box main form p {
+.checkout-box .continue {
     width: 100%;
     display: flex;
     justify-content: flex-end;
     margin-top: 2rem;
 }
-.checkout-box main form p button {
+.checkout-box .continue button {
     padding: 0.8rem 1.5rem;
     font-size: var(--p2);
     font-family: inherit;
@@ -117,4 +117,18 @@
     cursor: pointer;
     background-color: var(--secondary-color);
     color: var(--bg-color);
+}
+.disabled-button {
+    opacity: 0.5;
+}
+.checkout form .spinner {
+    justify-content: flex-end;
+}
+/* .select-container, .input-container, .other-section {
+    opacity: 0.4;
+} */
+.checkout iframe {
+    width: 100%;
+    height: var(--full-height);
+    border: none;
 }

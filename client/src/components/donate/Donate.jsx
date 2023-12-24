@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { donationSectionImages } from "../../util/content";
 import { chooseAtRandomFromArray } from "../../util/functions";
 import "./donate.css";
@@ -8,45 +8,51 @@ const backgroundImage = chooseAtRandomFromArray(donationSectionImages);
 const initialState = {
   frequency: "monthly",
   amount: "",
-  priceType: "50",
-  currency: "USD",
+  priceType: "10,000",
+  currency: "NGN",
 };
+const defaultPrice = { USD: "50", NGN: "10,000" };
 const howFrequent = [
   { type: "monthly", label: "Monthly Gift" },
   { type: "Once", label: "One-time Gift" },
 ];
 const donationAmount = [
   {
-    type: "20",
+    type: { USD: "20", NGN: "5000" },
     price: { USD: "20", NGN: "5000" },
   },
   {
-    type: "50",
+    type: { USD: "50", NGN: "10,000" },
     price: { USD: "50", NGN: "10,000" },
   },
   {
-    type: "100",
+    type: { USD: "100", NGN: "50,000" },
     price: { USD: "100", NGN: "50,000" },
   },
   {
-    type: "other",
+    type: { USD: "other", NGN: "other" },
     price: { USD: "", NGN: "" },
   },
 ];
 const currencies = [
-  { desc: "USD", name: "USD" },
   { desc: "NGN", name: "NGN" },
+  //   { desc: "USD", name: "USD" },
 ];
 
 const Donate = () => {
+  const navigate = useNavigate();
   const [{ frequency, amount, priceType, currency }, setDetails] =
     useState(initialState);
 
   const handleChange = (e) => {
     e && e.preventDefault && e.preventDefault();
+
+    const defaultPriceUpdate = { priceType: defaultPrice[e.target.value] };
+
     setDetails((pending) => ({
       ...pending,
       [e.target.name]: e.target.value,
+      ...(e.target.name === "currency" ? defaultPriceUpdate : {}),
     }));
   };
   const handleInput = (e) => {
@@ -57,6 +63,15 @@ const Donate = () => {
 
   const handleSubmit = (e) => {
     e && e.preventDefault && e.preventDefault();
+    sessionStorage.setItem(
+      "donation",
+      JSON.stringify({
+        subscription: frequency === "monthly",
+        amount: priceType === "other" ? amount : priceType,
+        currency,
+      })
+    );
+    navigate("/donate/checkout");
   };
 
   return (
@@ -92,8 +107,8 @@ const Donate = () => {
             <div>
               {donationAmount.map(({ type, price }) => (
                 <RadioLabel
-                  key={type}
-                  type={type}
+                  key={type[currency]}
+                  type={type[currency]}
                   label={`${currency === "USD" ? "$" : "N"} ${price[currency]}`}
                   handleChange={handleChange}
                   value={priceType}

@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import AnimatedPage from "../../components/animated/AnimatedPage";
 import CustomSection from "../../components/customSection/customSection";
 import "./checkout.css";
@@ -8,7 +8,10 @@ import {
   extractCountries,
 } from "../../util/functions";
 import { SelectBox } from "../../components/donate/Donate";
-import { useGetCountriesAndStatesQuery } from "../../app/api-slices/payment";
+import {
+  useGetCountriesAndStatesQuery,
+  useInitPaystackMutation,
+} from "../../app/api-slices/payment";
 import Spinner from "../../components/spinner/Spinner";
 
 const initialState = {
@@ -21,12 +24,13 @@ const initialState = {
 };
 
 const CheckOut = () => {
+  const donationDetails = JSON.parse(sessionStorage.getItem("donation"));
   const checkoutRef = useRef(null);
   const [details, setDetails] = useState(initialState);
 
   const { data } = useGetCountriesAndStatesQuery();
-
-  const { firstName, lastName, email, address, country, state } = details;
+  const [donate, { data: paystackInitData, isLoading }] =
+    useInitPaystackMutation();
 
   const handleChange = (e) => {
     e && e.preventDefault && e.preventDefault();
@@ -43,76 +47,112 @@ const CheckOut = () => {
     }));
   };
 
-  const isDisabled = Object.entries(details).some(
-    ([key, value]) => key !== "address" && !value
-  );
+  const isDisabled =
+    Object.entries(details).some(
+      ([key, value]) => key !== "address" && !value
+    ) ||
+    !donationDetails ||
+    donationDetails.amount === "0";
 
   const selectOptions = useMemo(() => {
     return {
       country: extractCountries(data),
-      state: getStatesByCountry(data, country),
+      state: getStatesByCountry(data, details.country),
     };
-  }, [country, data]);
+  }, [details, data]);
+
+  const handleSubmit = (e) => {
+    e && e.preventDefault && e.preventDefault();
+    const body = {
+      ...donationDetails,
+      ...details,
+      amount: donationDetails.amount.replace(/,/g, ""),
+    };
+    donate(body);
+  };
 
   return (
     <AnimatedPage className={"checkout"}>
-      <CustomSection id={""} ref={checkoutRef}>
-        <div className="checkout-box">
-          <aside>
-            <header>Donate Now</header>
-            <p>Join us in making the world a better place.</p>
-          </aside>
-          <main>
-            {data ? (
-              <form action="">
-                {Object.keys(initialState).map((item) =>
-                  item === "country" || item === "state" ? (
-                    <div key={item} className="select-container">
-                      <label htmlFor={item}>
-                        {capitalizeCamelCase(item)} *
-                      </label>
-                      <SelectBox
-                        handleChange={handleChange}
-                        value={item === "country" ? country : state}
-                        label={item}
-                        options={selectOptions[item]}
-                      />
+      {!paystackInitData ? (
+        <CustomSection id={""} ref={checkoutRef}>
+          <div className="checkout-box">
+            <aside>
+              <header>Donate Now</header>
+              <p>Join us in making the world a better place.</p>
+            </aside>
+            <main>
+              {data ? (
+                <form onSubmit={handleSubmit}>
+                  {Object.keys(initialState).map((item) =>
+                    item === "country" || item === "state" ? (
+                      <div key={item} className="select-container">
+                        <label htmlFor={item}>
+                          {capitalizeCamelCase(item)} *
+                        </label>
+                        <SelectBox
+                          handleChange={handleChange}
+                          value={details[item]}
+                          label={item}
+                          options={selectOptions[item]}
+                        />
+                      </div>
+                    ) : (
+                      <div key={item}>
+                        <TextInput
+                          value={details[item]}
+                          handleInput={handleInput}
+                          name={item}
+                        />
+                      </div>
+                    )
+                  )}
+                  <section className="other-section">
+                    <header>Your Donation</header>
+                    <div>
+                      <span>Frequency</span>
+                      <span>
+                        {donationDetails?.subscription ? "Monthly" : "One-off"}
+                      </span>
                     </div>
-                  ) : (
-                    <div key={item}>
-                      <TextInput
-                        value={details[item]}
-                        handleInput={handleInput}
-                        name={item}
-                      />
+                    <div>
+                      <span>Amount</span>
+                      <span>{`${donationDetails?.currency || "NGN"} ${
+                        donationDetails?.amount || "0"
+                      }`}</span>
                     </div>
-                  )
-                )}
-                <section className="other-section">
-                  <header>Your Donation</header>
-                  <div>
-                    <span>Frequency</span>
-                    <span>Monthly</span>
-                  </div>
-                  <div>
-                    <span>Amount</span>
-                    <span>$50</span>
-                  </div>
-                </section>
-                <p>
-                  <button disabled={isDisabled}>Continue</button>
-                </p>
-              </form>
-            ) : (
-              <Spinner />
-            )}
-          </main>
-        </div>
-      </CustomSection>
+                  </section>
+                  <section className="continue">
+                    {isLoading ? (
+                      <Spinner />
+                    ) : (
+                      <button
+                        disabled={isDisabled}
+                        className={isDisabled ? "disabled-button" : ""}
+                      >
+                        Continue
+                      </button>
+                    )}
+                  </section>
+                </form>
+              ) : (
+                <Spinner />
+              )}
+            </main>
+          </div>
+        </CustomSection>
+      ) : (
+        <iframe src={paystackInitData.authorization_url}></iframe>
+      )}
     </AnimatedPage>
   );
 };
 
+const inputTypes = {
+  firstName: "text",
+  lastName: "text",
+  email: "email",
+  address: "text",
+};
 const TextInput = ({ value, handleInput, name }) => {
   return (
     <div className="text-input-container">
@@ -121,7 +161,7 @@ const TextInput = ({ value, handleInput, name }) => {
           (name === "address" ? " (optional)" : " *")}
       </label>
       <input
-        type="text"
+        type={inputTypes[name]}
         id={name}
         value={value}
         onInput={handleInput}
