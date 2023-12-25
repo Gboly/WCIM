@@ -66,7 +66,7 @@ const CheckOut = () => {
     const body = {
       ...donationDetails,
       ...details,
-      amount: donationDetails.amount.replace(/,/g, ""),
+      amount: String(Number(donationDetails.amount.replace(/,/g, "")) * 100),
     };
     donate(body);
   };
