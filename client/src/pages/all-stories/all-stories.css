@@ -1,3 +1,6 @@
+.all-stories {
+    min-height: var(--full-height);
+}
 .all-stories .section {
     padding-top: 2rem;
 }
