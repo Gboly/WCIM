@@ -75,7 +75,7 @@ const Donate = () => {
   };
 
   return (
-    <section className="donate-section">
+    <section className="donate-section" name="donate-section">
       <img src={backgroundImage} alt="donate" />
       <div>
         <div>

@@ -3,6 +3,7 @@ import "./App.css";
 import { getTheme } from "./util/functions";
 import { useLocation } from "react-router-dom";
 import { scroller } from "react-scroll";
+import { sectionNames } from "./util/content";
 
 export const GeneralContext = createContext();
 function App({ children }) {
@@ -22,9 +23,9 @@ function App({ children }) {
 
   // Activating mailing form
   const [initiateMailingList, setInitiateMailingList] = useState(false);
-  const gotoMailingForm = () => {
-    scroller.scrollTo("subscription-form", { smooth: true });
-    setInitiateMailingList(true);
+  const navigateToSection = (section) => {
+    scroller.scrollTo(sectionNames[section], { smooth: true });
+    section === "Mailing list" && setInitiateMailingList(true);
   };
 
   // Set story category
@@ -35,7 +36,7 @@ function App({ children }) {
     <GeneralContext.Provider
       value={{
         initiateMailingList,
-        gotoMailingForm,
+        navigateToSection,
         setInitiateMailingList,
         storyCategory,
         changeStoryCategory,

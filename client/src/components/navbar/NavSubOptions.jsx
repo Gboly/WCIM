@@ -4,6 +4,7 @@ import Animated from "../animated/Animated";
 import { motion } from "framer-motion";
 import { reveal } from "../../util/variants";
 import { GeneralContext } from "../../App";
+import { sectionLinks } from "../../util/content";
 
 const NavSubOptionsWithRef = (
   { subOptions, columnType, closeSubOption },
@@ -31,7 +32,7 @@ export const SubOption = ({
   subOption: { icon, desc, url, category },
   closeSubOption,
 }) => {
-  const { gotoMailingForm, changeStoryCategory } = useContext(GeneralContext);
+  const { navigateToSection, changeStoryCategory } = useContext(GeneralContext);
   const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
 
@@ -48,8 +49,8 @@ export const SubOption = ({
   };
   const handleClick = () => {
     closeSubOption && closeSubOption();
-    desc === "Mailing list"
-      ? gotoMailingForm()
+    sectionLinks.includes(desc)
+      ? navigateToSection(desc)
       : category
       ? storyNavigation()
       : navigate(url);

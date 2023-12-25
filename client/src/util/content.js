@@ -157,6 +157,13 @@ export const navOptions = [
   },
 ];
 
+export const sectionLinks = ["Mailing list", "Donate today"];
+
+export const sectionNames = {
+  ["Mailing list"]: "subscription-form",
+  ["Donate today"]: "donate-section",
+};
+
 export const doingsContent = navOptions.find(
   (option) => option.desc === "What we do"
 ).content;
