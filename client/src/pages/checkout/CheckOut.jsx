@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import AnimatedPage from "../../components/animated/AnimatedPage";
 import CustomSection from "../../components/customSection/customSection";
 import "./checkout.css";

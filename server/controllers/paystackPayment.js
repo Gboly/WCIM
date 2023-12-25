@@ -3,13 +3,6 @@ import dotenv from "dotenv";
 import Donation from "../models/donation.js";
 dotenv.config();
 
-// const params = JSON.stringify({
-//   email: "customer@email.com",
-//   amount: "20000",
-//   currency: "NGN",
-//   //   callback: () => ,
-// });
-
 const initOptions = {
   method: "POST",
   url: "https://api.paystack.co/transaction/initialize",
@@ -37,7 +30,11 @@ export const initializePayment = async (req, res) => {
 
     const initResponse = await axios({
       ...initOptions,
-      data: JSON.stringify({ email, amount, currency }),
+      data: JSON.stringify({
+        email,
+        amount,
+        currency,
+      }),
     });
     res.status(200).json(initResponse.data);
   } catch (error) {
