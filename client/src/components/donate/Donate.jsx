@@ -18,8 +18,8 @@ const howFrequent = [
 ];
 const donationAmount = [
   {
-    type: { USD: "20", NGN: "5000" },
-    price: { USD: "20", NGN: "5000" },
+    type: { USD: "20", NGN: "5,000" },
+    price: { USD: "20", NGN: "5,000" },
   },
   {
     type: { USD: "50", NGN: "10,000" },
@@ -109,7 +109,7 @@ const Donate = () => {
                 <RadioLabel
                   key={type[currency]}
                   type={type[currency]}
-                  label={`${currency === "USD" ? "$" : "N"} ${price[currency]}`}
+                  label={`${currency === "USD" ? "$" : "N"}${price[currency]}`}
                   handleChange={handleChange}
                   value={priceType}
                   name={"priceType"}

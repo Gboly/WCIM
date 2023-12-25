@@ -37,9 +37,7 @@
     text-transform: uppercase;
     font-weight: 700;
     color: var(--color-2);
-}
-.select {
-
+    line-height: 0;
 }
 .select {
     width: 4.5rem;
@@ -124,4 +122,36 @@
     background-color: var(--dark) !important;
     color: var(--light) !important;
     opacity: 1;
+}
+
+@media screen and (max-width: 900px) {
+    .donate-section > div {
+        transform: translateY(-50%) translateX(-50%);
+    }
+}
+@media screen and (max-width: 720px) {
+    .donate-section > div {
+        width: 90%;
+        padding: 2rem 2.5rem 4rem;
+    }
+    .donate-section > div > div {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 560px) {
+    .donate-section > div {
+        width: 96%;
+        padding: 1rem 2rem 2rem;
+    }
+}
+@media screen and (max-width: 480px) {
+    .donate-section form > div {
+        flex-flow: row wrap;
+    }
+    .donate-section form > div label {
+        flex: calc(50% - 0.5rem);
+    }
+    .donate-section form > div:first-of-type label {
+        flex: 100%;
+    }
 }
