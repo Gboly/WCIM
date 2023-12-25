@@ -97,13 +97,12 @@ const CheckOut = () => {
                         />
                       </div>
                     ) : (
-                      <div key={item}>
-                        <TextInput
-                          value={details[item]}
-                          handleInput={handleInput}
-                          name={item}
-                        />
-                      </div>
+                      <TextInput
+                        key={item}
+                        value={details[item]}
+                        handleInput={handleInput}
+                        name={item}
+                      />
                     )
                   )}
                   <section className="other-section">
