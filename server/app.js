@@ -5,6 +5,7 @@ import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import paystackRoute from "./routes/paystackPayment.js";
+import storyRoute from "./routes/story.js";
 import runDb from "./config/db.config.js";
 
 dotenv.config();
@@ -30,6 +31,7 @@ runDb();
 
 //routing
 app.use("/payment/paystack", paystackRoute);
+app.use("/story", storyRoute);
 
 app.listen(PORT, (e) =>
   console.log(e || `Successfully connected to server ${PORT}`)
