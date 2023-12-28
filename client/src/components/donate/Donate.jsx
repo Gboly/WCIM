@@ -4,7 +4,6 @@ import { chooseAtRandomFromArray } from "../../util/functions";
 import "./donate.css";
 import { useState } from "react";
 
-const backgroundImage = chooseAtRandomFromArray(donationSectionImages);
 const initialState = {
   frequency: "monthly",
   amount: "",
@@ -40,6 +39,7 @@ const currencies = [
 ];
 
 const Donate = () => {
+  const backgroundImage = chooseAtRandomFromArray(donationSectionImages);
   const navigate = useNavigate();
   const [{ frequency, amount, priceType, currency }, setDetails] =
     useState(initialState);
