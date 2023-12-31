@@ -6,7 +6,7 @@ import { storyCategories } from "../../util/content";
 import StoryCameo from "../../components/storyCameo/StoryCameo";
 import { GeneralContext } from "../../App";
 import {
-  useGetStoriesByCategoryQuery,
+  useGetStoriesByQueryQuery,
   useGetStoriesQuery,
 } from "../../app/api-slices/story";
 import Spinner from "../../components/spinner/Spinner";
@@ -24,8 +24,8 @@ const AllStories = () => {
     }
   );
   const { data: categoryStories, isLoading: storyIsLoading } =
-    useGetStoriesByCategoryQuery(
-      { ...range, category: storyCategory },
+    useGetStoriesByQueryQuery(
+      { ...range, query: `category=${storyCategory}` },
       {
         skip: storyCategory === "show all",
       }

@@ -8,7 +8,7 @@ import { useRef } from "react";
 import StoryCameo from "../../components/storyCameo/StoryCameo";
 import { Link } from "react-scroll";
 import AnimatedPage from "../../components/animated/AnimatedPage";
-import { useGetStoriesByCategoryQuery } from "../../app/api-slices/story";
+import { useGetStoriesByQueryQuery } from "../../app/api-slices/story";
 import Spinner from "../../components/spinner/Spinner";
 
 const range = { start: 0, end: 3 };
@@ -17,9 +17,9 @@ const WhatWeDo = ({
 }) => {
   const ourStoriesRef = useRef(null);
 
-  const { data: stories } = useGetStoriesByCategoryQuery({
+  const { data: stories } = useGetStoriesByQueryQuery({
     ...range,
-    category: id,
+    query: `category=${id}`,
   });
 
   return (
