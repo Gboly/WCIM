@@ -11,9 +11,9 @@ export const extendedPaymentApiSlice = apiSlice.injectEndpoints({
           ...(result || []).map(({ _id }) => ({ type: "Story", id: _id })),
         ],
     }),
-    getStoriesByCategory: builder.query({
-      query: ({ start, end, category }) =>
-        `/story?start=${start}&end=${end}&category=${category}`,
+    getStoriesByQuery: builder.query({
+      query: ({ start, end, query }) =>
+        `/story?start=${start}&end=${end}&${query}`,
       transformResponse: (response) => response,
       providesTags: (result) =>
         result && [
@@ -28,7 +28,7 @@ export const extendedPaymentApiSlice = apiSlice.injectEndpoints({
       providesTags: (result) =>
         result && [
           { type: "Story", id: "List" },
-          ...(result || []).map(({ _id }) => ({ type: "Story", id: _id })),
+          { type: "Story", id: result?._id },
         ],
     }),
   }),
@@ -36,6 +36,6 @@ export const extendedPaymentApiSlice = apiSlice.injectEndpoints({
 
 export const {
   useGetStoriesQuery,
-  useGetStoriesByCategoryQuery,
+  useGetStoriesByQueryQuery,
   useGetStoryByNameQuery,
 } = extendedPaymentApiSlice;
