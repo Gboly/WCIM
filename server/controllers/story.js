@@ -1,9 +1,15 @@
 import Story from "../models/story.js";
 
 const skipLimit = ["start", "end"];
+const setQueryField = (key, value) => {
+  return key.includes("_ne")
+    ? { [key.slice(0, key.length - 3)]: { $nin: value } }
+    : { [key]: value };
+};
 const fixQuery = (query) => {
   return Object.entries(query).reduce((accum, [key, value]) => {
-    !skipLimit.includes(key) && (accum = { ...accum, [key]: value });
+    !skipLimit.includes(key) &&
+      (accum = { ...accum, ...setQueryField(key, value) });
     return accum;
   }, {});
 };
