@@ -4,21 +4,23 @@ import DonateButton from "../../components/donateButton/DonateButton";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Icon from "../../components/icon/Icon";
 import CustomSection from "../../components/customSection/customSection";
-import { useMemo, useRef } from "react";
-import { storyContent } from "../../util/content";
+import { useRef } from "react";
 import StoryCameo from "../../components/storyCameo/StoryCameo";
 import { Link } from "react-scroll";
 import AnimatedPage from "../../components/animated/AnimatedPage";
+import { useGetStoriesByCategoryQuery } from "../../app/api-slices/story";
+import Spinner from "../../components/spinner/Spinner";
 
+const range = { start: 0, end: 3 };
 const WhatWeDo = ({
   content: { id, title, poster, icon, snippet, content, video },
 }) => {
   const ourStoriesRef = useRef(null);
 
-  const thisDoingStories = useMemo(
-    () => storyContent.filter(({ category }) => category === id).slice(0, 3),
-    [id]
-  );
+  const { data: stories } = useGetStoriesByCategoryQuery({
+    ...range,
+    category: id,
+  });
 
   return (
     <AnimatedPage className={`what-we-do ${id}`}>
@@ -43,11 +45,14 @@ const WhatWeDo = ({
           ))}
         </div>
       </section>
-      {/* This section would require a fetch of stories relating to this service - the storyContent */}
       <CustomSection ref={ourStoriesRef} id={"our-stories"}>
-        {thisDoingStories.map((content, index) => (
-          <StoryCameo key={content.id} index={index} content={content} />
-        ))}
+        {stories ? (
+          stories.map((content, index) => (
+            <StoryCameo key={content._id} index={index} content={content} />
+          ))
+        ) : (
+          <Spinner />
+        )}
       </CustomSection>
     </AnimatedPage>
   );
