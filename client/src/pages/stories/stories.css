@@ -43,6 +43,11 @@
     max-width: 65rem;
 } */
 
+.story-page .spinner {
+    width: 100vw;
+    height: var(--full-height);
+}
+
 @media screen and (max-width: 720px) {
     .story-page .story-media {
         width: 90%;
