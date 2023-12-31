@@ -23,7 +23,7 @@ const frameColors = [
 ];
 const StoryCameo = ({
   index,
-  content: { imgSrc, desc, body, url },
+  content: { poster, title, snippet, url },
   testimonial,
 }) => {
   const storyCameoRef = useRef(null);
@@ -53,8 +53,8 @@ const StoryCameo = ({
         <NavLink to={url} className={testimonial ? "no-pointer-event" : ""}>
           <Animated
             element={motion.img}
-            src={imgSrc}
-            alt={"stoy poster image"}
+            src={poster}
+            alt={"story poster image"}
             ref={storyCameoRef}
             variants={justReactions(imageScale)}
             isReferenceHover={isReferenceHover}
@@ -66,12 +66,7 @@ const StoryCameo = ({
         variants={isReverse ? hSlideInLeft() : hSlideInRight()}
         ref={storyCameoRef}
       >
-        <Article
-          header={desc}
-          body={body[0].slice(0, 300)}
-          url={url}
-          quote={testimonial}
-        />
+        <Article header={title} body={snippet} url={url} quote={testimonial} />
       </Animated>
     </div>
   );
