@@ -11,33 +11,35 @@ import volunteer from "../assets/volunteer.png";
 import about from "../assets/about.png";
 import team from "../assets/team.png";
 import contact from "../assets/contact.png";
-import boreholeAponmu from "../assets/borehole-aponmu.png";
 import facebook from "../assets/facebook.png";
 import instagram from "../assets/instagram.png";
 import gmail from "../assets/gmail.png";
-import cleanWaterVideo from "../assets/clean-water-vid.mp4";
-import educationVideo from "../assets/education-vid.mp4";
-import evangelismPoster from "../assets/wcim-evangelism3.jpg";
-import boreholeOsolo from "../assets/wcim-water.jpeg";
-import eduPoster from "../assets/wcim-edu2.jpg";
-import scholarship from "../assets/wcim-scholarship.jpeg";
-import healthPoster from "../assets/wcim-health4.jpg";
-import orphanPoster from "../assets/wcim-orphan.jpg";
-import financingPoster from "../assets/wcim-financing.jpg";
-import feedPoster from "../assets/wcim-donations.jpg";
-import monthlySupport from "../assets/wcim-monthly.jpeg";
-import waterGiftPoster from "../assets/wcim-water-gift.jpg";
-import healPoster from "../assets/wcim-healPoster.jpg";
-import scholarshipPoster from "../assets/wcim-scholarship2.jpg";
-import orphanGiftPoster from "../assets/wcim-orphan2.jpg";
 import CallIcon from "@mui/icons-material/Call";
 import PlaceIcon from "@mui/icons-material/Place";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import EmailIcon from "@mui/icons-material/Email";
-import osoloOfOsolo from "../assets/wcim-osolo.jpg";
-import evangelismStoryPoster from "../assets/wcim-evangelism4.jpg";
-import schoolAmenitiesPoster from "../assets/wcim-school-amenities.jpg";
 import hash from "../assets/hash.png";
+import {
+  boreholeAponmu,
+  cleanWaterVideo,
+  educationVideo,
+  evangelismPoster,
+  boreholeOsolo,
+  eduPoster,
+  scholarship,
+  healthPoster,
+  orphanPoster,
+  financingPoster,
+  feedPoster,
+  monthlySupport,
+  waterGiftPoster,
+  healPoster,
+  scholarshipPoster,
+  orphanGiftPoster,
+  osoloOfOsolo,
+  evangelismStoryPoster,
+  schoolAmenitiesPoster,
+} from "./images";
 
 export const navOptions = [
   {

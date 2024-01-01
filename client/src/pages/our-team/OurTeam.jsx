@@ -2,9 +2,7 @@ import { useRef } from "react";
 import AnimatedPage from "../../components/animated/AnimatedPage";
 import CustomSection from "../../components/customSection/customSection";
 import "./our-team.css";
-import official1 from "../../assets/wcim-official1.jpg";
-import official2 from "../../assets/wcim-official2.jpg";
-import official3 from "../../assets/wcim-official3.jpg";
+import { official1, official2, official3 } from "../../util/images";
 
 const OurTeam = () => {
   const teamRef = useRef(null);

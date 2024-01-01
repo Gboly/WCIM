@@ -3,7 +3,7 @@ import "./banner.css";
 import Animated from "../animated/Animated";
 import { motion } from "framer-motion";
 import { hSlideIn } from "../../util/variants";
-import givingPoster from "../../assets/wcim-giving-poster.png";
+import { givingPoster } from "../../util/images";
 
 const BannerWithRef = ({ desc }, ref) => {
   return (

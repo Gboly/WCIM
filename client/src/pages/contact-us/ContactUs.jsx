@@ -1,6 +1,6 @@
 import AnimatedPage from "../../components/animated/AnimatedPage";
 import "./contact-us.css";
-import wcimMovement from "../../assets/wcim-action.jpg";
+import { wcimMovement } from "../../util/images";
 import Article from "../../components/article/Article";
 import Icon from "../../components/icon/Icon";
 import { NavLink } from "react-router-dom";
