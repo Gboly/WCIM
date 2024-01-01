@@ -4,7 +4,7 @@
 #intro{
     /* Full screen minus navbar height*/
     height: var(--full-height);
-    background-image: url("../../assets/wcim-main-pic.jpg");
+    background-image: url("https://res.cloudinary.com/dirwr8cde/image/upload/v1703697304/wcim/wcim-main-pic_helybz.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
