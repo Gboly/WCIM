@@ -4,8 +4,10 @@ import SearchIcon from "@mui/icons-material/Search";
 import Animated from "../animated/Animated";
 import { motion } from "framer-motion";
 import { vSlideIn } from "../../util/variants";
+import { useNavigate } from "react-router-dom";
 
-function SearchBar(_, ref) {
+function SearchBar({ closeSearch }, ref) {
+  const navigate = useNavigate();
   const [value, setValue] = useState("");
 
   const searchBarInViewRef = useRef(null);
@@ -15,6 +17,12 @@ function SearchBar(_, ref) {
   const handleChange = (e) => {
     const newValue = e.target.value;
     setValue(newValue);
+  };
+
+  const handleSubmit = (e) => {
+    e && e.preventDefault && e.preventDefault();
+    navigate(`/search?searchText=${value}`);
+    closeSearch();
   };
 
   return (
@@ -30,10 +38,10 @@ function SearchBar(_, ref) {
         variants={vSlideIn({ duration: 0.5 })}
         setElementRef={setElementRef}
       >
-        <div>
+        <form onSubmit={handleSubmit}>
           <span>Search:</span>
           <input
-            type="text"
+            type="search"
             name="search"
             id="search"
             placeholder="Enter keyword here"
@@ -41,8 +49,8 @@ function SearchBar(_, ref) {
             onChange={handleChange}
             autoFocus
           />
-          <Icon value={SearchIcon} />
-        </div>
+          <Icon value={SearchIcon} handleClick={handleSubmit} />
+        </form>
       </Animated>
     </div>
   );

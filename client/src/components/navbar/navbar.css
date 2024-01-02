@@ -105,29 +105,30 @@
     padding: 1.5rem 1rem;
     box-sizing: border-box;    
 }
-.nav-search-bar > div {
+.nav-search-bar > form {
     display: flex;
     align-items: center;
     gap: 1rem;
-    opacity: 0.8;
+    /* opacity: 0.8; */
 }
-.nav-search-bar > div > span {
+.nav-search-bar > form > span {
    font-size: var(--h4);
    font-weight: 700;
+   opacity: 0.8;
 }
-.nav-search-bar > div > input {
+.nav-search-bar > form > input {
     width: 30rem;
     background-color: inherit;
     border: none;
-    border-bottom: 2px solid var(--text-color);
+    border-bottom: 2px solid gray;
     color: inherit;
     font-family: inherit;
-    font-weight: 300;
-    font-size: var(--p3);
+    font-weight: 700;
+    font-size: var(--p2);
     padding: 0.5rem 0.1rem;
     box-sizing: border-box;
 }
-.nav-search-bar > div > input:focus{
+.nav-search-bar > form > input:focus{
     outline: none;
 }
 .menu-icon {

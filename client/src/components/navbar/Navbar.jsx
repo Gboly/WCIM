@@ -21,12 +21,13 @@ import Sidebar from "../sidebar/Sidebar";
 function Navbar() {
   const searchBarRef = useRef(null);
   const sidebarRef = useRef(null);
-  const [searchIsOpen, openSearch] = usePopUpHandler(searchBarRef);
+  const [searchIsOpen, openSearch, closeSearch] = usePopUpHandler(searchBarRef);
   const [sidebarIsOpen, openSidebar, closeSidebar] =
     usePopUpHandler(sidebarRef);
 
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+  const isSearchPage = location.pathname === "/search";
 
   return (
     <>
@@ -36,9 +37,11 @@ function Navbar() {
         </NavLink>
         <div className="nav-options">
           <div>
-            <Icon handleClick={openSearch} className={"search-icon"}>
-              <SearchIcon style={iconStyle} />
-            </Icon>
+            {!isSearchPage && (
+              <Icon handleClick={openSearch} className={"search-icon"}>
+                <SearchIcon style={iconStyle} />
+              </Icon>
+            )}
             <ThemeToggle />
           </div>
           <nav>
@@ -57,7 +60,9 @@ function Navbar() {
             <Icon value={CloseIcon} className={"menu-icon"} />
           )}
         </div>
-        {searchIsOpen && <SearchBar ref={searchBarRef} />}
+        {searchIsOpen && (
+          <SearchBar ref={searchBarRef} closeSearch={closeSearch} />
+        )}
       </section>
       {sidebarIsOpen && (
         <Sidebar ref={sidebarRef} closeSidebar={closeSidebar} />

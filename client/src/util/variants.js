@@ -46,7 +46,7 @@ export const hSlideInRight = (transition, hoverVariant, isPage) => ({
 });
 
 export const vSlideIn = (transition, hoverVariant, isPage) => ({
-  initial: isPage ? { opacity: 1, y: "-30vh" } : { opacity: 0, x: "-1rem" },
+  initial: isPage ? { opacity: 1, y: "-30vh" } : { opacity: 0, y: "-1rem" },
   final: {
     opacity: 1,
     y: 0,
