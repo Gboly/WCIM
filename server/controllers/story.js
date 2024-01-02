@@ -47,3 +47,22 @@ export const getStories = async (req, res) => {
       .json({ error: "An error was encountered. Try again" });
   }
 };
+
+export const searchStories = async (req, res) => {
+  const { start, end, searchText } = req.query;
+
+  try {
+    const stories = await Story.find({
+      $text: { $search: searchText },
+    })
+      .skip(start)
+      .limit(end);
+
+    res.status(200).json(stories);
+  } catch (error) {
+    console.log(error);
+    return res
+      .status(400)
+      .json({ error: "An error was encountered. Try again" });
+  }
+};
