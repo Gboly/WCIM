@@ -31,6 +31,16 @@ export const extendedPaymentApiSlice = apiSlice.injectEndpoints({
           { type: "Story", id: result?._id },
         ],
     }),
+    searchStories: builder.query({
+      query: ({ start, end, searchText }) =>
+        `/story/search?start=${start}&end=${end}&searchText=${searchText}`,
+      transformResponse: (response) => response,
+      providesTags: (result) =>
+        result && [
+          { type: "Story", id: "List" },
+          ...(result || []).map(({ _id }) => ({ type: "Story", id: _id })),
+        ],
+    }),
   }),
 });
 
@@ -38,4 +48,5 @@ export const {
   useGetStoriesQuery,
   useGetStoriesByQueryQuery,
   useGetStoryByNameQuery,
+  useSearchStoriesQuery,
 } = extendedPaymentApiSlice;
