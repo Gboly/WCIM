@@ -1,0 +1,33 @@
+.search-page {
+    min-height: var(--full-height);
+}
+.search-page .section {
+    padding-top: 0;
+}
+.search-page .spinner {
+    margin-top: 2rem;
+}
+.search-page form {
+    width: 100%;
+    max-width: 35rem;
+    margin-bottom: 2rem;
+}
+.search-page form input {
+    width: 100%;
+    padding: 1.2rem 1rem;
+    font-size: 1rem;
+    color: inherit;
+    font-family: inherit;
+    border: 1px solid gray;
+    background-color: inherit;
+    border-radius: 1rem;
+    outline: none;
+}
+
+.search-page .invalid {
+    font-size: var(--h3);
+    text-align: center;
+}
+.search-page .invalid span {
+    display: block;
+}
