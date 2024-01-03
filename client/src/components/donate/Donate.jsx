@@ -38,7 +38,7 @@ const currencies = [
   //   { desc: "USD", name: "USD" },
 ];
 
-const Donate = () => {
+const Donate = ({ bgImage, giftCategory }) => {
   const backgroundImage = chooseAtRandomFromArray(donationSectionImages);
   const navigate = useNavigate();
   const [{ frequency, amount, priceType, currency }, setDetails] =
@@ -69,6 +69,7 @@ const Donate = () => {
         subscription: frequency === "monthly",
         amount: priceType === "other" ? amount : priceType,
         currency,
+        giftCategory,
       })
     );
     navigate("/donate/checkout");
@@ -76,7 +77,7 @@ const Donate = () => {
 
   return (
     <section className="donate-section" name="donate-section">
-      <img src={backgroundImage} alt="donate" />
+      <img src={bgImage || backgroundImage} alt="donate" />
       <div>
         <div>
           <p>Join and support us in making the world a better place</p>
