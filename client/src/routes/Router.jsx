@@ -14,6 +14,7 @@ import OurTeam from "../pages/our-team/OurTeam";
 import AllStories from "../pages/all-stories/AllStories";
 import CheckOut from "../pages/checkout/CheckOut";
 import Search from "../pages/search/Search";
+import NoPage from "../pages/no-page/NoPage";
 
 export default function Router() {
   return (
@@ -114,6 +115,14 @@ export default function Router() {
           element={
             <AnimatePresence mode="wait">
               <Search />
+            </AnimatePresence>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <AnimatePresence mode="wait">
+              <NoPage />
             </AnimatePresence>
           }
         />
