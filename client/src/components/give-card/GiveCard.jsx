@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const GiveCard = ({ details: { id, title, desc, poster } }) => {
   const navigate = useNavigate();
 
-  const handleClick = () => navigate(`/donate/${id}`);
+  const handleClick = () => navigate(`/gift/${id}`);
 
   return (
     <article className="give-card">
