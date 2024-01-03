@@ -24,9 +24,18 @@
     margin-bottom: 2rem;
     font-size: var(--p1);
     font-family: inherit;
-    color: var(--bg-color);
+    color: var(--light);
     background-color: var(--color-2);
     outline: none;
     border: none;
     border-radius: 2rem;
+}
+.error-page button:last-of-type {
+    width: 20rem;
+    background-color: inherit;
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+.error-page button:hover {
+    opacity: 0.8;
 }

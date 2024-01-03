@@ -14,6 +14,9 @@ const Error = () => {
         <h3>Something went wrong...</h3>
         <p>We are working on fixing the problem.</p>
         <button onClick={() => location.reload()}>Try again</button>
+        <button onClick={() => (window.location.href = "/")}>
+          Go to home page and restart
+        </button>
       </CustomSection>
     </AnimatedPage>
   );
