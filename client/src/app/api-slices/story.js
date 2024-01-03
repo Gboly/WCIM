@@ -24,7 +24,7 @@ export const extendedPaymentApiSlice = apiSlice.injectEndpoints({
     getStoryByName: builder.query({
       query: ({ start, end, name }) =>
         `/story?start=${start}&end=${end}&name=${name}`,
-      transformResponse: (response) => response[0],
+      transformResponse: (response) => response?.error || response[0],
       providesTags: (result) =>
         result && [
           { type: "Story", id: "List" },
