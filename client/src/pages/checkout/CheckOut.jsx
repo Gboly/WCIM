@@ -119,6 +119,10 @@ const CheckOut = () => {
                         donationDetails?.amount || "0"
                       }`}</span>
                     </div>
+                    <div>
+                      <span>Gift Target</span>
+                      <span>{donationDetails?.giftCategory || "General"}</span>
+                    </div>
                   </section>
                   <section className="continue">
                     {isLoading ? (
