@@ -15,6 +15,7 @@ import AllStories from "../pages/all-stories/AllStories";
 import CheckOut from "../pages/checkout/CheckOut";
 import Search from "../pages/search/Search";
 import NoPage from "../pages/no-page/NoPage";
+import TargetedDonation from "../pages/targeted-donation/TargetedDonation";
 
 export default function Router() {
   return (
@@ -107,6 +108,14 @@ export default function Router() {
           element={
             <AnimatePresence mode="wait">
               <CheckOut />
+            </AnimatePresence>
+          }
+        />
+        <Route
+          path="/gift/:id"
+          element={
+            <AnimatePresence mode="wait">
+              <TargetedDonation />
             </AnimatePresence>
           }
         />
