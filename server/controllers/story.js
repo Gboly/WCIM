@@ -39,7 +39,9 @@ export const getStories = async (req, res) => {
       .skip(start)
       .limit(end);
 
-    res.status(200).json(stories);
+    stories.length === 0
+      ? res.status(204).json({ error: { message: "No story found" } })
+      : res.status(200).json(stories);
   } catch (error) {
     console.log(error);
     return res
