@@ -1,0 +1,34 @@
+.no-page {
+    min-height: var(--full-height);
+}
+.no-page .section {
+    padding-top: 0;
+}
+.no-page h3 {
+    font-size: var(--h1);
+    margin-bottom: 0;
+}
+.no-page p {
+    font-size: var(--h4);
+    margin-bottom: 4rem;
+    max-width: 40rem;
+    text-align: center;
+}
+.no-page img {
+    width: 20rem;
+}
+.no-page button {
+    width: 15rem;
+    height: 4rem;
+    margin-bottom: 2rem;
+    font-size: var(--p1);
+    font-family: inherit;
+    color: var(--light);
+    background-color: var(--color-2);
+    outline: none;
+    border: none;
+    border-radius: 2rem;
+}
+.no-page button:hover {
+    opacity: 0.8;
+}
