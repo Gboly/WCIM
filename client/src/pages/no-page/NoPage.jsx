@@ -6,14 +6,14 @@ import CustomSection from "../../components/customSection/customSection";
 import error404 from "../../assets/404.png";
 
 const NoPage = () => {
-  const { setIsNoPage, isNoPage } = useOutletContext();
+  const { setIsNoPage } = useOutletContext();
   const noPageRef = useRef(null);
 
   useEffect(() => {
     setIsNoPage(true);
 
     return () => setIsNoPage(false);
-  }, [setIsNoPage, isNoPage]);
+  }, [setIsNoPage]);
 
   return (
     <AnimatedPage className={"no-page"}>
