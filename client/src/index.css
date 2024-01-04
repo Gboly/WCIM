@@ -80,6 +80,11 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.disabled {
+  opacity: 0.45;
+}
+
 @media screen and (max-width: 1240px) {
     :root {
       --full-height: calc(100vh - 4.75rem)

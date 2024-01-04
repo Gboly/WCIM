@@ -13,7 +13,7 @@ const initialState = {
 const defaultPrice = { USD: "50", NGN: "10,000" };
 const howFrequent = [
   { type: "monthly", label: "Monthly Gift" },
-  { type: "Once", label: "One-time Gift" },
+  { type: "once", label: "One-time Gift" },
 ];
 const donationAmount = [
   {
@@ -38,7 +38,7 @@ const currencies = [
   //   { desc: "USD", name: "USD" },
 ];
 
-const Donate = ({ bgImage, giftCategory }) => {
+const Donate = ({ bgImage, giftCategory, isMonthly }) => {
   const backgroundImage = chooseAtRandomFromArray(donationSectionImages);
   const navigate = useNavigate();
   const [{ frequency, amount, priceType, currency }, setDetails] =
@@ -102,6 +102,7 @@ const Donate = ({ bgImage, giftCategory }) => {
                   handleChange={handleChange}
                   value={frequency}
                   name={"frequency"}
+                  disabled={type === "once" && isMonthly}
                 />
               ))}
             </div>
@@ -162,6 +163,7 @@ const RadioLabel = ({
   amount,
   handleInput,
   selectOther,
+  disabled,
 }) => {
   return (
     <>
@@ -173,13 +175,14 @@ const RadioLabel = ({
         value={type}
         checked={value === type}
         onChange={handleChange}
+        disabled={disabled}
       />
       <label
         key={label}
         htmlFor={type}
         className={`${type === "other" ? "other-label" : ""} ${
           value === type ? "checked" : ""
-        }`}
+        } ${disabled ? "disabled" : ""}`}
       >
         {type === "other" ? (
           <input

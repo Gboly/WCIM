@@ -32,7 +32,11 @@ const TargetedDonation = () => {
           <p>{desc}</p>
         </div>
       </CustomSection>
-      <Donate bgImage={poster} giftCategory={title} />
+      <Donate
+        bgImage={poster}
+        giftCategory={title}
+        isMonthly={id === "support-monthly"}
+      />
     </AnimatedPage>
   );
 };
