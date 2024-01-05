@@ -10,7 +10,6 @@ import runDb from "./config/db.config.js";
 
 dotenv.config();
 const app = express();
-const PORT = "5000";
 
 //Middlewares
 app.use(cookieParser());
@@ -30,9 +29,12 @@ app.use(morgan("combined"));
 runDb();
 
 //routing
+app.get("/", (req, res) => {
+  res.json("Hello");
+});
 app.use("/payment/paystack", paystackRoute);
 app.use("/story", storyRoute);
 
-app.listen(PORT, (e) =>
-  console.log(e || `Successfully connected to server ${PORT}`)
+app.listen(process.env.PORT, (e) =>
+  console.log(e || `Successfully connected to server ${process.env.PORT}`)
 );
