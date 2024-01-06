@@ -183,21 +183,21 @@ const orphanageTestimonial = [
 export const testimonials = [
   {
     id: 1,
-    imgSrc: scholarshipPoster,
-    desc: "Scholarship Beneficiary",
-    body: scholarshipTestimonial,
+    poster: scholarshipPoster,
+    title: "Scholarship Beneficiary",
+    snippet: scholarshipTestimonial,
   },
   {
     id: 2,
-    imgSrc: osoloOfOsolo,
-    desc: "Osolo of Osolo",
-    body: cleanWaterTestimonial,
+    poster: osoloOfOsolo,
+    title: "Osolo of Osolo",
+    snippet: cleanWaterTestimonial,
   },
   {
     id: 3,
-    imgSrc: orphanGiftPoster,
-    desc: "The kids at the orphanage",
-    body: orphanageTestimonial,
+    poster: orphanGiftPoster,
+    title: "The kids at the orphanage",
+    snippet: orphanageTestimonial,
   },
 ];
 
