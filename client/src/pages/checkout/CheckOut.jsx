@@ -68,7 +68,7 @@ const CheckOut = () => {
       ...details,
       amount: String(Number(donationDetails.amount.replace(/,/g, "")) * 100),
     };
-    donate(body);
+    // donate(body);
   };
 
   return (
