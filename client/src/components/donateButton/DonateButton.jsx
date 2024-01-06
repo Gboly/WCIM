@@ -1,9 +1,16 @@
 import { motion } from "framer-motion";
 import Animated from "../animated/Animated";
 import "./donate.css";
-import { forwardRef } from "react";
+import { forwardRef, useContext } from "react";
+import { GeneralContext } from "../../App";
 
 function DonateButtonWithRef({ styleClass, variants }, ref) {
+  const { navigateToSection } = useContext(GeneralContext);
+
+  const handleClick = () => {
+    navigateToSection("Donate today");
+  };
+
   return (
     <>
       {variants ? (
@@ -13,11 +20,17 @@ function DonateButtonWithRef({ styleClass, variants }, ref) {
           whileHover={{ scale: 1.05 }}
           variants={variants}
           ref={ref}
+          onClick={handleClick}
         >
           Donate
         </Animated>
       ) : (
-        <button className={`donate-button ${styleClass || ""}`}>Donate</button>
+        <button
+          className={`donate-button ${styleClass || ""}`}
+          onClick={handleClick}
+        >
+          Donate
+        </button>
       )}
     </>
   );
