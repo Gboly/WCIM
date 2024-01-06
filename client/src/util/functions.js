@@ -55,3 +55,5 @@ export const getStatesByCountry = (data, country) => {
 
   return extractCountries(countryResult?.states || []);
 };
+
+export const isDev = process.env.NODE_ENV === "development";
