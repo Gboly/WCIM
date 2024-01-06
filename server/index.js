@@ -11,17 +11,23 @@ import runDb from "./config/db.config.js";
 dotenv.config();
 const app = express();
 
+//cors
+const allowedOrigins = ["https://wcim.vercel.app", "http://localhost:5173"];
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) >= 0) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+
 //Middlewares
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(
-  cors({
-    origin: ["http://localhost:5173", "https://wcim.vercel.app/"],
-    methods: "GET,POST,PUT,PATCH,DELETE,HEAD",
-    credentials: true,
-  })
-);
+app.use(cors(corsOptions));
 app.use(helmet());
 app.use(morgan("combined"));
 
