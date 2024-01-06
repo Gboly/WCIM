@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://wcim.vercel.app"],
+    origin: ["http://localhost:5173", "https://wcim.vercel.app/"],
     methods: "GET,POST,PUT,PATCH,DELETE,HEAD",
     credentials: true,
   })
