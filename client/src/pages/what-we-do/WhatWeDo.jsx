@@ -3,7 +3,7 @@ import Article from "../../components/article/Article";
 import DonateButton from "../../components/donateButton/DonateButton";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Icon from "../../components/icon/Icon";
-import CustomSection from "../../components/customSection/customSection";
+import CustomSection from "../../components/customSection/CustomSection";
 import { useRef } from "react";
 import StoryCameo from "../../components/storyCameo/StoryCameo";
 import { Link } from "react-scroll";

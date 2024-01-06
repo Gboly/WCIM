@@ -10,7 +10,7 @@ import {
   vSlideInBottom,
 } from "../../util/variants";
 import DoingsCameo from "../../components/doingsCameo/DoingsCameo";
-import CustomSection from "../../components/customSection/customSection";
+import CustomSection from "../../components/customSection/CustomSection";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import Icon from "../../components/icon/Icon";

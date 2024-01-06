@@ -1,7 +1,7 @@
 import "./error.css";
 import errorImage from "../../assets/error_image.png";
 import AnimatedPage from "../animated/AnimatedPage";
-import CustomSection from "../customSection/customSection";
+import CustomSection from "../customSection/CustomSection";
 import { useRef } from "react";
 
 const Error = () => {

@@ -1,6 +1,6 @@
 import "./stories.css";
 import { useEffect, useRef } from "react";
-import CustomSection from "../../components/customSection/customSection";
+import CustomSection from "../../components/customSection/CustomSection";
 import { useParams } from "react-router-dom";
 import AnimatedPage from "../../components/animated/AnimatedPage";
 import StoryCameo from "../../components/storyCameo/StoryCameo";

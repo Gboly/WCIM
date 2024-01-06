@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from "react";
 import AnimatedPage from "../../components/animated/AnimatedPage";
-import CustomSection from "../../components/customSection/customSection";
+import CustomSection from "../../components/customSection/CustomSection";
 import "./checkout.css";
 import {
   capitalizeCamelCase,

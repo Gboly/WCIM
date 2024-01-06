@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from "react";
 import AnimatedPage from "../../components/animated/AnimatedPage";
 import "./giving-catalog.css";
-import CustomSection from "../../components/customSection/customSection";
+import CustomSection from "../../components/customSection/CustomSection";
 import GiveCard from "../../components/give-card/GiveCard";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 // import ExpandLessIcon from "@mui/icons-material/ExpandLess";

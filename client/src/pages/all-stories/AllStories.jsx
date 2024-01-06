@@ -1,6 +1,6 @@
 import { useContext, useRef } from "react";
 import AnimatedPage from "../../components/animated/AnimatedPage";
-import CustomSection from "../../components/customSection/customSection";
+import CustomSection from "../../components/customSection/CustomSection";
 import "./all-stories.css";
 import { storyCategories } from "../../util/content";
 import StoryCameo from "../../components/storyCameo/StoryCameo";

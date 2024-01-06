@@ -2,7 +2,7 @@ import { useOutletContext } from "react-router-dom";
 import "./no-page.css";
 import { useEffect, useRef } from "react";
 import AnimatedPage from "../../components/animated/AnimatedPage";
-import CustomSection from "../../components/customSection/customSection";
+import CustomSection from "../../components/customSection/CustomSection";
 import error404 from "../../assets/404.png";
 
 const NoPage = () => {

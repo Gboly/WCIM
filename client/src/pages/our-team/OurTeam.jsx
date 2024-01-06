@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import AnimatedPage from "../../components/animated/AnimatedPage";
-import CustomSection from "../../components/customSection/customSection";
+import CustomSection from "../../components/customSection/CustomSection";
 import "./our-team.css";
 import { official1, official2, official3 } from "../../util/images";
 

@@ -2,7 +2,7 @@ import { useRef } from "react";
 import AnimatedPage from "../../components/animated/AnimatedPage";
 import "./about-us.css";
 import Banner from "../../components/banner/Banner";
-import CustomSection from "../../components/customSection/customSection";
+import CustomSection from "../../components/customSection/CustomSection";
 import { extendedMissionStatement, testimonials } from "../../util/content";
 import StoryCameo from "../../components/storyCameo/StoryCameo";
 

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef } from "react";
 import AnimatedPage from "../../components/animated/AnimatedPage";
-import CustomSection from "../../components/customSection/customSection";
+import CustomSection from "../../components/customSection/CustomSection";
 import "./targeted-donation.css";
 import { useOutletContext, useParams } from "react-router-dom";
 import Donate from "../../components/donate/Donate";
