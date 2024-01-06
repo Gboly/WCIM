@@ -168,13 +168,13 @@
     .nav-search-bar {
         padding: 1rem 1rem 1.2rem;
     }
-    .nav-search-bar > div {
+    .nav-search-bar > form {
         width: 100%;
     }
-    .nav-search-bar > div > span {
+    .nav-search-bar > form > span {
         font-size: var(--p2);
     }
-    .nav-search-bar > div > input {
+    .nav-search-bar > form > input {
         width: 100%;
         padding: 0.25rem 0.1rem;
     }
