@@ -13,6 +13,7 @@ import {
   useInitPaystackMutation,
 } from "../../app/api-slices/payment";
 import Spinner from "../../components/spinner/Spinner";
+import TextInput from "../../components/text-input/TextInput";
 
 const initialState = {
   firstName: "",
@@ -147,30 +148,6 @@ const CheckOut = () => {
         <iframe src={paystackInitData.authorization_url}></iframe>
       )}
     </AnimatedPage>
-  );
-};
-
-const inputTypes = {
-  firstName: "text",
-  lastName: "text",
-  email: "email",
-  address: "text",
-};
-const TextInput = ({ value, handleInput, name }) => {
-  return (
-    <div className="text-input-container">
-      <label htmlFor={name}>
-        {capitalizeCamelCase(name) +
-          (name === "address" ? " (optional)" : " *")}
-      </label>
-      <input
-        type={inputTypes[name]}
-        id={name}
-        value={value}
-        onInput={handleInput}
-        autoComplete="off"
-      />
-    </div>
   );
 };
 

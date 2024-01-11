@@ -49,29 +49,14 @@
     min-width: 15rem;
     margin-bottom: 0.5rem;
 }
-.text-input-container {
-    display: flex;
-    flex-flow: column;
-    gap: 0.5rem;
-}
 .select-container {
     display: flex;
     flex-flow: column;
     gap: 0.5rem;
 }
-.checkout .text-input-container label, .select-container label {
+.select-container label {
     font-size: var(--p2);
     opacity: 0.95;
-}
-.checkout .text-input-container input {
-    background-color: inherit;
-    color: inherit;
-    border: 1px solid rgba(121,121,121,0.6);
-    border-radius: 0.35rem;
-    height: 3.3rem;
-    padding: 0 0.5rem;
-    font-size: var(--p3);
-    font-family: inherit;
 }
 .checkout .text-input-container input:focus {
     border-color: var(--secondary-color);
