@@ -16,6 +16,7 @@ import CheckOut from "../pages/checkout/CheckOut";
 import Search from "../pages/search/Search";
 import NoPage from "../pages/no-page/NoPage";
 import TargetedDonation from "../pages/targeted-donation/TargetedDonation";
+import ScholarshipApplication from "../pages/SSA/SSA";
 
 export default function Router() {
   return (
@@ -124,6 +125,14 @@ export default function Router() {
           element={
             <AnimatePresence mode="wait">
               <Search />
+            </AnimatePresence>
+          }
+        />
+        <Route
+          path="/scholarship/application"
+          element={
+            <AnimatePresence>
+              <ScholarshipApplication />
             </AnimatePresence>
           }
         />
