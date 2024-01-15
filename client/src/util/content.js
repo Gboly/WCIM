@@ -428,3 +428,81 @@ export const donationSectionImages = [
   orphanPoster,
   boreholeOsolo,
 ];
+
+export const applicationStages = [
+  {
+    id: 1,
+    label: "Personal Information",
+    zIndex: 1,
+  },
+  {
+    id: 2,
+    label: "Guardian Information",
+    zIndex: 0.9,
+  },
+  {
+    id: 3,
+    label: "Education Information",
+    zIndex: 0.8,
+  },
+];
+
+export const personalContent = [
+  { name: "firstName", label: "First name" },
+  { name: "lastName", label: "Last name" },
+  { name: "middleName", label: "Middle name" },
+  { name: "gender", label: "Gender" },
+  { name: "country", label: "Country" }, //select
+  { name: "city", label: "State/City" },
+  { name: "address", label: "Address" },
+  { name: "postCode", label: "Post code" },
+  { name: "email", label: "Email" },
+  { name: "phone", label: "Phone number" },
+  { name: "DOB", label: "Date of Birth" },
+];
+export const guardianContent = [
+  { name: "guardianName", label: "Name" },
+  { name: "guardianGender", label: "Gender" },
+  { name: "guardianPhone", label: "Phone number" },
+  { name: "guardianAdress", label: "Address" },
+  { name: "guardianEmail", label: "Email" },
+];
+export const educationContent = [
+  {
+    name: "choiceSchool",
+    label: "School (fresher should input choice school)",
+  },
+  { name: "tuition", label: "Tuition per year (NGN)" },
+  { name: "courseDuration", label: "Course duration (Year)" }, //select
+  { name: "currentYear", label: "Current school year" }, //select
+  {
+    name: "lastResult",
+    label:
+      "Upload an evidence of result. Current transcript for undergraduates and WAEC result for freshers", //file
+  },
+  {
+    name: "essay",
+    label:
+      "Write an essay stating why you need this scholarship in not more than 1200 words. File should be less than 2mb.", //file
+  },
+];
+export const selectInfos = ["courseDuration", "currentYear", "country"];
+export const courseDuration = [
+  "less than a year",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+];
+export const contents = [personalContent, guardianContent, educationContent];
+export const headers = [
+  "Provide us with your Personal details",
+  "We require information on your parent/guardian",
+  "Brief us on your educational background",
+];

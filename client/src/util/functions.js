@@ -1,4 +1,4 @@
-import { giftCategories } from "./content";
+import { courseDuration, giftCategories } from "./content";
 
 export const getTheme = () => {
   const localStorageTheme = localStorage.getItem("theme");
@@ -50,6 +50,14 @@ export const extractCountries = (data) => {
   return [{ name: "", desc: "Select" }, ...result];
 };
 
+export const prepareOptions = (data) => {
+  const result = (data || []).map((item) => ({
+    name: item?.name || item,
+    desc: item?.name || item,
+  }));
+  return [{ name: "", desc: "Select" }, ...result];
+};
+
 export const getStatesByCountry = (data, country) => {
   const countryResult = (data || []).find(({ name }) => country === name);
 
@@ -57,3 +65,17 @@ export const getStatesByCountry = (data, country) => {
 };
 
 export const isDev = process.env.NODE_ENV === "development";
+
+export const setSlideColor = (stage, id, type) =>
+  (type === "thumb" ? stage > id : stage >= id)
+    ? "var(--color-2)"
+    : "var(--soft-shadow-actual-color)";
+
+export const getInitialInfo = (content) =>
+  content.reduce((accum, { name }) => {
+    accum = { ...accum, [name]: "" };
+    return accum;
+  }, {});
+
+export const currentYearOptions = (duration) =>
+  prepareOptions(courseDuration.slice(1, courseDuration.indexOf(duration) + 1));
