@@ -1,0 +1,99 @@
+.ssa-page {
+    min-height: var(--full-height);
+}
+.ssa-page .section {
+    padding-top: 0.5rem;
+}
+.ssa-page .section > div > header  {
+    margin-bottom: 0;
+}
+.ssa-page main {
+    width: 100%;
+}
+.ssa-page aside {
+    width: 100%;
+    max-width: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 2rem; */
+}
+.ssa-page .sliders {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.ssa-page .sliders .label {
+    width: min-content;
+    text-align: center;
+    font-size: var(--p4);
+}
+.info-section {
+    margin-top: 3rem;
+}
+.info-section h1 {
+    font-size: var(--h3);
+    margin-bottom: 0.5rem;
+}
+.info-section header span {
+    font-size: var(--p1);
+}
+.info-section form {
+    margin-top: 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    overflow-x: hidden;
+}
+.info-section form > div {
+    flex: calc(50% - 1rem);
+}
+.info-section .select {
+    width: 100%;
+}
+.info-section .select {
+    width: 100%;
+    height: 3.5rem;
+    border: 1px solid rgba(121,121,121,0.6);
+    opacity: 0.75;
+    background-color: inherit;
+}
+.info-section .select option {
+    background-color: var(--soft-shadow-actual-color);
+}
+.ssa-page .form-actions {
+    flex: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.ssa-page .form-actions button {
+    padding: 0.7rem 1rem;
+    font-family: var(--font-family);
+    font-size: var(--p4);
+    border-radius: 0.3rem;
+    border: none;
+    outline: none;
+    background-color: var(--color-2);
+}
+.ssa-page .form-actions .back {
+    padding: 0.7rem 1.7rem;
+}
+
+@media screen and (max-width: 720px) {
+    .info-section form {
+        gap: 1rem;
+    }
+}
+@media screen and (max-width: 560px) {
+    .info-section form {
+        gap: 0.7rem;
+    }
+}
