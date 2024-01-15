@@ -79,3 +79,22 @@ export const getInitialInfo = (content) =>
 
 export const currentYearOptions = (duration) =>
   prepareOptions(courseDuration.slice(1, courseDuration.indexOf(duration) + 1));
+
+export const handleMediaUpload = (e, { loading, success }) => {
+  const fileObject = e.target.files[0];
+  const { size, name } = fileObject;
+
+  if (size > 2 * 1024 * 1024) {
+    return alert("File too large");
+  }
+
+  const reader = new FileReader();
+  reader.addEventListener("loadstart", () => {
+    loading();
+  });
+  reader.addEventListener("load", (e) => {
+    const src = e.target.result;
+    success(name, src);
+  });
+  reader.readAsDataURL(fileObject);
+};
