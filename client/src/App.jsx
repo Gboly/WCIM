@@ -32,6 +32,9 @@ function App({ children }) {
   const [storyCategory, setStoryCategory] = useState("show all");
   const changeStoryCategory = (e) => setStoryCategory(e?.target?.id || e);
 
+  // show processing pop-up
+  const [processingDesc, setProcessingDesc] = useState("");
+
   return (
     <GeneralContext.Provider
       value={{
@@ -40,6 +43,8 @@ function App({ children }) {
         setInitiateMailingList,
         storyCategory,
         changeStoryCategory,
+        processingDesc,
+        setProcessingDesc,
       }}
     >
       {children}
