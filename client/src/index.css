@@ -83,6 +83,7 @@ body {
 
 .disabled {
   opacity: 0.45;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 1240px) {
