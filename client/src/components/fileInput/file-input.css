@@ -1,5 +1,6 @@
 .file-input-container {
     min-width: fit-content;
+    margin-top: 0.5rem;
 }
 .file-input-container label {
     display: flex;
