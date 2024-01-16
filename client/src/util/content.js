@@ -486,7 +486,13 @@ export const educationContent = [
       "Write an essay stating why you need this scholarship in not more than 1200 words. File should be less than 2mb.", //file
   },
 ];
-export const selectInfos = ["courseDuration", "currentYear", "country"];
+export const selectInfos = [
+  "courseDuration",
+  "currentYear",
+  "country",
+  "gender",
+  "guardianGender",
+];
 export const courseDuration = [
   "less than a year",
   "1",
@@ -500,6 +506,7 @@ export const courseDuration = [
   "9",
   "10",
 ];
+export const genders = ["Other", "Male", "Female"];
 export const contents = [personalContent, guardianContent, educationContent];
 export const headers = [
   "Provide us with your Personal details",

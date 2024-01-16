@@ -71,9 +71,10 @@ export const setSlideColor = (stage, id, type) =>
     ? "var(--color-2)"
     : "var(--soft-shadow-actual-color)";
 
+const applicationDetails = JSON.parse(localStorage.getItem("application"));
 export const getInitialInfo = (content) =>
   content.reduce((accum, { name }) => {
-    accum = { ...accum, [name]: "" };
+    accum = { ...accum, [name]: applicationDetails?.[name] || "" };
     return accum;
   }, {});
 
