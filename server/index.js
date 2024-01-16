@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import paystackRoute from "./routes/paystackPayment.js";
 import storyRoute from "./routes/story.js";
+import scholarshipRoute from "./routes/scholarship.js";
 import runDb from "./config/db.config.js";
 
 dotenv.config();
@@ -21,6 +22,8 @@ const corsOptions = {
       callback(new Error("Not allowed by CORS"));
     }
   },
+  methods: "GET,POST,PUT,PATCH,DELETE,HEAD",
+  credentials: true,
 };
 
 //Middlewares
@@ -40,6 +43,7 @@ app.get("/", (req, res) => {
 });
 app.use("/payment/paystack", paystackRoute);
 app.use("/story", storyRoute);
+app.use("/scholarship/apply", scholarshipRoute);
 
 app.listen(process.env.PORT, (e) =>
   console.log(e || `Successfully connected to server ${process.env.PORT}`)

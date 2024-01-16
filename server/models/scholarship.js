@@ -30,6 +30,7 @@ const scholarshipSchema = schema({
   currentYear: { type: String, required: true, index: "text" },
   otherSChoolExpensesCost: { type: String, required: true, index: "text" },
   essay: { type: String, required: true, index: "text" },
+  createdAt: { type: Date, default: new Date() },
 });
 
 //on portal, calculate totalCost by multiplying tuition by number of years left (courseDuration - currentYear)
