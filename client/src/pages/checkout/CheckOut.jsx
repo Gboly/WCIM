@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import AnimatedPage from "../../components/animated/AnimatedPage";
 import CustomSection from "../../components/customSection/CustomSection";
 import "./checkout.css";
@@ -14,6 +14,7 @@ import {
 } from "../../app/api-slices/payment";
 import Spinner from "../../components/spinner/Spinner";
 import TextInput from "../../components/text-input/TextInput";
+import { GeneralContext } from "../../App";
 
 const initialState = {
   firstName: "",
@@ -26,12 +27,19 @@ const initialState = {
 
 const CheckOut = () => {
   const donationDetails = JSON.parse(sessionStorage.getItem("donation"));
+  const { setIsCheckout } = useContext(GeneralContext);
   const checkoutRef = useRef(null);
   const [details, setDetails] = useState(initialState);
 
   const { data } = useGetCountriesAndStatesQuery();
   const [donate, { data: paystackInitData, isLoading }] =
     useInitPaystackMutation();
+
+  useEffect(() => {
+    setIsCheckout(paystackInitData ? true : false);
+
+    return () => setIsCheckout(false);
+  }, [paystackInitData, setIsCheckout]);
 
   const handleChange = (e) => {
     e && e.preventDefault && e.preventDefault();
@@ -69,7 +77,7 @@ const CheckOut = () => {
       ...details,
       amount: String(Number(donationDetails.amount.replace(/,/g, "")) * 100),
     };
-    // donate(body);
+    donate(body);
   };
 
   return (

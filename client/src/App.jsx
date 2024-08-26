@@ -35,6 +35,9 @@ function App({ children }) {
   // show processing pop-up
   const [processingDesc, setProcessingDesc] = useState("");
 
+  //Checkout page alert
+  const [isCheckout, setIsCheckout] = useState(false);
+
   return (
     <GeneralContext.Provider
       value={{
@@ -45,6 +48,8 @@ function App({ children }) {
         changeStoryCategory,
         processingDesc,
         setProcessingDesc,
+        isCheckout,
+        setIsCheckout,
       }}
     >
       {children}

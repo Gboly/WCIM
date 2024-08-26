@@ -8,7 +8,7 @@ import ThemeToggle from "../themeToggle/ThemeToggle";
 import { navOptions } from "../../util/content";
 import NavSubOptions from "./NavSubOptions";
 import SearchBar from "./SearchBar";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import usePopUpHandler from "../../util/cutom-hooks/usePopupHandler";
 import Animated from "../animated/Animated";
 import { motion } from "framer-motion";
@@ -17,8 +17,10 @@ import Brand from "../brand/Brand";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import Sidebar from "../sidebar/Sidebar";
+import { GeneralContext } from "../../App";
 
 function Navbar() {
+  const { isCheckout } = useContext(GeneralContext);
   const searchBarRef = useRef(null);
   const sidebarRef = useRef(null);
   const [searchIsOpen, openSearch, closeSearch] = usePopUpHandler(searchBarRef);
@@ -35,31 +37,33 @@ function Navbar() {
         <NavLink to={"/"} reloadDocument={isHomePage}>
           <Brand />
         </NavLink>
-        <div className="nav-options">
-          <div>
-            {!isSearchPage && (
-              <Icon handleClick={openSearch} className={"search-icon"}>
-                <SearchIcon style={iconStyle} />
-              </Icon>
+        {!isCheckout && (
+          <div className="nav-options">
+            <div>
+              {!isSearchPage && (
+                <Icon handleClick={openSearch} className={"search-icon"}>
+                  <SearchIcon style={iconStyle} />
+                </Icon>
+              )}
+              <ThemeToggle />
+            </div>
+            <nav>
+              {navOptions.map((option) => (
+                <NavOption key={option.desc} option={option} />
+              ))}
+            </nav>
+            <DonateButton />
+            {!sidebarIsOpen ? (
+              <Icon
+                handleClick={openSidebar}
+                value={MenuIcon}
+                className={"menu-icon"}
+              />
+            ) : (
+              <Icon value={CloseIcon} className={"menu-icon"} />
             )}
-            <ThemeToggle />
           </div>
-          <nav>
-            {navOptions.map((option) => (
-              <NavOption key={option.desc} option={option} />
-            ))}
-          </nav>
-          <DonateButton />
-          {!sidebarIsOpen ? (
-            <Icon
-              handleClick={openSidebar}
-              value={MenuIcon}
-              className={"menu-icon"}
-            />
-          ) : (
-            <Icon value={CloseIcon} className={"menu-icon"} />
-          )}
-        </div>
+        )}
         {searchIsOpen && (
           <SearchBar ref={searchBarRef} closeSearch={closeSearch} />
         )}
