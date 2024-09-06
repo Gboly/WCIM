@@ -1,0 +1,9 @@
+.pip {
+    height: var(--full-height);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pip .spinner {
+  margin-bottom: 3rem;
+}

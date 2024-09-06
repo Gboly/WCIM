@@ -1,17 +1,20 @@
 import { apiSlice } from "../api";
 import axios from "axios";
+import { isPaystack } from "../../util/functions";
 
 export const extendedPaymentApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
-    initPaystack: builder.mutation({
+    initPayment: builder.mutation({
       query: (credentials) => ({
-        url: "/payment/paystack/initialize",
+        url: `/payment/${
+          isPaystack(credentials) ? "paystack" : "stripe"
+        }/initialize`,
         method: "POST",
         body: credentials,
         credentials: "include",
       }),
       transformResponse: (response) => response?.data,
-      invalidatesTags: [{ type: "Paystack", id: "initialize" }],
+      invalidatesTags: [{ type: "Payment", id: "initialize" }],
     }),
 
     getCountriesAndStates: builder.query({
@@ -35,5 +38,5 @@ export const extendedPaymentApiSlice = apiSlice.injectEndpoints({
   }),
 });
 
-export const { useInitPaystackMutation, useGetCountriesAndStatesQuery } =
+export const { useInitPaymentMutation, useGetCountriesAndStatesQuery } =
   extendedPaymentApiSlice;

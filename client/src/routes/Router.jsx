@@ -17,6 +17,7 @@ import Search from "../pages/search/Search";
 import NoPage from "../pages/no-page/NoPage";
 import TargetedDonation from "../pages/targeted-donation/TargetedDonation";
 import ScholarshipApplication from "../pages/SSA/SSA";
+import StripeReRoute from "../pages/stripe-reroute/StripeReRoute";
 
 export default function Router() {
   return (
@@ -143,6 +144,14 @@ export default function Router() {
               <NoPage />
             </AnimatePresence>
           }
+        />
+        <Route
+          path="/stripe/redirect/success"
+          element={<StripeReRoute type="success" />}
+        />
+        <Route
+          path="/stripe/redirect/cancel"
+          element={<StripeReRoute type="cancel" />}
         />
       </Route>
     </Routes>

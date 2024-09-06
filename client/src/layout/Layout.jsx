@@ -21,17 +21,23 @@ export default function Layout() {
   const location = useLocation();
   const [isNoPage, setIsNoPage] = useState(false);
 
+  const isStripeReroutePage =
+    location.pathname === "/stripe/redirect/success" ||
+    location.pathname === "/stripe/redirect/cancel";
+
   const isExcluded =
-    donateExcludedPages.includes(location.pathname) || isNoPage;
+    donateExcludedPages.includes(location.pathname) ||
+    isStripeReroutePage ||
+    isNoPage;
 
   return (
     <>
-      <Navbar />
+      {!isStripeReroutePage && <Navbar />}
       <ErrorBoundary FallbackComponent={Error}>
         <Outlet context={{ setIsNoPage, isNoPage }} />
         {!isExcluded && <Donate />}
       </ErrorBoundary>
-      <Footer />
+      {!isStripeReroutePage && <Footer />}
       {processingDesc && <Processing desc={processingDesc} />}
     </>
   );

@@ -99,3 +99,6 @@ export const handleMediaUpload = (e, { loading, success }) => {
   });
   reader.readAsDataURL(fileObject);
 };
+
+export const isPaystack = (donationDetails) =>
+  donationDetails.currency === "NGN";

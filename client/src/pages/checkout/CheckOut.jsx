@@ -1,4 +1,4 @@
-import { useContext, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import AnimatedPage from "../../components/animated/AnimatedPage";
 import CustomSection from "../../components/customSection/CustomSection";
 import "./checkout.css";
@@ -6,15 +6,18 @@ import {
   capitalizeCamelCase,
   getStatesByCountry,
   extractCountries,
+  isPaystack,
 } from "../../util/functions";
 import { SelectBox } from "../../components/donate/Donate";
 import {
   useGetCountriesAndStatesQuery,
-  useInitPaystackMutation,
+  useInitPaymentMutation,
 } from "../../app/api-slices/payment";
 import Spinner from "../../components/spinner/Spinner";
 import TextInput from "../../components/text-input/TextInput";
-import { GeneralContext } from "../../App";
+import PaymentSuccessful from "../../components/PaymentSuccessful/PaymentSuccessful";
+import PaymentCancelled from "../../components/PaymentCancelled/PaymentCancelled";
+import PaymentInProgress from "../../components/PaymentInProgress/PaymentInProgress";
 
 const initialState = {
   firstName: "",
@@ -27,19 +30,23 @@ const initialState = {
 
 const CheckOut = () => {
   const donationDetails = JSON.parse(sessionStorage.getItem("donation"));
-  const { setIsCheckout } = useContext(GeneralContext);
+
   const checkoutRef = useRef(null);
   const [details, setDetails] = useState(initialState);
+  const [isPaid, setIsPaid] = useState("");
 
   const { data } = useGetCountriesAndStatesQuery();
-  const [donate, { data: paystackInitData, isLoading }] =
-    useInitPaystackMutation();
+  const [donate, { data: paymentData, isLoading }] = useInitPaymentMutation();
 
   useEffect(() => {
-    setIsCheckout(paystackInitData ? true : false);
+    window.setPaidStatus = (type) => {
+      setIsPaid(type);
+    };
 
-    return () => setIsCheckout(false);
-  }, [paystackInitData, setIsCheckout]);
+    paymentData &&
+      !isPaystack(donationDetails) &&
+      window.open(paymentData.url, "_blank", "width=1000,height=1000");
+  }, [paymentData, donationDetails]);
 
   const handleChange = (e) => {
     e && e.preventDefault && e.preventDefault();
@@ -80,9 +87,13 @@ const CheckOut = () => {
     donate(body);
   };
 
-  return (
+  return isPaid === "success" ? (
+    <PaymentSuccessful />
+  ) : isPaid === "cancel" ? (
+    <PaymentCancelled />
+  ) : (
     <AnimatedPage className={"checkout"}>
-      {!paystackInitData ? (
+      {!paymentData ? (
         <CustomSection id={""} ref={checkoutRef}>
           <div className="checkout-box">
             <aside>
@@ -152,8 +163,10 @@ const CheckOut = () => {
             </main>
           </div>
         </CustomSection>
+      ) : isPaystack(donationDetails) ? (
+        <iframe src={paymentData.authorization_url}></iframe>
       ) : (
-        <iframe src={paystackInitData.authorization_url}></iframe>
+        <PaymentInProgress />
       )}
     </AnimatedPage>
   );

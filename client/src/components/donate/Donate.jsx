@@ -7,8 +7,8 @@ import { useState } from "react";
 const initialState = {
   frequency: "monthly",
   amount: "",
-  priceType: "10,000",
-  currency: "NGN",
+  priceType: "50",
+  currency: "USD",
 };
 const defaultPrice = { USD: "50", NGN: "10,000" };
 const howFrequent = [
@@ -34,8 +34,8 @@ const donationAmount = [
   },
 ];
 const currencies = [
+  { desc: "USD", name: "USD" },
   { desc: "NGN", name: "NGN" },
-  //   { desc: "USD", name: "USD" },
 ];
 
 const Donate = ({ bgImage, giftCategory, isMonthly }) => {

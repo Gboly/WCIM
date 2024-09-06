@@ -8,6 +8,6 @@ export const apiSlice = createApi({
       ? "http://localhost:5000"
       : "https://wcim-backend.vercel.app",
   }),
-  tagTypes: ["Paystack", "Story", "Scholarship"],
+  tagTypes: ["Payment", "Story", "Scholarship"],
   endpoints: () => ({}),
 });
