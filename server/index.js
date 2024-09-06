@@ -5,9 +5,12 @@ import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import paystackRoute from "./routes/paystackPayment.js";
+import stripeRoute from "./routes/stripePayment.js";
 import storyRoute from "./routes/story.js";
 import scholarshipRoute from "./routes/scholarship.js";
 import runDb from "./config/db.config.js";
+
+export const clientBaseUrl = "http://localhost:5173/";
 
 dotenv.config();
 const app = express();
@@ -42,6 +45,7 @@ app.get("/", (req, res) => {
   res.json("Hello");
 });
 app.use("/payment/paystack", paystackRoute);
+app.use("/payment/stripe", stripeRoute);
 app.use("/story", storyRoute);
 app.use("/scholarship/apply", scholarshipRoute);
 
