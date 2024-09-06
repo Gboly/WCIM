@@ -8,7 +8,7 @@ import ThemeToggle from "../themeToggle/ThemeToggle";
 import { navOptions } from "../../util/content";
 import NavSubOptions from "./NavSubOptions";
 import SearchBar from "./SearchBar";
-import { useContext, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import usePopUpHandler from "../../util/cutom-hooks/usePopupHandler";
 import Animated from "../animated/Animated";
 import { motion } from "framer-motion";
@@ -17,10 +17,8 @@ import Brand from "../brand/Brand";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import Sidebar from "../sidebar/Sidebar";
-import { GeneralContext } from "../../App";
 
 function Navbar() {
-  const { isCheckout } = useContext(GeneralContext);
   const searchBarRef = useRef(null);
   const sidebarRef = useRef(null);
   const [searchIsOpen, openSearch, closeSearch] = usePopUpHandler(searchBarRef);
@@ -30,6 +28,7 @@ function Navbar() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const isSearchPage = location.pathname === "/search";
+  const isCheckout = location.pathname === "/donate/checkout";
 
   return (
     <>
