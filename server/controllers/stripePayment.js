@@ -2,7 +2,8 @@
 import dotenv from "dotenv";
 import Donation from "../models/donation.js";
 import stripe from "stripe";
-import { clientBaseUrl } from "../index.js";
+
+const clientBaseUrl = "https://wcim.vercel.app/";
 
 dotenv.config();
 const Stripe = stripe(process.env.STRIPE_SECRET_KEY);

@@ -10,8 +10,6 @@ import storyRoute from "./routes/story.js";
 import scholarshipRoute from "./routes/scholarship.js";
 import runDb from "./config/db.config.js";
 
-export const clientBaseUrl = "https://wcim.vercel.app";
-
 dotenv.config();
 const app = express();
 
