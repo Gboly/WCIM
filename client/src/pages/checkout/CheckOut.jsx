@@ -15,7 +15,7 @@ import {
 } from "../../app/api-slices/payment";
 import Spinner from "../../components/spinner/Spinner";
 import TextInput from "../../components/text-input/TextInput";
-import PaymentSuccessful from "../../components/paymentSuccessful/PaymentSuccessful";
+import PaymentSuccessful from "../../components/PaymentSuccessful/PaymentSuccessful";
 import PaymentCancelled from "../../components/paymentCancelled/PaymentCancelled";
 import PaymentInProgress from "../../components/paymentInProgress/PaymentInProgress";
 
