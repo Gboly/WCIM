@@ -5,7 +5,9 @@ import "./payment-successful.css";
 import successful from "../../assets/successful.png";
 
 const PaymentSuccessful = () => {
-  const { currency, amount } = JSON.parse(sessionStorage.getItem("donation"));
+  const { currency, amount, subscription } = JSON.parse(
+    sessionStorage.getItem("donation")
+  );
   const psRef = useRef(null);
 
   const handleClick = () => (window.location.href = "/");
@@ -18,7 +20,9 @@ const PaymentSuccessful = () => {
           <p>Donation Successful</p>
           <p>
             Your donation of {currency}
-            {amount} is successful. Thank you and God bless.
+            {amount} is successful.{" "}
+            {subscription && "You would be charged on a monthly basis."} Thank
+            you and God bless.
           </p>
         </div>
         <button onClick={handleClick}>Go to Homepage</button>
