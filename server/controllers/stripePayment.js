@@ -14,7 +14,6 @@ export const initializePayment = async (req, res) => {
     await donation.save();
 
     const session = await Stripe.checkout.sessions.create({
-      mode: "payment",
       customer_email: email,
       line_items: [
         {
@@ -23,15 +22,24 @@ export const initializePayment = async (req, res) => {
             currency: "usd",
             unit_amount: amount,
             product_data: {
-              name: "Donation",
+              name: "Donation to World Care International Ministry",
               description: "In a bid to make the world a better place",
               images: [
                 "https://res.cloudinary.com/dirwr8cde/image/upload/v1703697304/wcim/wcim-main-pic_helybz.jpg",
               ],
             },
+            ...(subscription
+              ? {
+                  recurring: {
+                    interval: "month",
+                    interval_count: 1,
+                  },
+                }
+              : {}),
           },
         },
       ],
+      mode: subscription ? "subscription" : "payment",
       success_url: clientBaseUrl + "stripe/redirect/success",
       cancel_url: clientBaseUrl + "stripe/redirect/cancel",
     });
