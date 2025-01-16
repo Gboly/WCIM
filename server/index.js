@@ -14,7 +14,11 @@ dotenv.config();
 const app = express();
 
 //cors
-const allowedOrigins = ["https://wcim.vercel.app", "http://localhost:5173"];
+const allowedOrigins = [
+  "https://wcim.ngo",
+  "https://wcim.vercel.app",
+  "http://localhost:5173",
+];
 const corsOptions = {
   origin: function (origin, callback) {
     if (allowedOrigins.indexOf(origin) >= 0) {
